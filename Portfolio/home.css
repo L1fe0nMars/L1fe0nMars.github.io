@@ -1,0 +1,28 @@
+body {
+    height: 100vh;
+}
+
+.section-1 .container {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.swiper {
+    width: 90%;
+    height: 60vh;
+    padding: 1em 0;
+}
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+}

@@ -1,0 +1,270 @@
+* {
+    font-family: 'Rajdhani', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+::selection {
+    background: rgb(0, 144, 201);
+}
+
+::-moz-selection {
+    background: rgb(0, 144, 201);
+}
+
+body {
+    color: var(--off-white);
+    background-image: url("images/space-background.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.fa {
+    color: var(--space-color);
+}
+
+header {
+    margin-bottom: 3em;
+}
+
+header ul {
+    list-style: none;
+    margin-right: 0;
+    padding-right: 1em;
+    padding-top: 0.5em;
+    color: var(--space-color);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+header li {
+    font-size: 2em;
+    padding: 0 0.4em;
+}
+
+#section-1 {
+    margin-bottom: 5em;
+}
+
+.main-content {
+    padding: 1em 0.5em;
+    text-align: center;
+    width: 90%;
+    height: 10%;
+    margin: 0 auto;
+    background: rgba(0, 0, 0, 0.75);
+    border-radius: 35px;
+    box-shadow: inset 3px -3px 15px var(--space-color);
+}
+
+h1 {
+    font-size: 2em;
+    font-family: 'Rajdhani Bold', 'Rajdhani', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.main-content h1,
+.main-content p {
+    padding: 0.5em;
+}
+
+#names {
+    padding: 0.5em 0;
+    list-style-type: none;
+    display: block;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+#names li div{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#names h2 {
+    padding: 0.5em;
+    width: max-content;
+    margin: 0 auto;
+    transition: 0.1s ease-out;
+    cursor: pointer;
+    border-radius: 10px;
+    font-family: 'Rajdhani Bold', 'Rajdhani', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#names h2:hover {
+    box-shadow: inset 3px -3px 15px var(--space-color);
+    border-radius: 30px;
+}
+
+.fa-star {
+    cursor: pointer;
+    margin-left: 0.25em;
+    transition: 0.1s ease-out;
+}
+
+.fa-star:hover {
+    color: var(--space-color);
+}
+
+p,
+label,
+button {
+    font-size: 20px;
+}
+
+#generate {
+    margin: 1em auto;
+    padding: 0.5em 1em;
+    box-shadow: inset 3px -3px 15px var(--space-color);
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.25s ease-out;
+}
+
+#generate:hover {
+    box-shadow: inset 10px -3px 15px var(--space-color);
+}
+
+form {
+    padding: 0.5em 0 1em 0;
+}
+
+input {
+    padding-left: 0.3em;
+    color: var(--off-white);
+    width: 3.5em;
+    font-size: 16px;
+    background-color: black;
+    border: 1px solid var(--space-color);
+    border-radius: 5px;
+}
+
+hr {
+    background-color: var(--space-color);
+    border: none;
+    width: 90%;
+    height: 1px;
+    margin: 1em auto;
+    margin-bottom: 1.5em;
+}
+
+details {
+    color: var(--space-color);
+    margin-bottom: 1em;
+}
+
+summary {
+    color: var(--off-white);
+    width: max-content;
+    margin: 0 auto;
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family: 'Rajdhani Bold', 'Rajdhani', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cursor: pointer;
+}
+
+#saved-names-list {
+    list-style-type: none;
+}
+
+#saved-names-list li {
+    padding: 0.5em;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Rajdhani Bold', 'Rajdhani', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#saved-names-list li h2 {
+    padding: 0.5em;
+    cursor: pointer;
+    font-family: 'Rajdhani Bold', 'Rajdhani', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#saved-names-list li h2:hover {
+    box-shadow: inset 3px -3px 15px var(--space-color);
+    border-radius: 30px;
+}
+
+.fa-circle-xmark {
+    margin-left: 0.25em;
+    cursor: pointer;
+    color: rgb(224, 49, 49);
+    font-size: 0.9em;
+    transition: 0.1s ease-out;
+}
+
+/* PC + TABLETS */
+@media (min-width: 481px) {
+    header {
+        margin-bottom: 5em;
+    }
+    
+    p {
+        font-size: 20px;
+    }
+    
+    #names,
+    #saved-names-list {
+        display: grid;
+    }
+
+    .fa-circle-xmark {
+        color: var(--off-white);
+    }
+
+    .fa-circle-xmark:hover {
+        color: rgb(224, 49, 49);
+    }
+}
+
+/* TABLETS */
+@media screen and (min-width: 481px) and (max-width: 1024px) {
+    h1 {
+        font-size: 2.5em;
+    }
+    
+    #names,
+    #saved-names-list {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #names h2 {
+        font-size: 1.7em;
+    }
+}
+
+/* PC */
+@media screen and (min-width: 1025px) {
+    h1 {
+        font-size: 3em;
+    }
+    
+    #names,
+    #saved-names-list {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    #names h2 {
+        font-size: 2em;
+    }
+}
+
+@media screen and (min-width: 1300px) {
+    #names,
+    #saved-names-list {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    #names,
+    #saved-names-list {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+}
