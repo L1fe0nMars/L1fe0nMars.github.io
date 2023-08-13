@@ -159,7 +159,7 @@ class Suffix {
         "uul",
         "ux",
         "uz",
-    ]
+    ];
 
     /**
      * Gets a random suffix from the above array
@@ -167,9 +167,9 @@ class Suffix {
      * @return {string} The suffix
      */
     getSuffix() {
-        let suffix = this.#suffixes[Math.floor(Math.random() * this.#suffixes.length)]
+        let suffix = this.#suffixes[Math.floor(Math.random() * this.#suffixes.length)];
 
-        return suffix
+        return suffix;
     }
 
     /**
@@ -178,6 +178,6 @@ class Suffix {
      * @return {number} The total number of possible suffixes
      */
     getNumSuffixes() {
-        return this.#suffixes.length
+        return this.#suffixes.length;
     }
 }

@@ -409,7 +409,7 @@ class Prefix {
             "Zyth",
             "Zyv",
         ],
-    ]
+    ];
 
     /**
      * Gets a random prefix from the above array
@@ -417,10 +417,10 @@ class Prefix {
      * @return {string} The prefix
      */
     getPrefix() {
-        let letter = this.#prefixes[Math.floor(Math.random() * this.#prefixes.length)]
-        let prefix = letter[Math.floor(Math.random() * letter.length)]
+        let letter = this.#prefixes[Math.floor(Math.random() * this.#prefixes.length)];
+        let prefix = letter[Math.floor(Math.random() * letter.length)];
 
-        return prefix
+        return prefix;
     }
 
     /**
@@ -429,12 +429,12 @@ class Prefix {
      * @return {number} The total number of possible prefixes
      */
     getNumPrefixes() {
-        let numPrefixes = 0
+        let numPrefixes = 0;
 
         for (let i = 0; i < this.#prefixes.length; i++) {
-            numPrefixes += this.#prefixes[i].length
+            numPrefixes += this.#prefixes[i].length;
         }
 
-        return numPrefixes
+        return numPrefixes;
     }
 }

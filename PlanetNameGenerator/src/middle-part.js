@@ -404,7 +404,7 @@ class MiddlePart {
         "uxl",
         "uz",
         "uzg",
-    ]
+    ];
 
     /**
      * Gets a string from the above array
@@ -412,9 +412,9 @@ class MiddlePart {
      * @return {string} The middle string
      */
     getMiddlePart() {
-        let middle = this.#middlePart[Math.floor(Math.random() * this.#middlePart.length)]
+        let middle = this.#middlePart[Math.floor(Math.random() * this.#middlePart.length)];
 
-        return middle
+        return middle;
     }
 
     /**
@@ -423,15 +423,15 @@ class MiddlePart {
      * @return {string} The middle string
      */
     getMiddlePartTwoLetters() {
-        let middlePartTwoLetters = []
+        let middlePartTwoLetters = [];
 
         for (let i = 0; i < this.#middlePart.length; i++) {
             if (this.#middlePart[i].length == 2) {
-                middlePartTwoLetters.push(this.#middlePart[i])
+                middlePartTwoLetters.push(this.#middlePart[i]);
             }
         }
         
-        return middlePartTwoLetters[Math.floor(Math.random() * middlePartTwoLetters.length)]
+        return middlePartTwoLetters[Math.floor(Math.random() * middlePartTwoLetters.length)];
     }
 
     /**
@@ -440,7 +440,7 @@ class MiddlePart {
      * @return {number} The total number of possible middle strings
      */
     getNumMiddleParts() {
-        return this.#middlePart.length
+        return this.#middlePart.length;
     }
 
     /**
@@ -449,14 +449,14 @@ class MiddlePart {
      * @return {number} The total number of possible strings
      */
     getNumMiddlePartsTwoLetters() {
-        let middlePartTwoLetters = []
+        let middlePartTwoLetters = [];
 
         for (let i = 0; i < this.#middlePart.length; i++) {
             if (this.#middlePart[i].length == 2) {
-                middlePartTwoLetters.push(this.#middlePart[i])
+                middlePartTwoLetters.push(this.#middlePart[i]);
             }
         }
 
-        return middlePartTwoLetters.length
+        return middlePartTwoLetters.length;
     }
 }

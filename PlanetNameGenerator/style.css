@@ -77,7 +77,8 @@ h1 {
     flex-wrap: wrap;
 }
 
-#names li div{
+#names li div {
+    position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -96,6 +97,24 @@ h1 {
 #names h2:hover {
     box-shadow: inset 3px -3px 15px var(--space-color);
     border-radius: 30px;
+}
+
+.tooltip-text {
+    visibility: hidden;
+    position: absolute;
+    width: 140px;
+    background-color: black;
+    color: var(--off-white);
+    text-align: center;
+    border-radius: 10px;
+    padding: 0.5em;
+    font-size: 16px;
+    bottom: 110%;
+    left: 50%;
+    margin-left: -75px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    box-shadow: inset 3px -3px 15px var(--space-color);
 }
 
 .fa-star {
@@ -171,8 +190,7 @@ summary {
 }
 
 #saved-names-list li {
-    padding: 0.5em;
-    font-size: 20px;
+    padding: 0 0.5em;
     font-weight: bold;
     font-family: 'Rajdhani Bold', 'Rajdhani', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
@@ -203,10 +221,6 @@ summary {
 @media (min-width: 481px) {
     header {
         margin-bottom: 5em;
-    }
-    
-    p {
-        font-size: 20px;
     }
     
     #names,
@@ -252,6 +266,11 @@ summary {
 
     #names h2 {
         font-size: 2em;
+    }
+
+    #names h2:hover .tooltip-text {
+        visibility: visible;
+        opacity: 1;
     }
 }
 
