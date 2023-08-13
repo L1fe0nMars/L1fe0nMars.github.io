@@ -382,6 +382,7 @@ class Prefix {
             "Scy",
             "Syr",
             "Syph",
+            "Thyb",
             "Thyl",
             "Tyb",
             "Tyg",
