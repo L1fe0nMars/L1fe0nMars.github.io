@@ -1,6 +1,7 @@
 :root {
     --off-white: rgb(248, 248, 248);
     --space-color: rgb(65, 201, 255);
+    --blackjack-color: rgb(24, 122, 71);
 }
 
 @font-face { 
