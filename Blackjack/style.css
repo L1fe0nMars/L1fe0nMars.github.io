@@ -1,13 +1,25 @@
 body {
-    background-color: var(--blackjack-color);
+    background: radial-gradient(var(--blackjack-color), var(--blackjack-color-dark));
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+header {
+    color: var(--off-white);
+    padding-top: 0.5em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header h1 {
+    margin-left: 0.5em;
 }
 
 header ul {
     list-style: none;
     margin-right: 0;
-    padding-right: 1em;
-    padding-top: 0.5em;
-    color: var(--off-white);
+    margin-right: 1em;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -18,3 +30,72 @@ header li {
     padding: 0 0.4em;
 }
 
+#section-1 {
+    text-align: center;
+}
+
+#game-area {
+    padding: 1em;
+    height: 90vh;
+}
+
+#section-1 button {
+    color: var(--off-white);
+    background: linear-gradient(gray, black 33%);
+    padding: 1em 2em;
+    border: solid black 2px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#section-2 {
+    text-align: center;
+}
+
+#rules {
+    margin: 2em auto;
+    padding: 1em;
+    width: 90%;
+    max-width: 75em;
+    border: solid white 5px;
+    border-radius: 30px;
+    color: var(--off-white);
+}
+
+#rules h1 {
+    margin-bottom: 0.5em;
+}
+
+#rules-list {
+    text-align: left;
+    padding: 0 2em;
+}
+
+#rules-list li {
+    padding: 0.25em 0;
+    font-size: 20px;
+}
+
+/* PC + TABLETS */
+@media (min-width: 481px) {
+    
+}
+
+/* TABLETS */
+@media screen and (min-width: 481px) and (max-width: 1024px) {
+    h1 {
+        font-size: 2.5em;
+    }
+    
+    
+}
+
+/* PC */
+@media screen and (min-width: 1025px) {
+    h1 {
+        font-size: 3em;
+    }
+    
+    
+}

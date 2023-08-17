@@ -41,19 +41,33 @@ function loadNames() {
     for (let i = 0; i < storedNames.length; i++) {
         let listElement = document.createElement("li");
         let savedName = document.createElement("h2");
+        let copyIcon = document.createElement("h3");
         let deleteButton = document.createElement("h3");
 
         savedName.innerHTML = storedNames[i];
-        savedName.onclick = function() {
+        savedName.onclick = () => {
             navigator.clipboard.writeText(savedName.innerHTML);
         };
 
+        copyIcon.innerHTML = '<i class="fa-regular fa-copy"></i>';
+        copyIcon.style.color = "var(--off-white)";
+        copyIcon.onclick = () => {
+            navigator.clipboard.writeText(savedName.innerHTML);
+            copyIcon.innerHTML = '<i class="fa-regular fa-circle-check"></i>';
+            copyIcon.style.color = "green";
+            setTimeout(() => {
+                    copyIcon.innerHTML = '<i class="fa-regular fa-copy"></i>';
+                    copyIcon.style.color = "var(--off-white)";
+            }, 2000);
+        };
+
         deleteButton.innerHTML = '<i class="fa-regular fa-circle-xmark"></i>';
-        deleteButton.onclick = function() {
+        deleteButton.onclick = () => {
             deleteSavedName(savedName.innerHTML);
         };
 
         listElement.appendChild(savedName);
+        listElement.appendChild(copyIcon);
         listElement.appendChild(deleteButton);
         SAVED_NAMES_LIST.appendChild(listElement);
     }
@@ -90,7 +104,7 @@ GENERATOR_BTN.addEventListener("click", () => {
         if ((numNames < 5 && window.innerWidth >= 1600)
             || (numNames < 4 && window.innerWidth >= 1300)
             || (numNames < 3 && window.innerWidth >= 1025)
-            || (numNames < 2 && window.innerWidth >= 481)
+            || (numNames < 2 && window.innerWidth >= 600)
         ) {
             NAMES_LIST.style.display = "flex";
         } else {
@@ -102,26 +116,30 @@ GENERATOR_BTN.addEventListener("click", () => {
         let listElement = document.createElement("li");
         let nameDiv = document.createElement("div");
         let name = document.createElement("h2");
+        let copyIcon = document.createElement("h3");
         let starIcon = document.createElement("h3");
-        let tooltip = document.createElement("span");
 
         name.innerHTML = generator.generateName();
-        name.onclick = function() {
+        
+        copyIcon.innerHTML = '<i class="fa-regular fa-copy"></i>';
+        copyIcon.onclick = () => {
             navigator.clipboard.writeText(name.innerHTML);
+            copyIcon.innerHTML = '<i class="fa-regular fa-circle-check"></i>';
+            copyIcon.style.color = "green";
+            setTimeout(() => {
+                    copyIcon.innerHTML = '<i class="fa-regular fa-copy"></i>';
+                    copyIcon.style.color = "var(--off-white)";
+            }, 2000);
         };
 
         starIcon.innerHTML = '<i class="fa-regular fa-star"></i>';
-        starIcon.onclick = function() {
+        starIcon.onclick = () => {
             saveName(name.innerHTML);
             starIcon.style.color = "var(--space-color)";
         };
 
-        tooltip.innerHTML = "Copy to clipboard";
-        tooltip.id = "tooltip";
-        tooltip.className = "tooltip-text";
-        
-        name.appendChild(tooltip);
         nameDiv.appendChild(name);
+        nameDiv.appendChild(copyIcon);
         nameDiv.appendChild(starIcon);
         listElement.appendChild(nameDiv);
         NAMES_LIST.appendChild(listElement);
