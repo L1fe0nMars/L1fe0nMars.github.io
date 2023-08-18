@@ -59,6 +59,7 @@ class MiddlePart {
         "amp",
         "an",
         "anc",
+        "ancr",
         "and",
         "andr",
         "ang",
