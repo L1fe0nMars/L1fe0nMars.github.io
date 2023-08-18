@@ -92,8 +92,14 @@ class Player {
      * Adds a card to the player's hand when they hit
      * 
      * @param {Deck} deck The deck object to pull a card from
+     * 
+     * @return {Card} The card that was pulled from the deck
      */
     hit(deck) {
-        this.#hand.addCard(deck.dealCard());
+        let card = deck.dealCard();
+
+        this.#hand.addCard(card);
+
+        return card;
     }
 }

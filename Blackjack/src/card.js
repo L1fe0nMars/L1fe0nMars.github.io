@@ -5,6 +5,7 @@
  */
 class Card {
     #rank;
+    #suit;
     #value;
     #hidden = false;
 
@@ -12,10 +13,12 @@ class Card {
      * Constructor to set each parameter
      * 
      * @param {string} rank The rank of the card
+     * @param {string} suit The suit of the card
      * @param {number} value The value of the card
      */
-    constructor(rank, value) {
+    constructor(rank, suit, value) {
         this.#rank = rank;
+        this.#suit = suit;
         this.#value = value;
     }
 
@@ -27,6 +30,13 @@ class Card {
     }
 
     /**
+     * @return {string} The suit of the card
+     */
+    get suit() {
+        return this.#suit;
+    }
+
+    /**
      * @return {number} The value of the card
      */
     get value() {
@@ -35,6 +45,8 @@ class Card {
 
     /**
      * Sets the card value
+     * 
+     * @param {number} value The value of the card
      */
     set value(value) {
         this.#value = value;

@@ -21,14 +21,16 @@ class BlackjackGame {
      * The main game loop
      */
     playBlackjack() {
-
+        
     }
 
     /**
-     * Places the user's bet before each game
+     * Places the user's bet before each hand is dealt
+     * 
+     * @param {number} betAmount The amount of money the player bets
      */
-    placeBet() {
-
+    placeBet(betAmount) {
+        
     }
 
     /**
@@ -43,7 +45,7 @@ class BlackjackGame {
             hand.addCard(card);
 
             if (isDealer && i == 1) {
-                card.setHidden(true);
+                card.hidden = true;
             }
         }
     }

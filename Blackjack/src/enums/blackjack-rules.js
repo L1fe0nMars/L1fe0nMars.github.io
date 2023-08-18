@@ -5,7 +5,7 @@ const BLACKJACK_RULES = {
     DEALER_MIN_SCORE: 17,
     NUM_MAX_DECKS: 6,
     NUM_CARDS_IN_DECK: 52,
-    MIN_BET_AMOUNT: 5,
+    MIN_BET_AMOUNT: 1,
     RULES: [
         "The goal of Blackjack is to have your cards total to a value of, or as close as possible, to 21 without going over.",
         "You must first place a bet (minimum $5) and then you and the dealer are each dealt 2 cards.",
@@ -21,3 +21,10 @@ const BLACKJACK_RULES = {
         "If there's a tie, the money you bet is returned to you."
     ],
 };
+
+const CONSTANTS = {
+    CLUBS: "&clubs;",
+    DIAMONDS: "&diams;",
+    HEARTS: "&hearts;",
+    SPADES: "&spades;",
+}

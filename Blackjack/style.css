@@ -1,12 +1,16 @@
 body {
-    background: radial-gradient(var(--blackjack-color), var(--blackjack-color-dark));
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+    background-color: var(--off-white);
+    background-image: url(/Blackjack/images/pattern.png);
+}
+
+h1 {
+    font-size: 2em;
 }
 
 header {
     color: var(--off-white);
-    padding-top: 0.5em;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 0.5em 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -19,7 +23,6 @@ header h1 {
 header ul {
     list-style: none;
     margin-right: 0;
-    margin-right: 1em;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -32,25 +35,133 @@ header li {
 
 #section-1 {
     text-align: center;
-}
-
-#game-area {
-    padding: 1em;
-    height: 90vh;
+    color: var(--off-white);
+    background: radial-gradient(var(--blackjack-color), var(--blackjack-color-dark));
+    background-repeat: no-repeat;
 }
 
 #section-1 button {
     color: var(--off-white);
     background: linear-gradient(gray, black 33%);
-    padding: 1em 2em;
     border: solid black 2px;
     border-radius: 10px;
-    font-size: 20px;
     font-weight: bold;
+}
+
+#game-area {
+    padding: 1em;
+    height: 90vh;
+    min-height: 45em;
+}
+
+#play-btn {
+    padding: 1em 2em;
+    font-size: 20px;
+    display: none;
+}
+
+#dealer-total,
+#player-total {
+    font-size: 1.5em;
+}
+
+#dealer-total {
+    margin-top: 1em;
+}
+
+#player-total {
+    margin-bottom: 2em;
+}
+
+#dealer-hand,
+#player-hand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 3em auto;
+    margin-right: 4em;
+}
+
+.card {
+    width: 6em;
+    height: 8em;
+    margin-right: -4em;
+    position: relative;
+    background-color: white;
+    color: black;
+    border: solid black 1px;
+    border-radius: 4px;
+    font-size: 18px;
+    font-family: 'Playing Card';
+    user-select: none;
+}
+
+.hidden-card {
+    background-image: url(/Blackjack/images/cardback.jpg);
+}
+
+.card-top {
+    text-align: left;
+    padding-left: 0.2em;
+}
+
+.card-bottom {
+    position: absolute;
+    padding-right: 0.2em;
+    bottom: 0;
+    right: 0.2em;
+    transform: rotate(180deg);
+}
+
+.card .card-bottom:nth-of-type(3) {
+    bottom: 1.1em;
+}
+
+#hit-btn,
+#stand-btn {
+    padding: 0.5em 1em;
+    font-size: 16px;
+}
+
+#user-input {
+    margin: 1em auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    font-size: 20px;
+}
+
+input {
+    padding-left: 0.3em;
+    width: 5em;
+}
+
+#bet-btn {
+    padding: 0.5em 1em;
+    font-size: 16px;
+}
+
+#money-info {
+    margin: 0 auto;
+    width: max-content;
+}
+
+#error-text,
+#current-bet-text,
+#player-money {
+    font-size: 20px;
+}
+
+#current-bet-text {
+    margin: 1em auto;
 }
 
 #section-2 {
     text-align: center;
+    padding: 2em 0;
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 #rules {
@@ -61,6 +172,7 @@ header li {
     border: solid white 5px;
     border-radius: 30px;
     color: var(--off-white);
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 #rules h1 {
@@ -79,7 +191,20 @@ header li {
 
 /* PC + TABLETS */
 @media (min-width: 481px) {
+    header ul {
+        margin-right: 1em;
+    }
     
+    #section-1 button {
+        font-size: 20px;
+    }
+
+    #money-info {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 3em;
+    }
 }
 
 /* TABLETS */
