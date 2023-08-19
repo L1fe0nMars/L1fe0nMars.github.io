@@ -24,7 +24,8 @@ function saveName(name) {
             savedNames.push(name);
             localStorage["savedNames"] = JSON.stringify(savedNames);
         }
-    } else {
+    }
+    else {
         localStorage["savedNames"] = JSON.stringify([name]);
     }
 
@@ -95,7 +96,8 @@ GENERATOR_BTN.addEventListener("click", () => {
     if (numNames > MAX_NAMES) {
         numNames = MAX_NAMES;
         NUM_NAMES.value = NUM_NAMES.max;
-    } else if (numNames < MIN_NAMES) {
+    }
+    else if (numNames < MIN_NAMES) {
         numNames = MIN_NAMES;
         NUM_NAMES.value = NUM_NAMES.min;
     }
@@ -107,7 +109,8 @@ GENERATOR_BTN.addEventListener("click", () => {
             || (numNames < 2 && window.innerWidth >= 600)
         ) {
             NAMES_LIST.style.display = "flex";
-        } else {
+        }
+        else {
             NAMES_LIST.style.display = "grid";
         }
     }
