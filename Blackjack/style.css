@@ -70,7 +70,11 @@ header li {
 }
 
 #player-total {
-    margin-bottom: 2em;
+    margin-bottom: 1.5em;
+}
+
+#display-info {
+    font-size: 20px;
 }
 
 #dealer-hand,
@@ -79,8 +83,18 @@ header li {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    margin: 3em auto;
+    margin: 0 auto;
     margin-right: 4em;
+}
+
+#dealer-hand {
+    margin-top: 1em;
+    margin-bottom: 2em;
+}
+
+#player-hand {
+    margin-top: 2em;
+    margin-bottom: 1em;
 }
 
 .card {
@@ -122,6 +136,14 @@ header li {
 #stand-btn {
     padding: 0.5em 1em;
     font-size: 16px;
+    opacity: 0.33;
+    pointer-events: none;
+}
+
+#new-game-btn {
+    padding: 0.5em 1em;
+    font-size: 16px;
+    display: none;
 }
 
 #user-input {
@@ -136,6 +158,7 @@ header li {
 input {
     padding-left: 0.3em;
     width: 5em;
+    font-size: 15px;
 }
 
 #bet-btn {
@@ -199,6 +222,10 @@ input {
         font-size: 20px;
     }
 
+    .card {
+        font-size: 20px;
+    }
+
     #money-info {
         display: flex;
         align-items: center;
@@ -212,8 +239,6 @@ input {
     h1 {
         font-size: 2.5em;
     }
-    
-    
 }
 
 /* PC */
@@ -221,6 +246,4 @@ input {
     h1 {
         font-size: 3em;
     }
-    
-    
 }

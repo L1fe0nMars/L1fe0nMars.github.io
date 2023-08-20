@@ -22,9 +22,14 @@ const BLACKJACK_RULES = {
     ],
 };
 
-const CONSTANTS = {
+const CARD_SUIT = {
     CLUBS: "&clubs;",
     DIAMONDS: "&diams;",
     HEARTS: "&hearts;",
     SPADES: "&spades;",
-}
+};
+
+const DEALER_ACTION = {
+    HIT: 0,
+    STAND: 1,
+};

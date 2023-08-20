@@ -25,7 +25,7 @@ class Deck {
         for (let i = 0; i < numDecks; i++) {
             for (const [key, cardVal] of Object.entries(CARD_VALUES)) {
                 for (let j = 0; j < 4; j++) {
-                    const suit = CONSTANTS[Object.keys(CONSTANTS)[j]];
+                    const suit = CARD_SUIT[Object.keys(CARD_SUIT)[j]];
                     const card = new Card(cardVal.rank, suit, getCardValue(CARD_VALUES[key], true));
                     this.#cardDeck.push(card);
                 }

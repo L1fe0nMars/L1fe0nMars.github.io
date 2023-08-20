@@ -21,6 +21,17 @@ class Dealer {
     }
 
     /**
+     * @return {Card} The card that's hidden
+     */
+    get hiddenCard() {
+        for (const card of this.#hand.cards) {
+            if (card.isHidden()) {
+                return card;
+            }
+        }
+    }
+
+    /**
      * @return {boolean} Check whether the player busts or not
      */
     bust() {
@@ -31,15 +42,21 @@ class Dealer {
      * @return {boolean} Check if the hand is equal to the blackjack value
      */
     hasBlackjack() {
-        return this.#hand.getScore() == BLACKJACK_RULES.BLACKJACK_VALUE;
+        return this.#hand.score == BLACKJACK_RULES.BLACKJACK_VALUE;
     }
 
     /**
-     * Adds a card to the dealer's hand when they hit
+     * Adds a card to the player's hand when they hit
      * 
      * @param {Deck} deck The deck object to pull a card from
+     * 
+     * @return {Card} The card that was pulled from the deck
      */
     hit(deck) {
-        this.#hand.addCard(deck.dealCard());
+        let card = deck.dealCard();
+
+        this.#hand.addCard(card);
+
+        return card;
     }
 }
