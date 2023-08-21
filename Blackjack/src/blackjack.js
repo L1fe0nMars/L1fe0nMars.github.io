@@ -78,7 +78,7 @@ function resetHands() {
 /**
  * Places the user's bet
  * 
- * @param {number} betAmount The amount that the user bets
+ * @param {number} betAmount The amount of money that the user bets
  */
 function placeBet(betAmount) {
     const playerHand = player.hand;
@@ -99,7 +99,6 @@ function placeBet(betAmount) {
         endUserTurn();
     }
 }
-
 
 /**
  * Deals 2 cards to the player and dealer at the start of each game
@@ -126,7 +125,7 @@ function dealInitialCards(hand, isDealer) {
 }
 
 /**
- * Deals 2 cards to the player and dealer at the start of each game
+ * Updates the hand element cards
  * 
  * @param {object} handElement The hand element to update
  * @param {Card} card The card to add or update in the hand
@@ -250,34 +249,13 @@ function dealerLogic() {
 }
 
 /**
- * Pays out the player at the end of the game and displays the result
+ * Pays out the player at the end of the game
  */
-function endGameResult() {
+function payoutPlayer() {
     let playerScore = player.hand.score;
     let dealerScore = dealer.hand.score;
     let betAmount = player.betAmount;
-
-    if (dealer.bust()) {
-        DISPLAY_INFO.innerHTML = "The dealer busts! You win!";
-        updateStat("wins", ++stats.wins.value);
-    }
-    else if (player.bust()) {
-        DISPLAY_INFO.innerHTML = "Bust! You lose.";
-        updateStat("losses", ++stats.losses.value);
-    }
-    else if (dealerScore == playerScore) {
-        DISPLAY_INFO.innerHTML = "It's a draw.";
-        updateStat("draws", ++stats.draws.value);
-    }
-    else if (dealerScore < playerScore) {
-        DISPLAY_INFO.innerHTML = "You win!";
-        updateStat("wins", ++stats.wins.value);
-    }
-    else if (dealerScore > playerScore) {
-        DISPLAY_INFO.innerHTML = "You lose.";
-        updateStat("losses", ++stats.losses.value);
-    }
-
+    
     if (player.hasBlackjack() && (dealerScore < playerScore || dealer.bust())) {
         let payoutAmount = 2 * betAmount;
         
@@ -304,7 +282,37 @@ function endGameResult() {
     if (player.money > stats.highestTotalMoney.value) {
         updateStat("highestTotalMoney", player.money);
     }
+}
 
+/**
+ * Displays the game result
+ */
+function endGameResult() {
+    let playerScore = player.hand.score;
+    let dealerScore = dealer.hand.score;
+
+    if (dealer.bust()) {
+        DISPLAY_INFO.innerHTML = "The dealer busts! You win!";
+        updateStat("wins", ++stats.wins.value);
+    }
+    else if (player.bust()) {
+        DISPLAY_INFO.innerHTML = "Bust! You lose.";
+        updateStat("losses", ++stats.losses.value);
+    }
+    else if (dealerScore < playerScore) {
+        DISPLAY_INFO.innerHTML = "You win!";
+        updateStat("wins", ++stats.wins.value);
+    }
+    else if (dealerScore > playerScore) {
+        DISPLAY_INFO.innerHTML = "You lose.";
+        updateStat("losses", ++stats.losses.value);
+    }
+    else {
+        DISPLAY_INFO.innerHTML = "It's a draw.";
+        updateStat("draws", ++stats.draws.value);
+    }
+
+    payoutPlayer();
     CURRENT_BET.innerHTML = "";
     PLAYER_MONEY.innerHTML = player.money;
     toggleButton(BET_BTN);
@@ -321,7 +329,6 @@ HIT_BTN.addEventListener("click", () => {
     updateHand(PLAYER_HAND, newCard);
 
     if (player.bust()) {
-        DISPLAY_INFO.innerHTML = "Bust! You lose.";
         toggleButton(HIT_BTN, true);
         toggleButton(STAND_BTN, true);
         toggleButton(BET_BTN);

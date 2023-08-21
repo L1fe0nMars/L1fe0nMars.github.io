@@ -236,6 +236,7 @@ td {
     text-align: center;
     padding: 2em 0;
     background-image: url(/Blackjack/images/pattern.png);
+    color: var(--off-white);
 }
 
 #rules {
@@ -245,7 +246,6 @@ td {
     max-width: 75em;
     border: solid var(--off-white) 5px;
     border-radius: 30px;
-    color: var(--off-white);
     background-color: rgba(0, 0, 0, 0.9);
 }
 
@@ -261,6 +261,17 @@ td {
 #rules-list li {
     padding: 0.25em 0;
     font-size: 20px;
+}
+
+#disclaimer {
+    width: 90%;
+    max-width: max-content;
+    margin: 2em auto 0 auto;
+    padding: 0.3em 0.5em;
+    margin-bottom: 0;
+    border: solid var(--off-white) 2px;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.9);
 }
 
 /* PC + TABLETS */

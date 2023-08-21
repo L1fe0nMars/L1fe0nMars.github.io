@@ -64,7 +64,7 @@ function saveStats() {
  */
 function loadStats() {
     if (localStorage["stats"] == null) {
-        saveStats()
+        saveStats();
     }
     else {
         stats = JSON.parse(localStorage["stats"]);
