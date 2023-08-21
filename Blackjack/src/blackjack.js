@@ -1,6 +1,6 @@
 "use strict";
 
-const PLAY_BTN = document.getElementById("play-btn");
+const BODY = document.querySelector("body");
 const PLAYER_HAND = document.getElementById("player-hand");
 const DEALER_HAND = document.getElementById("dealer-hand");
 const DISPLAY_INFO = document.getElementById("display-info");
@@ -26,8 +26,7 @@ for (let i = 0; i < BLACKJACK_RULES.RULES.length; i++) {
     RULES_LIST.appendChild(listElement);
 }
 
-PLAYER_MONEY.innerHTML = 100;
-
+resetGame();
 
 /**
  * Toggles buttons that should or shouldn't be clickable during the game
@@ -74,15 +73,6 @@ function resetHands() {
     while (DEALER_HAND.firstChild) {
         DEALER_HAND.removeChild(DEALER_HAND.lastChild);
     }
-}
-
-/**
- * Ends the user's turn
- */
-function endUserTurn() {
-    toggleButton(HIT_BTN, true);
-    toggleButton(STAND_BTN, true);
-    dealerTurn();
 }
 
 /**
@@ -182,6 +172,14 @@ function updateHand(handElement, card, cardElement) {
     DEALER_SCORE.innerHTML = dealer.hand.score;
 }
 
+/**
+ * Ends the user's turn
+ */
+function endUserTurn() {
+    toggleButton(HIT_BTN, true);
+    toggleButton(STAND_BTN, true);
+    dealerTurn();
+}
 
 /**
  * Simulates the dealer's actions
@@ -243,7 +241,7 @@ function dealerLogic() {
     let dealerScore = dealer.hand.score;
     
     if ((player.hasBlackjack() && dealerScore < BLACKJACK_RULES.BLACKJACK_VALUE)
-        || (dealerScore < BLACKJACK_RULES.DEALER_MIN_SCORE && dealerScore < playerScore)
+        || (dealerScore < BLACKJACK_RULES.DEALER_MIN_SCORE && dealerScore <= playerScore)
     ) {
         dealerSelection = DEALER_ACTION.HIT;
     }
@@ -261,28 +259,50 @@ function endGameResult() {
 
     if (dealer.bust()) {
         DISPLAY_INFO.innerHTML = "The dealer busts! You win!";
+        updateStat("wins", ++stats.wins.value);
     }
     else if (player.bust()) {
         DISPLAY_INFO.innerHTML = "Bust! You lose.";
+        updateStat("losses", ++stats.losses.value);
     }
     else if (dealerScore == playerScore) {
         DISPLAY_INFO.innerHTML = "It's a draw.";
+        updateStat("draws", ++stats.draws.value);
     }
     else if (dealerScore < playerScore) {
         DISPLAY_INFO.innerHTML = "You win!";
+        updateStat("wins", ++stats.wins.value);
     }
     else if (dealerScore > playerScore) {
         DISPLAY_INFO.innerHTML = "You lose.";
+        updateStat("losses", ++stats.losses.value);
     }
 
     if (player.hasBlackjack() && (dealerScore < playerScore || dealer.bust())) {
-        player.payout(2 * betAmount);
+        let payoutAmount = 2 * betAmount;
+        
+        player.payout(payoutAmount);
+        updateStat("lifetimeEarnings", stats.lifetimeEarnings.value + payoutAmount);
+
+        if (payoutAmount > stats.biggestPayout.value) {
+            updateStat("biggestPayout", payoutAmount);
+        }
     }
     else if (playerScore < BLACKJACK_RULES.BLACKJACK_VALUE && (dealerScore < playerScore || dealer.bust())) {
         player.payout(betAmount);
+        updateStat("lifetimeEarnings", stats.lifetimeEarnings.value + betAmount);
+
+        if (betAmount > stats.biggestPayout.value) {
+            updateStat("biggestPayout", betAmount);
+        }
     }
     else if (playerScore != dealerScore) {
         player.payout(-betAmount);
+        updateStat("lifetimeMoneyLost", stats.lifetimeMoneyLost.value + betAmount);
+    }
+
+    if (player.money > stats.highestTotalMoney.value) {
+        updateStat("highestTotalMoney", player.money);
     }
 
     CURRENT_BET.innerHTML = "";
@@ -292,12 +312,9 @@ function endGameResult() {
     if (player.money == 0) {
         toggleButton(BET_BTN, true);
         NEW_GAME_BTN.style.display = "inline";
+        updateStat("lostItAll", ++stats.lostItAll.value);
     }
 }
-
-PLAY_BTN.addEventListener("click", () => {
-    
-});
 
 HIT_BTN.addEventListener("click", () => {
     let newCard = player.hit(deck);
@@ -333,6 +350,10 @@ BET_BTN.addEventListener("click", () => {
         ERROR_TEXT.innerHTML = "You can only bet using whole numbers.";
     }
     else {
+        if (betAmount > stats.highestBet.value) {
+            updateStat("highestBet", betAmount);
+        }
+
         ERROR_TEXT.innerHTML = "";
         DISPLAY_INFO.innerHTML = "";
         toggleButton(BET_BTN, true);

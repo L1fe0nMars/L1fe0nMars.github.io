@@ -57,8 +57,8 @@ function loadNames() {
             copyIcon.innerHTML = '<i class="fa-regular fa-circle-check"></i>';
             copyIcon.style.color = "green";
             setTimeout(() => {
-                    copyIcon.innerHTML = '<i class="fa-regular fa-copy"></i>';
-                    copyIcon.style.color = "var(--off-white)";
+                copyIcon.innerHTML = '<i class="fa-regular fa-copy"></i>';
+                copyIcon.style.color = "var(--off-white)";
             }, 2000);
         };
 
@@ -130,8 +130,8 @@ GENERATOR_BTN.addEventListener("click", () => {
             copyIcon.innerHTML = '<i class="fa-regular fa-circle-check"></i>';
             copyIcon.style.color = "green";
             setTimeout(() => {
-                    copyIcon.innerHTML = '<i class="fa-regular fa-copy"></i>';
-                    copyIcon.style.color = "var(--off-white)";
+                copyIcon.innerHTML = '<i class="fa-regular fa-copy"></i>';
+                copyIcon.style.color = "var(--off-white)";
             }, 2000);
         };
 

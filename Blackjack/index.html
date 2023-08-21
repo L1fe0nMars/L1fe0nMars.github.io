@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="/global-style.css">
         <link rel="stylesheet" href="/Blackjack/style.css">
         <title>Play Blackjack</title>
+        <link rel="icon" type="image/x-icon" href="/Blackjack//images/spades.png">
     </head>
     <body>
         <header>
@@ -32,42 +33,82 @@
         </header>
         <main>
             <section id="section-1">
-                <div class="container">
-                    <div id="game-area">
-                        <button id="play-btn">Play Blackjack</button>
-                        <div id="main-game">
-                            <h1 id="game-result"></h1>
-                            <div id="card-area">
-                                <p id="dealer-total">Total: <span id="dealer-score"></span></p>
-                                <div id="dealer-hand"></div>
-                                <p id="display-info"></p>
-                                <div id="player-hand"></div>
-                                <p id="player-total">Total: <span id="player-score"></span></p>
-                                <button id="hit-btn">Hit</button>
-                                <button id="stand-btn">Stand</button>
-                                <button id="new-game-btn">New Game</button>
-                            </div>
-                            <div id="user-input">
-                                <form>
-                                    <label for="bet-amount">Enter bet amount: <input id="bet-amount" type="number" name="bet-amount" min="1" value="1" /></label>
-                                </form>
-                                <button id="bet-btn">Place Bet</button>
-                            </div>
-                            <p id="error-text"></p>
-                            <div id="money-info">
-                                <p id="current-bet-text">Current bet amount: $<span id="current-bet"></span></p>
-                                <p id="player-money">Your money: $<span id="player-money-amount"></span></p>
-                            </div>
+                <div id="game-area">
+                    <div id="main-game">
+                        <h1 id="game-result"></h1>
+                        <div id="card-area">
+                            <p id="dealer-total">Total: <span id="dealer-score"></span></p>
+                            <div id="dealer-hand"></div>
+                            <b><p id="display-info"></p></b>
+                            <div id="player-hand"></div>
+                            <p id="player-total">Total: <span id="player-score"></span></p>
+                            <button id="hit-btn">Hit</button>
+                            <button id="stand-btn">Stand</button>
+                            <button id="new-game-btn">New Game</button>
                         </div>
+                        <div id="user-input">
+                            <form>
+                                <label for="bet-amount">Enter bet amount: <input id="bet-amount" type="number" name="bet-amount" min="1" value="1" /></label>
+                            </form>
+                            <button id="bet-btn">Place Bet</button>
+                        </div>
+                        <p id="error-text"></p>
+                        <div id="money-info">
+                            <p id="current-bet-text">Current bet amount: $<span id="current-bet"></span></p>
+                            <p id="player-money">Your money: $<span id="player-money-amount"></span></p>
+                        </div>
+                        <button id="stats-btn">Stats</button>
+                    </div>
+                </div>
+                <div id="modal">
+                    <span id="close">&times;</span>
+                    <div id="stats">
+                        <h1>Stats</h1>
+                        <table>
+                            <tr>
+                                <td>Wins</td>
+                                <td id="wins">0</td>
+                            </tr>
+                            <tr>
+                                <td>Losses</td>
+                                <td id="losses">0</td>
+                            </tr>
+                            <tr>
+                                <td>Draws</td>
+                                <td id="draws">0</td>
+                            </tr>
+                            <tr>
+                                <td>Highest Bet</td>
+                                <td>$<span id="highest-bet">0</span></td>
+                            </tr>
+                            <tr>
+                                <td>Biggest Payout</td>
+                                <td>$<span id="biggest-payout">0</span></td>
+                            </tr>
+                            <tr>
+                                <td>Highest Total Money</td>
+                                <td>$<span id="highest-total-money">100</span></td>
+                            </tr>
+                            <tr>
+                                <td>Lifetime Earnings</td>
+                                <td>$<span id="lifetime-earnings">0</span></td>
+                            </tr>
+                            <tr>
+                                <td>Lifetime Money Lost</td>
+                                <td>$<span id="lifetime-money-lost">0</span></td>
+                            </tr>
+                            <tr>
+                                <td>Lost It All</td>
+                                <td><span id="lost-it-all">0</span> times</td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
             </section>
             <section id="section-2">
-                <div class="container">
-                    <div id="rules">
-                        <h1>Rules</h1>
-                        <ul id="rules-list"></ul>
-                    </div>
+                <div id="rules">
+                    <h1>Rules</h1>
+                    <ul id="rules-list"></ul>
                 </div>
             </section>
         </main>
@@ -79,6 +120,7 @@
         <script src="/Blackjack/src/hand.js"></script>
         <script src="/Blackjack/src/player.js"></script>
         <script src="/Blackjack/src/dealer.js"></script>
+        <script src="/Blackjack/src/stats.js"></script>
         <script src="/Blackjack/src/blackjack.js"></script>
     </body>
 </html>

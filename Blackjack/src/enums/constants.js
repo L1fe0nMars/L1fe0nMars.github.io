@@ -8,7 +8,7 @@ const BLACKJACK_RULES = {
     MIN_BET_AMOUNT: 1,
     RULES: [
         "The goal of Blackjack is to have your cards total to a value of, or as close as possible, to 21 without going over.",
-        "You must first place a bet (minimum $5) and then you and the dealer are each dealt 2 cards.",
+        "You must first place a bet and then you and the dealer are each dealt 2 cards.",
         "Your cards are face up but the dealer has 1 card face up and 1 card face down until it's their turn.",
         "Each card with a number counts as that number, while Jacks, Queens, and Kings count as 10. An Ace counts as either 1 or 11.",
         "You can either \"hit\" or \"stand\".",
