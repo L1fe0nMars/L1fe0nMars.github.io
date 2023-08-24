@@ -1,6 +1,7 @@
 html {
     background: radial-gradient(var(--blackjack-color), var(--blackjack-color-dark));
     background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 h1 {
