@@ -10,12 +10,20 @@ const MIN_NAMES = Number(NUM_NAMES.min);
 
 let generator = new Generator();
 
+/**
+ * Clears all names from the names list element
+ */
 function clearNames() {
     while (NAMES_LIST.firstChild) {
         NAMES_LIST.removeChild(NAMES_LIST.lastChild);
     }
 }
 
+/**
+ * Saves name the browser's local storage
+ * 
+ * @param {string} name The name to save
+ */
 function saveName(name) {
     if (localStorage["savedNames"] != null) {
         let savedNames = JSON.parse(localStorage["savedNames"]);
@@ -32,6 +40,9 @@ function saveName(name) {
     loadNames();
 }
 
+/**
+ * Load all saved names
+ */
 function loadNames() {
     let storedNames = JSON.parse(localStorage["savedNames"]);
 
@@ -74,6 +85,11 @@ function loadNames() {
     }
 }
 
+/**
+ * Deletes a name from the browser's local storage
+ * 
+ * @param {string} name The name to delete
+ */
 function deleteSavedName(name) {
     let storedNames = JSON.parse(localStorage["savedNames"]);
 
