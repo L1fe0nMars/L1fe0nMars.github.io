@@ -19,6 +19,11 @@
 }
 
 @font-face { 
+    font-family: 'Nunito Sans Extra Bold'; 
+    src: url("/Portfolio/fonts/Nunito-Sans/static/NunitoSans_10pt-ExtraBold.ttf");
+}
+
+@font-face { 
     font-family: 'Rajdhani'; 
     src: url("/PlanetNameGenerator/fonts/Rajdhani/Rajdhani-Regular.ttf");
 }
