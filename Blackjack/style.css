@@ -39,6 +39,14 @@ header li {
     padding: 0.1em 0.3em;
 }
 
+header li a {
+    transition: 0.25s ease-out;
+}
+
+header li a:hover {
+    opacity: 0.5;
+}
+
 #section-1 {
     text-align: center;
     color: var(--off-white);
