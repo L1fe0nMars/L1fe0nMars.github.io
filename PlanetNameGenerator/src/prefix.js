@@ -426,6 +426,42 @@ class Prefix {
     }
 
     /**
+     * Gets a random prefix that starts with a specific letter
+     * 
+     * @param letter The letter the prefix starts with
+     * 
+     * @return {string} The prefix
+     */
+    getPrefixWithFirstLetter(letter) {
+        let lastArray = this.#prefixes[this.#prefixes.length - 1];
+        let letterPrefixArray = [];
+        let complexPrefixes = [];
+        let prefix;
+        
+        for (let i = 0; i < this.#prefixes.length; i++) {
+            if (this.#prefixes[i][0].charAt(0) == letter) {
+                letterPrefixArray = [...this.#prefixes[i]];
+                break;
+            }
+        }
+
+        for (let i = 0; i < lastArray.length; i++) {
+            if (lastArray[i].charAt(0) == letter) {
+                complexPrefixes.push(lastArray[i]);
+            }
+        }
+        
+        if (Math.random() < 0.1) {
+            prefix = complexPrefixes[Math.floor(Math.random() * complexPrefixes.length)];
+        }
+        else {
+            prefix = letterPrefixArray[Math.floor(Math.random() * letterPrefixArray.length)];
+        }
+        
+        return prefix;
+    }
+
+    /**
      * Gets the amount of total prefixes
      * 
      * @return {number} The total number of possible prefixes

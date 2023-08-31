@@ -2,7 +2,8 @@
 
 const GENERATOR_BTN = document.getElementById("generate");
 const NAMES_LIST = document.getElementById("names");
-const NUM_NAMES = document.getElementById("numNames");
+const NUM_NAMES = document.getElementById("num-names");
+const FIRST_LETTER = document.getElementById("first-letter");
 const SAVED_NAMES = document.getElementById("saved-names");
 const SAVED_NAMES_LIST = document.getElementById("saved-names-list");
 const MAX_NAMES = Number(NUM_NAMES.max);
@@ -104,8 +105,27 @@ function deleteSavedName(name) {
     loadNames();
 }
 
+/**
+ * Checks if a char is a letter
+ * 
+ * @param {string} char The char to check
+ * 
+ * @return {boolean} Whether the char is a letter or not
+ */
+function isLetter(char) {
+    return /[a-z]/i.test(char);
+}
+
 GENERATOR_BTN.addEventListener("click", () => {
     let numNames = Number(NUM_NAMES.value);
+    let firstLetter = FIRST_LETTER.value[0];
+
+    if (firstLetter && isLetter(firstLetter)) {
+        firstLetter = FIRST_LETTER.value[0].toUpperCase();
+    }
+    else {
+        firstLetter = "";
+    }
     
     clearNames();
     
@@ -138,7 +158,7 @@ GENERATOR_BTN.addEventListener("click", () => {
         let copyIcon = document.createElement("h3");
         let starIcon = document.createElement("h3");
 
-        name.innerHTML = generator.generateName();
+        name.innerHTML = generator.generateName(firstLetter);
         
         copyIcon.innerHTML = '<i class="fa-regular fa-copy"></i>';
         copyIcon.onclick = () => {

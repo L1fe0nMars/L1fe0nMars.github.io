@@ -11,9 +11,11 @@ class Generator {
     /**
      * Generates a random name by combining word parts together
      * 
+     * @param {string} letter Optional letter that the name should start with
+     * 
      * @return {string} The generated name
      */
-    generateName() {
+    generateName(letter) {
         let nameStrings = [];
         let prefix = this.prefix.getPrefix();
         let middlePart1 = "";
@@ -22,8 +24,13 @@ class Generator {
         let suffix = "";
         let name = "";
 
-        nameStrings.push(prefix);
-
+        if (letter != "") {
+            nameStrings.push(this.prefix.getPrefixWithFirstLetter(letter));
+        }
+        else {
+            nameStrings.push(prefix);
+        }
+        
         if (Math.random() < 0.5) {
             do {
                 middlePart1 = this.middlePart.getMiddlePart();

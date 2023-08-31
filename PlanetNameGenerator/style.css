@@ -2,10 +2,7 @@
     font-family: 'Rajdhani', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-::selection {
-    background: rgb(0, 144, 201);
-}
-
+::selection,
 ::-moz-selection {
     background: rgb(0, 144, 201);
 }
@@ -19,6 +16,10 @@ body {
     background-size: cover;
 }
 
+ul {
+    list-style-type: none;
+}
+
 .fa {
     color: var(--space-color);
 }
@@ -30,7 +31,6 @@ header {
 header ul {
     list-style: none;
     margin-right: 0;
-    padding-right: 1em;
     padding-top: 0.5em;
     color: var(--space-color);
     display: flex;
@@ -41,6 +41,14 @@ header ul {
 header li {
     font-size: 2em;
     padding: 0 0.4em;
+}
+
+header li a {
+    transition: 0.25s ease-out;
+}
+
+header li a:hover {
+    opacity: 0.5;
 }
 
 #section-1 {
@@ -70,7 +78,6 @@ h1 {
 
 #names {
     padding: 0.5em 0;
-    list-style-type: none;
     display: block;
     align-items: center;
     justify-content: space-evenly;
@@ -139,7 +146,14 @@ button {
 }
 
 form {
-    padding: 0.5em 0 1em 0;
+    padding: 1em;
+    margin: 0 auto;
+    max-width: 35em;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 2em;
 }
 
 input {
@@ -150,6 +164,10 @@ input {
     background-color: black;
     border: 1px solid var(--space-color);
     border-radius: 5px;
+}
+
+#first-letter {
+    width: 3em;
 }
 
 hr {
@@ -174,10 +192,6 @@ summary {
     font-weight: bold;
     font-family: 'Rajdhani Bold', 'Rajdhani', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     cursor: pointer;
-}
-
-#saved-names-list {
-    list-style-type: none;
 }
 
 #saved-names-list li {
