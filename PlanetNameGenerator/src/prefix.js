@@ -451,7 +451,7 @@ class Prefix {
             }
         }
         
-        if (Math.random() < 0.1) {
+        if (complexPrefixes.length > 0 && Math.random() < 0.1) {
             prefix = complexPrefixes[Math.floor(Math.random() * complexPrefixes.length)];
         }
         else {
