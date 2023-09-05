@@ -108,12 +108,14 @@ button {
     background-color: gray !important;
     width: 1em !important;
     height: 1em !important;
+    transition: 0.25s ease;
 }
 
 .swiper-pagination-bullet-active {
-    background-color: var(--off-white) !important;
+    background-color: var(--blue-glow) !important;
     width: 1em !important;
     height: 1em !important;
+    filter: drop-shadow(0 0 3px var(--blue-glow));
 }
 
 #projects h1 {
