@@ -5,7 +5,6 @@ const FEATURES_LIST = document.getElementById("features-list");
 const PROJECT_DESCRIPTION = document.getElementById("description-text");
 const PROJECT_LINK = document.getElementById("link");
 const PROJECT_LINK_BTN = document.getElementById("link-btn");
-const SWIPER_LOGO = document.getElementById("swiperjs");
 const SOURCE_CODE_DIV = document.getElementById("source-code-div");
 const SOURCE_CODE_LINK = document.getElementById("source-code");
 const JAVA_BTN = document.getElementById("java-btn");
@@ -28,7 +27,12 @@ const projects = [
             that I believe would greatly benefit the user experience, and this project was no exception.`,
         link: "/PlanetNameGenerator/index.html",
         linkText: "Visit Project",
-        swiperLogoDisplay: "none",
+        logos: {
+            "html": "block",
+            "css": "block",
+            "javascript": "block",
+            "swiperjs": "none",
+        },
         sourceCode: "https://github.com/L1fe0nMars/ProjectPortfolio/tree/main/PlanetNameGenerator",
         javaBtnDisplay: "block",
         javaSourceLink: "https://github.com/L1fe0nMars/PlanetNameGenerator",
@@ -49,7 +53,12 @@ const projects = [
             the simple header makes it easy for the user to navigate through the site. The 21 Classics website is a perfect example of how there's beauty in simplicity.`,
         link: "https://21classics.com/",
         linkText: "Visit Website",
-        swiperLogoDisplay: "block",
+        logos: {
+            "html": "block",
+            "css": "block",
+            "javascript": "block",
+            "swiperjs": "block",
+        },
         sourceCode: "https://github.com/L1fe0nMars/21Classics",
         javaBtnDisplay: "none",
         javaSourceLink: "",
@@ -72,7 +81,12 @@ const projects = [
             All of these features and a simple UI make for an engaging web application to play.`,
         link: "/Blackjack/index.html",
         linkText: "Visit Project",
-        swiperLogoDisplay: "none",
+        logos: {
+            "html": "block",
+            "css": "block",
+            "javascript": "block",
+            "swiperjs": "none",
+        },
         sourceCode: "https://github.com/L1fe0nMars/ProjectPortfolio/tree/main/Blackjack",
         javaBtnDisplay: "block",
         javaSourceLink: "https://github.com/L1fe0nMars/Blackjack",
@@ -137,27 +151,30 @@ function updateProjectInfo(slide) {
     PROJECT_DESCRIPTION.innerHTML = projects[slide].description;
     PROJECT_LINK.href = projects[slide].link;
     PROJECT_LINK_BTN.innerHTML = projects[slide].linkText;
-    SWIPER_LOGO.style.display = projects[slide].swiperLogoDisplay;
     SOURCE_CODE_LINK.href = projects[slide].sourceCode;
     JAVA_BTN.style.display = projects[slide].javaBtnDisplay;
     JAVA_LINK.href = projects[slide].javaSourceLink;
+
+    for (const feature of projects[slide].features) {
+        let listElement = document.createElement("li");
+        let boldFeature = document.createElement("p");
+
+        boldFeature.classList.toggle("bold-feature");
+        boldFeature.innerHTML = feature;
+        
+        listElement.appendChild(boldFeature);
+        FEATURES_LIST.appendChild(listElement);
+    }
+
+    for (const logo in projects[slide].logos) {
+        document.getElementById(logo).style.display = projects[slide].logos[logo];
+    }
 
     if (projects[slide].javaBtnDisplay == "none") {
         SOURCE_CODE_DIV.style.gap = "0";
     }
     else {
         SOURCE_CODE_DIV.style.gap = "2em";
-    }
-
-    for (let i = 0; i < projects[slide].features.length; i++) {
-        let listElement = document.createElement("li");
-        let boldFeature = document.createElement("p");
-
-        boldFeature.classList.toggle("bold-feature")
-        boldFeature.innerHTML = projects[slide].features[i];
-        
-        listElement.appendChild(boldFeature);
-        FEATURES_LIST.appendChild(listElement);
     }
 }
 
