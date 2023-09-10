@@ -74,6 +74,7 @@ const CARD_VALUES = Object.freeze({
 /**
  * Gets the value of a card and checks whether the high value should be used in the case for aces
  * 
+ * @param {object} card The card object 
  * @param {boolean} useHighValue Boolean that determines which card value to use if there are multiple
  * 
  * @return {number} The value of the card

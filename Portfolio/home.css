@@ -39,11 +39,6 @@ button {
     background-image: url(/Portfolio/images/stars.png);
     background-position: center;
     background-attachment: fixed;
-}
-
-#heading-section .container {
-    width: 100%;
-    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -180,6 +175,14 @@ button {
     justify-content: center;
     flex-wrap: wrap;
     gap: 2em;
+}
+
+#built-with ul li {
+    transition: 0.25s ease;
+}
+
+#built-with ul li:hover {
+    transform: scale(1.25);
 }
 
 #built-with ul li img {

@@ -43,11 +43,13 @@ header li {
     padding: 0 0.4em;
 }
 
-header li a {
-    transition: 0.25s ease-out;
+header li a,
+#bottom-text a {
+    transition: 0.25s ease;
 }
 
-header li a:hover {
+header li a:hover,
+#bottom-text a:hover {
     opacity: 0.5;
 }
 
@@ -55,7 +57,7 @@ header li a:hover {
     margin-bottom: 5em;
 }
 
-.main-content {
+#main-content {
     padding: 1em 0.5em;
     text-align: center;
     width: 90%;
@@ -71,8 +73,8 @@ h1 {
     font-family: 'Rajdhani Bold', 'Rajdhani', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.main-content h1,
-.main-content p {
+#main-content h1,
+#main-content p {
     padding: 0.5em;
 }
 
@@ -194,6 +196,10 @@ summary {
     cursor: pointer;
 }
 
+#saved-names-list {
+    margin-top: 1em;
+}
+
 #saved-names-list li {
     padding: 0 0.5em;
     font-weight: bold;
@@ -206,6 +212,7 @@ summary {
 #saved-names-list li h2 {
     padding: 0.5em;
     font-family: 'Rajdhani Bold', 'Rajdhani', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: 0.1s ease-out;
 }
 
 #saved-names-list li h2:hover {
@@ -219,6 +226,10 @@ summary {
     color: rgb(224, 49, 49);
     font-size: 0.9em;
     transition: 0.1s ease-out;
+}
+
+#bottom-text a {
+    color: var(--space-color);
 }
 
 /* PC + TABLETS */

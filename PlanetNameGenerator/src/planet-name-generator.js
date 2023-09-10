@@ -123,9 +123,6 @@ GENERATOR_BTN.addEventListener("click", () => {
     if (firstLetter && isLetter(firstLetter)) {
         firstLetter = FIRST_LETTER.value[0].toUpperCase();
     }
-    else {
-        firstLetter = "";
-    }
     
     clearNames();
     

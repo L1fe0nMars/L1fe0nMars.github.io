@@ -67,17 +67,11 @@ footer p {
 
 /* PC + TABLETS */
 @media (min-width: 481px) {
+    header li {
+        font-size: 1.75em;
+    }
+    
     footer hr {
         width: 55%;
     }
-}
-
-/* TABLETS */
-@media screen and (min-width: 481px) and (max-width: 1024px) {
-    
-}
-
-/* PC */
-@media screen and (min-width: 1025px) {
-    
 }

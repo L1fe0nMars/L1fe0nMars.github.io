@@ -23,8 +23,8 @@ const projects = [
             This generator has undergone several iterations, and this version is the most advanced, capable of generating <i>billions</i> of unique names.<br><br>
             
             The possibility of so many different names is what lead me to implement the ability to save your favorite names, that way you'll never lose them. 
-            It's also incredibly easy to copy names to your clipboard, it just takes one click of a button. With all of my projects, I strive to implement features 
-            that I believe would greatly benefit the user experience, and this project was no exception.`,
+            You can also generate up to 100 names at a time, specify the first letter of generated names, and copy any name with one click of a button. With all of 
+            my projects, I strive to implement features that I believe would greatly benefit the user experience, and this project was no exception.`,
         link: "/PlanetNameGenerator/index.html",
         linkText: "Visit Project",
         logos: {

@@ -15,7 +15,7 @@ class Generator {
      * 
      * @return {string} The generated name
      */
-    generateName(letter) {
+    generateName(letter = "") {
         let nameStrings = [];
         let prefix = this.prefix.getPrefix();
         let middlePart1 = "";
