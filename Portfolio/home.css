@@ -198,8 +198,89 @@ button {
     gap: 2em;
 }
 
+#contact {
+    padding: 5em 1em;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-image: url(/Portfolio/images/stars.png);
+    background-position: center;
+    background-attachment: fixed;
+}
+
+#contact h1 {
+    font-family: 'Nunito Sans Extra Bold', sans-serif;
+}
+
+#contact p {
+    margin: 1em auto;
+    width: 95%;
+    max-width: max-content;
+    text-align: justify;
+    font-size: 1.125em;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 95%;
+    max-width: 35em;
+}
+
+label,
+input,
+textarea {
+    display: block;
+    text-align: left;
+    width: 100%;
+    font-size: 1.125em;
+}
+
+label {
+    padding: 1em 0;
+    font-size: 1.25em;
+    font-weight: bold;
+    color: var(--paragraph-color);
+}
+
+input,
+textarea {
+    padding: 0.5em 1em;
+    background-color: rgba(24, 24, 24, 0.5);
+    color: var(--paragraph-color);
+    border-radius: 30px;
+    border: none;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 25px -5px var(--blue-glow);
+    font-family: inherit;
+    resize: vertical;
+    -webkit-appearance: none;
+}
+
+textarea {
+    padding: 1em 1.5em;
+    min-height: 8em;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+}
+
+#contact button {
+    margin: 2em auto 0 0;
+}
+
 /* PC + TABLETS */
 @media (min-width: 481px) {
+    p,
+    input,
+    textarea {
+        font-size: 1.125em;
+    }
+    
     button {
         box-shadow: none;
     }
@@ -214,11 +295,6 @@ button {
 
     #heading {
         padding: 1em 3em;
-    }
-
-    #heading p,
-    #description p {
-        font-size: 1.125em;
     }
 
     #project-name {

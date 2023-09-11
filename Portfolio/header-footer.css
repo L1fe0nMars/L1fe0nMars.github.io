@@ -65,6 +65,16 @@ footer p {
     margin-top: 3em;
 }
 
+#arrow-top {
+    display: inline-block;
+    margin-bottom: 2em;
+    color: var(--paragraph-color);
+}
+
+.fa-chevron-up {
+    font-size: 2em;
+}
+
 /* PC + TABLETS */
 @media (min-width: 481px) {
     header li {
