@@ -23,13 +23,12 @@ class Generator {
         let middlePart3 = "";
         let suffix = "";
         let name = "";
+        
+        this.isLetter(letter) ? letter = letter.toUpperCase() : letter = "";
 
-        if (letter != "") {
-            nameStrings.push(this.prefix.getPrefixWithFirstLetter(letter));
-        }
-        else {
-            nameStrings.push(prefix);
-        }
+        letter !== ""
+            ? nameStrings.push(this.prefix.getPrefixWithFirstLetter(letter))
+            : nameStrings.push(prefix);
         
         if (Math.random() < 0.5) {
             do {
@@ -52,14 +51,14 @@ class Generator {
         } while(this.compareNameParts(prefix, middlePart1, middlePart2, suffix));
 
         nameStrings.push(suffix);
-
-        if (nameStrings.length == 4 && Math.random() < 0.1) {
+        
+        if (nameStrings.length === 4 && Math.random() < 0.1) {
             let index = Math.floor(Math.random() * 3) + 1;
 
             do {
-                middlePart3 = this.middlePart.getMiddlePart();
-            } while (middlePart3.localeCompare(nameStrings[index]) == 0 || middlePart3.localeCompare(nameStrings[index - 1]) == 0);
-            
+                middlePart3 = this.middlePart.getMiddlePartTwoLetters();
+            } while (middlePart3.localeCompare(nameStrings[index]) === 0 || middlePart3.localeCompare(nameStrings[index - 1]) === 0);
+            console.log(middlePart3);
             nameStrings.splice(index, 0, middlePart3);
         }
 
@@ -68,6 +67,17 @@ class Generator {
         }
 
         return name;
+    }
+
+    /**
+     * Checks if a char is a letter
+     * 
+     * @param {string} char The char to check
+     * 
+     * @return {boolean} Whether the char is a letter or not
+     */
+    isLetter(char) {
+        return /[a-z]/i.test(char);
     }
 
     /**
@@ -83,10 +93,10 @@ class Generator {
         let previousString = "";
 
         for (let i = nameParts.length - 2; i >= 0; i--) {
-            if (nameParts[i] != "") {
+            if (nameParts[i] !== "") {
                 previousString = nameParts[i];
 
-                return lastString.localeCompare(previousString) == 0;
+                return lastString.localeCompare(previousString) === 0;
             }
         }
 

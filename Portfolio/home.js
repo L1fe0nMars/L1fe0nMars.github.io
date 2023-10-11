@@ -170,12 +170,9 @@ function updateProjectInfo(slide) {
         document.getElementById(logo).style.display = projects[slide].logos[logo];
     }
 
-    if (projects[slide].javaBtnDisplay == "none") {
-        SOURCE_CODE_DIV.style.gap = "0";
-    }
-    else {
-        SOURCE_CODE_DIV.style.gap = "2em";
-    }
+    projects[slide].javaBtnDisplay === "none"
+        ? SOURCE_CODE_DIV.style.gap = "0"
+        : SOURCE_CODE_DIV.style.gap = "2em";
 }
 
 swiper.on("transitionEnd", () => {

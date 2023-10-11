@@ -46,7 +46,7 @@ class Hand {
         let score = 0;
 
         for (const card of this.#cards) {
-            if (card.rank == CARD_VALUES.ACE.rank) {
+            if (card.rank === CARD_VALUES.ACE.rank) {
                 aces.push(card);
             }
 
@@ -57,7 +57,7 @@ class Hand {
         
         // Reduce the value of aces to 1 if the total score is over 21
         for (const ace of aces) {
-            if (score > BLACKJACK_RULES.BLACKJACK_VALUE && ace.value == getCardValue(CARD_VALUES.ACE, true)) {
+            if (score > BLACKJACK_RULES.BLACKJACK_VALUE && ace.value === getCardValue(CARD_VALUES.ACE, true)) {
                 ace.value = getCardValue(CARD_VALUES.ACE, false);
                 score -= 10;
             }

@@ -37,6 +37,7 @@ class Prefix {
             "Amph",
             "Amr",
             "An",
+            "Anb",
             "Anc",
             "And",
             "Andr",
@@ -434,29 +435,20 @@ class Prefix {
      */
     getPrefixWithFirstLetter(letter) {
         let lastArray = this.#prefixes[this.#prefixes.length - 1];
+        let complexPrefixes = lastArray.filter(prefix => prefix.charAt(0) === letter);
         let letterPrefixArray = [];
-        let complexPrefixes = [];
         let prefix;
         
         for (let i = 0; i < this.#prefixes.length; i++) {
-            if (this.#prefixes[i][0].charAt(0) == letter) {
+            if (this.#prefixes[i][0].charAt(0) === letter) {
                 letterPrefixArray = [...this.#prefixes[i]];
                 break;
             }
         }
-
-        for (let i = 0; i < lastArray.length; i++) {
-            if (lastArray[i].charAt(0) == letter) {
-                complexPrefixes.push(lastArray[i]);
-            }
-        }
         
-        if (complexPrefixes.length > 0 && Math.random() < 0.1) {
-            prefix = complexPrefixes[Math.floor(Math.random() * complexPrefixes.length)];
-        }
-        else {
-            prefix = letterPrefixArray[Math.floor(Math.random() * letterPrefixArray.length)];
-        }
+        (complexPrefixes.length > 0 && Math.random() < 0.1)
+            ? prefix = complexPrefixes[Math.floor(Math.random() * complexPrefixes.length)]
+            : prefix = letterPrefixArray[Math.floor(Math.random() * letterPrefixArray.length)];
         
         return prefix;
     }

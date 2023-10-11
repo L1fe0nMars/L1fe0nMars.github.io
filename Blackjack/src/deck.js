@@ -58,7 +58,7 @@ class Deck {
      * @return The top card from the deck
      */
     dealCard() {
-        if (this.#cardDeck.length == 0) {
+        if (this.#cardDeck.length === 0) {
             this.createDeck(BLACKJACK_RULES.NUM_MAX_DECKS);
         }
 

@@ -95,6 +95,7 @@ class MiddlePart {
         "as",
         "ash",
         "asm",
+        "asph",
         "aspr",
         "ast",
         "astr",
@@ -224,6 +225,7 @@ class MiddlePart {
         "id",
         "idr",
         "ig",
+        "igd",
         "igl",
         "igm",
         "igr",
@@ -424,13 +426,7 @@ class MiddlePart {
      * @return {string} The middle string
      */
     getMiddlePartTwoLetters() {
-        let middlePartTwoLetters = [];
-
-        for (let i = 0; i < this.#middlePart.length; i++) {
-            if (this.#middlePart[i].length == 2) {
-                middlePartTwoLetters.push(this.#middlePart[i]);
-            }
-        }
+        let middlePartTwoLetters = this.#middlePart.filter(str => str.length === 2);
         
         return middlePartTwoLetters[Math.floor(Math.random() * middlePartTwoLetters.length)];
     }
@@ -450,13 +446,7 @@ class MiddlePart {
      * @return {number} The total number of possible strings
      */
     getNumMiddlePartsTwoLetters() {
-        let middlePartTwoLetters = [];
-
-        for (let i = 0; i < this.#middlePart.length; i++) {
-            if (this.#middlePart[i].length == 2) {
-                middlePartTwoLetters.push(this.#middlePart[i]);
-            }
-        }
+        let middlePartTwoLetters = this.#middlePart.filter(str => str.length === 2);
 
         return middlePartTwoLetters.length;
     }

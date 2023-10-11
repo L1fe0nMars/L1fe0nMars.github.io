@@ -26,7 +26,7 @@ function clearNames() {
  * @param {string} name The name to save
  */
 function saveName(name) {
-    if (localStorage["savedNames"] != null) {
+    if (localStorage["savedNames"] !== undefined) {
         let savedNames = JSON.parse(localStorage["savedNames"]);
 
         if (!savedNames.includes(name)) {
@@ -95,7 +95,7 @@ function deleteSavedName(name) {
     let storedNames = JSON.parse(localStorage["savedNames"]);
 
     for (let i = 0; i < storedNames.length; i++) {
-        if (name == storedNames[i]) {
+        if (name === storedNames[i]) {
             storedNames.splice(i, 1);
             localStorage["savedNames"] = JSON.stringify(storedNames);
             break;
@@ -105,24 +105,8 @@ function deleteSavedName(name) {
     loadNames();
 }
 
-/**
- * Checks if a char is a letter
- * 
- * @param {string} char The char to check
- * 
- * @return {boolean} Whether the char is a letter or not
- */
-function isLetter(char) {
-    return /[a-z]/i.test(char);
-}
-
 GENERATOR_BTN.addEventListener("click", () => {
     let numNames = Number(NUM_NAMES.value);
-    let firstLetter = FIRST_LETTER.value[0];
-
-    if (firstLetter && isLetter(firstLetter)) {
-        firstLetter = FIRST_LETTER.value[0].toUpperCase();
-    }
     
     clearNames();
     
@@ -155,7 +139,7 @@ GENERATOR_BTN.addEventListener("click", () => {
         let copyIcon = document.createElement("h3");
         let starIcon = document.createElement("h3");
 
-        name.innerHTML = generator.generateName(firstLetter);
+        name.innerHTML = generator.generateName(FIRST_LETTER.value[0]);
         
         copyIcon.innerHTML = '<i class="fa-regular fa-copy"></i>';
         copyIcon.onclick = () => {
@@ -183,7 +167,7 @@ GENERATOR_BTN.addEventListener("click", () => {
 });
 
 SAVED_NAMES.addEventListener("click", () => {
-    if (localStorage.getItem("savedNames") != null) {
+    if (localStorage.getItem("savedNames") !== undefined) {
         loadNames();
     }
 });

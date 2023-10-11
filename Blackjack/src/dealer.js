@@ -42,7 +42,7 @@ class Dealer {
      * @return {boolean} Check if the hand is equal to the blackjack value
      */
     hasBlackjack() {
-        return this.#hand.score == BLACKJACK_RULES.BLACKJACK_VALUE;
+        return this.#hand.score === BLACKJACK_RULES.BLACKJACK_VALUE;
     }
 
     /**

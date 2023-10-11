@@ -63,7 +63,7 @@ function saveStats() {
  * Loads the game stats
  */
 function loadStats() {
-    if (localStorage["stats"] == null) {
+    if (localStorage["stats"] === undefined) {
         saveStats();
     }
     else {
@@ -111,12 +111,10 @@ function closeStatsModal() {
  * @return {boolean} Whether the modal is open or not
  */
 function isStatsModalOpen() {
-    return MODAL.style.display == "block" ? true : false;
+    return MODAL.style.display === "block" ? true : false;
 }
 
-STATS_BTN.addEventListener("click", () => {
-    openStatsModal();
-});
+STATS_BTN.addEventListener("click", openStatsModal);
 
 CLOSE_BTN.addEventListener("click", closeStatsModal);
 

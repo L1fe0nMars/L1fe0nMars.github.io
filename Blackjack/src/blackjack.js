@@ -111,16 +111,11 @@ function dealInitialCards(hand, isDealer) {
         const card = deck.dealCard();
         hand.addCard(card);
 
-        if (isDealer && i == 1) {
+        if (isDealer && i === 1) {
             card.hidden = true;
         }
 
-        if (!isDealer) {
-            updateHand(PLAYER_HAND, card);
-        }
-        else {
-            updateHand(DEALER_HAND, card);
-        }
+        !isDealer ? updateHand(PLAYER_HAND, card) : updateHand(DEALER_HAND, card);
     }
 }
 
@@ -132,7 +127,7 @@ function dealInitialCards(hand, isDealer) {
  * @param {object} cardElement Optional parameter if the card element already exists but needs to be updated
  */
 function updateHand(handElement, card, cardElement) {
-    if (cardElement == null) {
+    if (cardElement === undefined) {
         cardElement = document.createElement("div");
         cardElement.classList.toggle("card");
         handElement.appendChild(cardElement);
@@ -157,7 +152,7 @@ function updateHand(handElement, card, cardElement) {
         cardSuitTop.innerHTML = card.suit;
         cardSuitBottom.innerHTML = card.suit;
         
-        if (card.suit == CARD_SUIT.DIAMONDS || card.suit == CARD_SUIT.HEARTS) {
+        if (card.suit === CARD_SUIT.DIAMONDS || card.suit === CARD_SUIT.HEARTS) {
             cardElement.style.color = "red";
         }
 
@@ -274,7 +269,7 @@ function payoutPlayer() {
             updateStat("biggestPayout", betAmount);
         }
     }
-    else if (playerScore != dealerScore) {
+    else if (playerScore !== dealerScore) {
         player.payout(-betAmount);
         updateStat("lifetimeMoneyLost", stats.lifetimeMoneyLost.value + betAmount);
     }
@@ -317,7 +312,7 @@ function endGameResult() {
     PLAYER_MONEY.innerHTML = player.money;
     toggleButton(BET_BTN);
 
-    if (player.money == 0) {
+    if (player.money === 0) {
         toggleButton(BET_BTN, true);
         NEW_GAME_BTN.style.display = "inline";
         updateStat("lostItAll", ++stats.lostItAll.value);
