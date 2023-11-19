@@ -273,6 +273,15 @@ textarea:focus {
     margin: 2em auto 0 0;
 }
 
+.text-link {
+    color: var(--blue-glow);
+    transition: 0.25s ease-out;
+}
+
+.text-link:hover {
+    opacity: 0.5;
+}
+
 /* PC + TABLETS */
 @media (min-width: 481px) {
     p,

@@ -2,7 +2,6 @@ header {
     color: var(--off-white);
     padding: 0.5em 0;
     box-shadow: 0 0 25px -5px var(--blue-glow);
-    backdrop-filter: blur(10px);
     display: flex;
     align-items: center;
 }
