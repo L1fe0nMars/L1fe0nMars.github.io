@@ -49,6 +49,8 @@ class MiddlePart {
         "all",
         "alm",
         "aln",
+        "alt",
+        "alth",
         "altr",
         "alv",
         "alyps",
