@@ -6,19 +6,11 @@ const NUM_NAMES = document.getElementById("num-names");
 const FIRST_LETTER = document.getElementById("first-letter");
 const SAVED_NAMES = document.getElementById("saved-names");
 const SAVED_NAMES_LIST = document.getElementById("saved-names-list");
+
 const MAX_NAMES = Number(NUM_NAMES.max);
 const MIN_NAMES = Number(NUM_NAMES.min);
 
-let generator = new Generator();
-
-/**
- * Clears all names from the names list element
- */
-function clearNames() {
-    while (NAMES_LIST.firstChild) {
-        NAMES_LIST.removeChild(NAMES_LIST.lastChild);
-    }
-}
+const generator = new Generator();
 
 /**
  * Saves name the browser's local storage
@@ -26,7 +18,7 @@ function clearNames() {
  * @param {string} name The name to save
  */
 function saveName(name) {
-    if (localStorage["savedNames"] !== undefined) {
+    if (localStorage["savedNames"]) {
         let savedNames = JSON.parse(localStorage["savedNames"]);
 
         if (!savedNames.includes(name)) {
@@ -45,44 +37,84 @@ function saveName(name) {
  * Load all saved names
  */
 function loadNames() {
-    let storedNames = JSON.parse(localStorage["savedNames"]);
+    const storedNames = JSON.parse(localStorage["savedNames"]);
 
-    while (SAVED_NAMES_LIST.firstChild) {
-        SAVED_NAMES_LIST.removeChild(SAVED_NAMES_LIST.lastChild);
-    }
-    
-    for (let i = 0; i < storedNames.length; i++) {
-        let listElement = document.createElement("li");
-        let savedName = document.createElement("h2");
-        let copyIcon = document.createElement("h3");
-        let deleteButton = document.createElement("h3");
+    clearNames(SAVED_NAMES_LIST);
+    createNameList(SAVED_NAMES_LIST, storedNames.length);
+}
 
-        savedName.innerHTML = storedNames[i];
-        savedName.onclick = () => {
-            navigator.clipboard.writeText(savedName.innerHTML);
-        };
+/**
+ * Creates the elements for the list of names that get displayed
+ * 
+ * @param {object} nameList The name list element to add names to
+ * @param {number} numNames The number of names to list
+ */
+function createNameList(nameList, numNames) {
+    for (let i = 0; i < numNames; i++) {
+        const listElement = document.createElement("li");
+        const name = document.createElement("h2");
+        const copyIcon = document.createElement("h3");
+        const storedNames = JSON.parse(localStorage["savedNames"]);
+
+        nameList === NAMES_LIST
+            ? name.innerHTML = generator.generateName(FIRST_LETTER.value[0])
+            : name.innerHTML = storedNames[i];
+        
 
         copyIcon.innerHTML = '<i class="fa-regular fa-copy"></i>';
         copyIcon.style.color = "var(--off-white)";
         copyIcon.onclick = () => {
-            navigator.clipboard.writeText(savedName.innerHTML);
+            navigator.clipboard.writeText(name.innerHTML);
             copyIcon.innerHTML = '<i class="fa-regular fa-circle-check"></i>';
             copyIcon.style.color = "green";
+
             setTimeout(() => {
                 copyIcon.innerHTML = '<i class="fa-regular fa-copy"></i>';
                 copyIcon.style.color = "var(--off-white)";
             }, 2000);
         };
 
-        deleteButton.innerHTML = '<i class="fa-regular fa-circle-xmark"></i>';
-        deleteButton.onclick = () => {
-            deleteSavedName(savedName.innerHTML);
-        };
+        if (nameList === NAMES_LIST) {
+            const nameDiv = document.createElement("div");
+            const starIcon = document.createElement("h3");
 
-        listElement.appendChild(savedName);
-        listElement.appendChild(copyIcon);
-        listElement.appendChild(deleteButton);
-        SAVED_NAMES_LIST.appendChild(listElement);
+            starIcon.innerHTML = '<i class="fa-regular fa-star"></i>';
+            starIcon.onclick = () => {
+                saveName(name.innerHTML);
+                starIcon.style.color = "var(--space-color)";
+            };
+
+            nameDiv.appendChild(name);
+            nameDiv.appendChild(copyIcon);
+            nameDiv.appendChild(starIcon);
+            listElement.appendChild(nameDiv);
+        }
+        else {
+            const deleteButton = document.createElement("h3");
+
+            deleteButton.innerHTML = '<i class="fa-regular fa-circle-xmark"></i>';
+            deleteButton.onclick = () => {
+                deleteSavedName(name.innerHTML);
+            };
+
+            listElement.appendChild(name);
+            listElement.appendChild(copyIcon);
+            listElement.appendChild(deleteButton);
+        }
+
+        
+        nameList.appendChild(listElement);
+    }
+}
+
+/**
+ * Clears all names from the passed name list
+ * 
+ * @param {object} nameList The list element to clear
+ */
+function clearNames(nameList) {
+    while (nameList.firstChild) {
+        nameList.removeChild(nameList.lastChild);
     }
 }
 
@@ -108,7 +140,7 @@ function deleteSavedName(name) {
 GENERATOR_BTN.addEventListener("click", () => {
     let numNames = Number(NUM_NAMES.value);
     
-    clearNames();
+    clearNames(NAMES_LIST);
     
     if (numNames > MAX_NAMES) {
         numNames = MAX_NAMES;
@@ -131,43 +163,12 @@ GENERATOR_BTN.addEventListener("click", () => {
             NAMES_LIST.style.display = "grid";
         }
     }
-    
-    for (let i = 0; i < numNames; i++) {
-        let listElement = document.createElement("li");
-        let nameDiv = document.createElement("div");
-        let name = document.createElement("h2");
-        let copyIcon = document.createElement("h3");
-        let starIcon = document.createElement("h3");
 
-        name.innerHTML = generator.generateName(FIRST_LETTER.value[0]);
-        
-        copyIcon.innerHTML = '<i class="fa-regular fa-copy"></i>';
-        copyIcon.onclick = () => {
-            navigator.clipboard.writeText(name.innerHTML);
-            copyIcon.innerHTML = '<i class="fa-regular fa-circle-check"></i>';
-            copyIcon.style.color = "green";
-            setTimeout(() => {
-                copyIcon.innerHTML = '<i class="fa-regular fa-copy"></i>';
-                copyIcon.style.color = "var(--off-white)";
-            }, 2000);
-        };
-
-        starIcon.innerHTML = '<i class="fa-regular fa-star"></i>';
-        starIcon.onclick = () => {
-            saveName(name.innerHTML);
-            starIcon.style.color = "var(--space-color)";
-        };
-
-        nameDiv.appendChild(name);
-        nameDiv.appendChild(copyIcon);
-        nameDiv.appendChild(starIcon);
-        listElement.appendChild(nameDiv);
-        NAMES_LIST.appendChild(listElement);
-    }
+    createNameList(NAMES_LIST, numNames);
 });
 
 SAVED_NAMES.addEventListener("click", () => {
-    if (localStorage.getItem("savedNames") !== undefined) {
+    if (localStorage["savedNames"]) {
         loadNames();
     }
 });

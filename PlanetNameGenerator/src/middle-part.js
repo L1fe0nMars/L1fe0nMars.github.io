@@ -417,7 +417,7 @@ class MiddlePart {
      * @return {string} The middle string
      */
     getMiddlePart() {
-        let middle = this.#middlePart[Math.floor(Math.random() * this.#middlePart.length)];
+        const middle = this.#middlePart[Math.floor(Math.random() * this.#middlePart.length)];
 
         return middle;
     }
@@ -428,7 +428,7 @@ class MiddlePart {
      * @return {string} The middle string
      */
     getMiddlePartTwoLetters() {
-        let middlePartTwoLetters = this.#middlePart.filter(str => str.length === 2);
+        const middlePartTwoLetters = this.#middlePart.filter(str => str.length === 2);
         
         return middlePartTwoLetters[Math.floor(Math.random() * middlePartTwoLetters.length)];
     }
@@ -448,7 +448,7 @@ class MiddlePart {
      * @return {number} The total number of possible strings
      */
     getNumMiddlePartsTwoLetters() {
-        let middlePartTwoLetters = this.#middlePart.filter(str => str.length === 2);
+        const middlePartTwoLetters = this.#middlePart.filter(str => str.length === 2);
 
         return middlePartTwoLetters.length;
     }

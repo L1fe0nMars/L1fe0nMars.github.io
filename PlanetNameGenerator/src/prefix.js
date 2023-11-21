@@ -420,8 +420,8 @@ class Prefix {
      * @return {string} The prefix
      */
     getPrefix() {
-        let letter = this.#prefixes[Math.floor(Math.random() * this.#prefixes.length)];
-        let prefix = letter[Math.floor(Math.random() * letter.length)];
+        const letter = this.#prefixes[Math.floor(Math.random() * this.#prefixes.length)];
+        const prefix = letter[Math.floor(Math.random() * letter.length)];
 
         return prefix;
     }
@@ -434,8 +434,8 @@ class Prefix {
      * @return {string} The prefix
      */
     getPrefixWithFirstLetter(letter) {
-        let lastArray = this.#prefixes[this.#prefixes.length - 1];
-        let complexPrefixes = lastArray.filter(prefix => prefix.charAt(0) === letter);
+        const lastArray = this.#prefixes[this.#prefixes.length - 1];
+        const complexPrefixes = lastArray.filter(prefix => prefix.charAt(0) === letter);
         let letterPrefixArray = [];
         let prefix;
         

@@ -58,7 +58,7 @@ class Generator {
             do {
                 middlePart3 = this.middlePart.getMiddlePartTwoLetters();
             } while (middlePart3.localeCompare(nameStrings[index]) === 0 || middlePart3.localeCompare(nameStrings[index - 1]) === 0);
-            console.log(middlePart3);
+            
             nameStrings.splice(index, 0, middlePart3);
         }
 
@@ -88,8 +88,8 @@ class Generator {
      * @return {boolean} Whether the strings are equal or not
      */
     compareNameParts(...strings) {
-        let nameParts = strings;
-        let lastString = nameParts[nameParts.length - 1];
+        const nameParts = strings;
+        const lastString = nameParts[nameParts.length - 1];
         let previousString = "";
 
         for (let i = nameParts.length - 2; i >= 0; i--) {

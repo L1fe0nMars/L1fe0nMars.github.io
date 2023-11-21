@@ -124,10 +124,10 @@ function dealInitialCards(hand, isDealer) {
  * 
  * @param {object} handElement The hand element to update
  * @param {Card} card The card to add or update in the hand
- * @param {object} cardElement Optional parameter if the card element already exists but needs to be updated
+ * @param {object} cardElement Optional parameter if the card element already exists but needs to be updated, only used for the dealer's hidden card
  */
 function updateHand(handElement, card, cardElement) {
-    if (cardElement === undefined) {
+    if (!cardElement) {
         cardElement = document.createElement("div");
         cardElement.classList.toggle("card");
         handElement.appendChild(cardElement);

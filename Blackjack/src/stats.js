@@ -63,15 +63,15 @@ function saveStats() {
  * Loads the game stats
  */
 function loadStats() {
-    if (localStorage["stats"] === undefined) {
-        saveStats();
-    }
-    else {
+    if (localStorage["stats"]) {
         stats = JSON.parse(localStorage["stats"]);
 
         for (const [key, val] of Object.entries(stats)) {
             document.getElementById(stats[key].element).innerHTML = stats[key].value;
         }
+    }
+    else {
+        saveStats();
     }
 }
 

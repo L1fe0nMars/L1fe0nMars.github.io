@@ -169,7 +169,7 @@ class Suffix {
      * @return {string} The suffix
      */
     getSuffix() {
-        let suffix = this.#suffixes[Math.floor(Math.random() * this.#suffixes.length)];
+        const suffix = this.#suffixes[Math.floor(Math.random() * this.#suffixes.length)];
 
         return suffix;
     }
