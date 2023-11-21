@@ -16,12 +16,12 @@ const CURRENT_BET = document.getElementById("current-bet");
 const PLAYER_MONEY = document.getElementById("player-money-amount");
 const RULES_LIST = document.getElementById("rules-list");
 
-let player = new Player();
-let dealer = new Dealer();
-let deck = new Deck(BLACKJACK_RULES.NUM_MAX_DECKS);
+const player = new Player();
+const dealer = new Dealer();
+const deck = new Deck(BLACKJACK_RULES.NUM_MAX_DECKS);
 
 for (let i = 0; i < BLACKJACK_RULES.RULES.length; i++) {
-    let listElement = document.createElement("li");
+    const listElement = document.createElement("li");
     listElement.innerHTML = BLACKJACK_RULES.RULES[i];
     RULES_LIST.appendChild(listElement);
 }
@@ -133,10 +133,10 @@ function updateHand(handElement, card, cardElement) {
         handElement.appendChild(cardElement);
     }
     
-    let cardRankTop = document.createElement("p");
-    let cardRankBottom = document.createElement("p");
-    let cardSuitTop = document.createElement("p");
-    let cardSuitBottom = document.createElement("p");
+    const cardRankTop = document.createElement("p");
+    const cardRankBottom = document.createElement("p");
+    const cardSuitTop = document.createElement("p");
+    const cardSuitBottom = document.createElement("p");
 
     cardRankTop.className = "card-top";
     cardSuitTop.className = "card-top";
@@ -180,8 +180,8 @@ function endUserTurn() {
  */
 function dealerTurn() {
     setTimeout(() => {
-        let hiddenCard = dealer.hiddenCard;
-        let hiddenCardElement = document.querySelector(".hidden-card");
+        const hiddenCard = dealer.hiddenCard;
+        const hiddenCardElement = document.querySelector(".hidden-card");
 
         hiddenCard.hidden = false;
         hiddenCardElement.classList.toggle("hidden-card");
@@ -230,9 +230,9 @@ function dealerTurn() {
  * The dealer AI to determine what choice to make
  */
 function dealerLogic() {
+    const playerScore = player.hand.score;
+    const dealerScore = dealer.hand.score;
     let dealerSelection = DEALER_ACTION.STAND;
-    let playerScore = player.hand.score;
-    let dealerScore = dealer.hand.score;
     
     if ((player.hasBlackjack() && dealerScore < BLACKJACK_RULES.BLACKJACK_VALUE)
         || (dealerScore < BLACKJACK_RULES.DEALER_MIN_SCORE && dealerScore <= playerScore)
@@ -247,12 +247,12 @@ function dealerLogic() {
  * Pays out the player at the end of the game
  */
 function payoutPlayer() {
-    let playerScore = player.hand.score;
-    let dealerScore = dealer.hand.score;
-    let betAmount = player.betAmount;
+    const playerScore = player.hand.score;
+    const dealerScore = dealer.hand.score;
+    const betAmount = player.betAmount;
     
     if (player.hasBlackjack() && (dealerScore < playerScore || dealer.bust())) {
-        let payoutAmount = 2 * betAmount;
+        const payoutAmount = 2 * betAmount;
         
         player.payout(payoutAmount);
         updateStat("lifetimeEarnings", stats.lifetimeEarnings.value + payoutAmount);
@@ -283,8 +283,8 @@ function payoutPlayer() {
  * Displays the game result
  */
 function endGameResult() {
-    let playerScore = player.hand.score;
-    let dealerScore = dealer.hand.score;
+    const playerScore = player.hand.score;
+    const dealerScore = dealer.hand.score;
 
     if (dealer.bust()) {
         DISPLAY_INFO.innerHTML = "The dealer busts! You win!";
@@ -320,7 +320,7 @@ function endGameResult() {
 }
 
 HIT_BTN.addEventListener("click", () => {
-    let newCard = player.hit(deck);
+    const newCard = player.hit(deck);
     updateHand(PLAYER_HAND, newCard);
 
     if (player.bust()) {
@@ -340,7 +340,7 @@ STAND_BTN.addEventListener("click", () => {
 });
 
 BET_BTN.addEventListener("click", () => {
-    let betAmount = Number(BET_AMOUNT.value);
+    const betAmount = Number(BET_AMOUNT.value);
 
     if (betAmount < BLACKJACK_RULES.MIN_BET_AMOUNT) {
         ERROR_TEXT.innerHTML = "Minimum bet is $1.";

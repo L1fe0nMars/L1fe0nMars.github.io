@@ -40,7 +40,7 @@ class Deck {
      */
     shuffleDeck() {
         for (let i = this.#cardDeck.length - 1; i > 0; i--) {
-            let j = Math.floor(Math.random() * (i + 1));
+            const j = Math.floor(Math.random() * (i + 1));
             [this.#cardDeck[i], this.#cardDeck[j]] = [this.#cardDeck[j], this.#cardDeck[i]];
         }
     }

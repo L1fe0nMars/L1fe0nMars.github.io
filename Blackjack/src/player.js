@@ -96,7 +96,7 @@ class Player {
      * @return {Card} The card that was pulled from the deck
      */
     hit(deck) {
-        let card = deck.dealCard();
+        const card = deck.dealCard();
 
         this.#hand.addCard(card);
 

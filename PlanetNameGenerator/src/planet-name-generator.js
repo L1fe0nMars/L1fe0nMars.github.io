@@ -61,7 +61,7 @@ function createNameList(nameList, numNames) {
             : name.innerHTML = storedNames[i];
         
 
-        copyIcon.innerHTML = '<i class="fa-regular fa-copy"></i>';
+        copyIcon.innerHTML = '<i class="fa-regular fa-copy" title="Copy name"></i>';
         copyIcon.style.color = "var(--off-white)";
         copyIcon.onclick = () => {
             navigator.clipboard.writeText(name.innerHTML);
@@ -69,7 +69,7 @@ function createNameList(nameList, numNames) {
             copyIcon.style.color = "green";
 
             setTimeout(() => {
-                copyIcon.innerHTML = '<i class="fa-regular fa-copy"></i>';
+                copyIcon.innerHTML = '<i class="fa-regular fa-copy" title="Copy name"></i>';
                 copyIcon.style.color = "var(--off-white)";
             }, 2000);
         };
@@ -78,7 +78,7 @@ function createNameList(nameList, numNames) {
             const nameDiv = document.createElement("div");
             const starIcon = document.createElement("h3");
 
-            starIcon.innerHTML = '<i class="fa-regular fa-star"></i>';
+            starIcon.innerHTML = '<i class="fa-regular fa-star" title="Save name"></i>';
             starIcon.onclick = () => {
                 saveName(name.innerHTML);
                 starIcon.style.color = "var(--space-color)";
@@ -92,7 +92,7 @@ function createNameList(nameList, numNames) {
         else {
             const deleteButton = document.createElement("h3");
 
-            deleteButton.innerHTML = '<i class="fa-regular fa-circle-xmark"></i>';
+            deleteButton.innerHTML = '<i class="fa-regular fa-circle-xmark" title="Remove name"></i>';
             deleteButton.onclick = () => {
                 deleteSavedName(name.innerHTML);
             };

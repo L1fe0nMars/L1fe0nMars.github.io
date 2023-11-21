@@ -14,6 +14,7 @@ class Suffix {
         "ag",
         "ah",
         "ahl",
+        "ahn",
         "ai",
         "aia",
         "air",

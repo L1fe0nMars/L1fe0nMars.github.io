@@ -187,8 +187,8 @@ function updateProjectInfo(slide) {
     JAVA_LINK.href = projects[slide].javaSourceLink;
 
     for (const feature of projects[slide].features) {
-        let listElement = document.createElement("li");
-        let boldFeature = document.createElement("p");
+        const listElement = document.createElement("li");
+        const boldFeature = document.createElement("p");
 
         boldFeature.classList.toggle("bold-feature");
         boldFeature.innerHTML = feature;
