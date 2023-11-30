@@ -4,6 +4,19 @@ body {
     color: var(--off-white);
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0a141b;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--blue-glow);
+    border-radius: 20px;
+}
+
 h1 {
     font-size: 2em;
     font-family: 'Nunito Sans Bold', sans-serif;
@@ -34,8 +47,7 @@ button {
 }
 
 #heading-section {
-    text-align: center;
-    padding: 8em 0;
+    height: 100vh;
     background-image: url(/Portfolio/images/stars.png);
     background-position: center;
     background-attachment: fixed;
@@ -52,7 +64,6 @@ button {
 }
 
 #heading h1 {
-    text-align: left;
     font-size: 2.5em;
     font-family: 'Nunito Sans Extra Bold', sans-serif;
 }
@@ -60,7 +71,6 @@ button {
 #heading p {
     margin-top: 0.25em;
     margin-bottom: 0.75em;
-    text-align: justify;
 }
 
 #heading button {
@@ -156,7 +166,6 @@ button {
 
 #description {
     padding: 1.5em;
-    text-align: justify;
 }
 
 #link-div {
@@ -216,8 +225,8 @@ button {
 #contact p {
     margin: 1em auto;
     width: 95%;
-    max-width: max-content;
-    text-align: justify;
+    max-width: 35em;
+    text-align: left;
     font-size: 1.125em;
 }
 
@@ -296,10 +305,6 @@ textarea:focus {
 
     button:hover {
         box-shadow: 0 0 25px -5px var(--blue-glow);
-    }
-    
-    #heading-section {
-        padding: 15em 0;
     }
 
     #heading {

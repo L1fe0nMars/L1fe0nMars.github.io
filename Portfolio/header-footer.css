@@ -1,9 +1,13 @@
 header {
     color: var(--off-white);
     padding: 0.5em 0;
-    box-shadow: 0 0 25px -5px var(--blue-glow);
     display: flex;
     align-items: center;
+    background-image: url(/Portfolio/images/stars.png);
+    background-position: center;
+    background-attachment: fixed;
+    position: absolute;
+    width: 100%;
 }
 
 header ul,
@@ -18,7 +22,7 @@ footer ul {
 }
 
 header li {
-    font-size: 1.5em;
+    font-size: 2em;
     padding: 0.1em 0.4em;
 }
 
@@ -76,10 +80,6 @@ footer p {
 
 /* PC + TABLETS */
 @media (min-width: 481px) {
-    header li {
-        font-size: 1.75em;
-    }
-    
     footer hr {
         width: 55%;
     }
