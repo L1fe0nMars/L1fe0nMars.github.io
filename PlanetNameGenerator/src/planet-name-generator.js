@@ -54,13 +54,12 @@ function createNameList(nameList, numNames) {
         const listElement = document.createElement("li");
         const name = document.createElement("h2");
         const copyIcon = document.createElement("h3");
-        const storedNames = JSON.parse(localStorage["savedNames"]);
+        const storedNames = localStorage["savedNames"];
 
         nameList === NAMES_LIST
             ? name.innerHTML = generator.generateName(FIRST_LETTER.value[0])
-            : name.innerHTML = storedNames[i];
+            : name.innerHTML = JSON.parse(storedNames)[i];
         
-
         copyIcon.innerHTML = '<i class="fa-regular fa-copy" title="Copy name"></i>';
         copyIcon.style.color = "var(--off-white)";
         copyIcon.onclick = () => {
@@ -102,7 +101,6 @@ function createNameList(nameList, numNames) {
             listElement.appendChild(deleteButton);
         }
 
-        
         nameList.appendChild(listElement);
     }
 }
