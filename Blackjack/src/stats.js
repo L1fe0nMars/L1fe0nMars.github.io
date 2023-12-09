@@ -1,11 +1,8 @@
 "use strict";
 
-const GAME_AREA = document.getElementById("game-area");
-const SECTION_2 = document.getElementById("section-2");
 const STATS_BTN = document.getElementById("stats-btn");
-const MODAL = document.getElementById("modal");
+const STATS_MODAL = document.getElementById("stats-modal");
 const STATS_TABLE = document.getElementById("stats");
-const CLOSE_BTN = document.getElementById("close");
 
 let stats = {
     wins: {
@@ -91,18 +88,16 @@ function updateStat(stat, newValue) {
  * Opens the stats modal
  */
 function openStatsModal() {
-    MODAL.style.display = "block";
+    STATS_MODAL.style.display = "block";
     GAME_AREA.style.display = "none";
-    SECTION_2.style.display = "none";
 }
 
 /**
  * Closes the stats modal
  */
 function closeStatsModal() {
-    MODAL.style.display = "none";
+    STATS_MODAL.style.display = "none";
     GAME_AREA.style.display = "block";
-    SECTION_2.style.display = "block";
 }
 
 /**
@@ -111,12 +106,11 @@ function closeStatsModal() {
  * @return {boolean} Whether the modal is open or not
  */
 function isStatsModalOpen() {
-    return MODAL.style.display === "block" ? true : false;
+    return STATS_MODAL.style.display === "block" ? true : false;
 }
 
 STATS_BTN.addEventListener("click", openStatsModal);
-
-CLOSE_BTN.addEventListener("click", closeStatsModal);
+CLOSE_BTN[1].addEventListener("click", closeStatsModal);
 
 document.addEventListener("keydown", (event) => {
     if (isStatsModalOpen() && event.key === "Escape") {

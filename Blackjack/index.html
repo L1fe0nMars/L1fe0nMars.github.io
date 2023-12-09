@@ -5,22 +5,23 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Test your luck by playing Blackjack, one of the most popular casino games of all time.">
+        <meta name="theme-color" content="#125d2b">
         <link rel="stylesheet" href="/global-style.css">
         <link rel="stylesheet" href="/Blackjack/style.css">
-        <title>Play Blackjack</title>
         <link rel="icon" type="image/x-icon" href="/Blackjack//images/spades.png">
+        <title>Play Blackjack</title>
     </head>
     <body>
         <header>
             <h1>Blackjack</h1>
             <ul>
                 <li>
-                    <a href="mailto:jkama005@gmail.com" target="_blank" rel="noopener noreferrer">
+                    <a href="mailto:jkama005@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email">
                         <i class="fa fa-solid fa-envelope"></i>
                     </a>
                 </li>
                 <li>
-                    <a href="https://github.com/L1fe0nMars" target="_blank" rel="noopener">
+                    <a href="https://github.com/L1fe0nMars" target="_blank" rel="noopener" aria-label="GitHub">
                         <i class="fab fa-github"></i>
                     </a>
                 </li>
@@ -49,14 +50,24 @@
                         </div>
                         <p id="error-text"></p>
                         <div id="money-info">
-                            <p id="current-bet-text">Current bet amount: $<span id="current-bet"></span></p>
-                            <p id="player-money">Your money: $<span id="player-money-amount"></span></p>
+                            <p id="current-bet-text"><b>Current bet amount:</b> $<span id="current-bet"></span></p>
+                            <p id="player-money"><b>Your money:</b> $<span id="player-money-amount"></span></p>
                         </div>
-                        <button id="stats-btn">Stats</button>
+                        <div id="modal-btns">
+                            <button id="rules-btn">Rules</button>
+                            <button id="stats-btn">Stats</button>
+                        </div>
                     </div>
                 </div>
-                <div id="modal">
-                    <span id="close">&times;</span>
+                <div id="rules-modal">
+                    <span class="close">&times;</span>
+                    <div id="rules">
+                        <h1>Rules</h1>
+                        <ul id="rules-list"></ul>
+                    </div>
+                </div>
+                <div id="stats-modal">
+                    <span class="close">&times;</span>
                     <div id="stats">
                         <h1>Stats</h1>
                         <table>
@@ -100,15 +111,11 @@
                     </div>
                 </div>
             </section>
-            <section id="section-2">
-                <div id="rules">
-                    <h1>Rules</h1>
-                    <ul id="rules-list"></ul>
-                </div>
-                <p id="disclaimer"><b>DISCLAIMER: </b>You do not gain or lose any real world money by playing this game.</p>
-                <p id="bottom-text">Designed and developed by <a href="https://l1fe0nmars.github.io/" target="_blank" rel="noopener">Jamal Kamareddine</a></p>
-            </section>
         </main>
+        <footer>
+            <p id="disclaimer"><b>DISCLAIMER: </b>You do not gain or lose any real world money by playing this game.</p>
+            <p id="bottom-text">Designed and developed by <a href="https://l1fe0nmars.github.io/" target="_blank" rel="noopener">Jamal Kamareddine</a></p>
+        </footer>
         <script src="https://kit.fontawesome.com/4f246fd89d.js" crossorigin="anonymous"></script>
         <script src="/Blackjack/src/enums/constants.js"></script>
         <script src="/Blackjack/src/enums/card-value.js"></script>
@@ -117,6 +124,7 @@
         <script src="/Blackjack/src/hand.js"></script>
         <script src="/Blackjack/src/player.js"></script>
         <script src="/Blackjack/src/dealer.js"></script>
+        <script src="/Blackjack/src/rules.js"></script>
         <script src="/Blackjack/src/stats.js"></script>
         <script src="/Blackjack/src/blackjack.js"></script>
     </body>

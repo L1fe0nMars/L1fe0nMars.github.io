@@ -12,19 +12,13 @@ const NEW_GAME_BTN = document.getElementById("new-game-btn");
 const BET_AMOUNT = document.getElementById("bet-amount");
 const BET_BTN = document.getElementById("bet-btn");
 const ERROR_TEXT = document.getElementById("error-text");
+const CURRENT_BET_TEXT = document.getElementById("current-bet-text");
 const CURRENT_BET = document.getElementById("current-bet");
 const PLAYER_MONEY = document.getElementById("player-money-amount");
-const RULES_LIST = document.getElementById("rules-list");
 
 const player = new Player();
 const dealer = new Dealer();
 const deck = new Deck(BLACKJACK_RULES.NUM_MAX_DECKS);
-
-for (let i = 0; i < BLACKJACK_RULES.RULES.length; i++) {
-    const listElement = document.createElement("li");
-    listElement.innerHTML = BLACKJACK_RULES.RULES[i];
-    RULES_LIST.appendChild(listElement);
-}
 
 resetGame();
 
@@ -58,6 +52,7 @@ function resetGame() {
     DISPLAY_INFO.innerHTML = "";
     PLAYER_SCORE.innerHTML = "";
     DEALER_SCORE.innerHTML = "";
+    CURRENT_BET_TEXT.style.display = "none";
     CURRENT_BET.innerHTML = "";
     PLAYER_MONEY.innerHTML = 100;
 }
@@ -90,6 +85,7 @@ function placeBet(betAmount) {
 
     player.betAmount = betAmount;
     CURRENT_BET.innerHTML = betAmount;
+    CURRENT_BET_TEXT.style.display = "block";
     PLAYER_MONEY.innerHTML = player.money - betAmount;
 
     dealInitialCards(playerHand, false);
@@ -309,6 +305,7 @@ function endGameResult() {
 
     payoutPlayer();
     CURRENT_BET.innerHTML = "";
+    CURRENT_BET_TEXT.style.display = "none";
     PLAYER_MONEY.innerHTML = player.money;
     toggleButton(BET_BTN);
 
