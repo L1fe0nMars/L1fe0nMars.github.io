@@ -106,7 +106,7 @@ function closeStatsModal() {
  * @return {boolean} Whether the modal is open or not
  */
 function isStatsModalOpen() {
-    return STATS_MODAL.style.display === "block" ? true : false;
+    return STATS_MODAL.style.display === "block";
 }
 
 STATS_BTN.addEventListener("click", openStatsModal);

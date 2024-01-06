@@ -34,7 +34,7 @@ function closeRulesModal() {
  * @return {boolean} Whether the modal is open or not
  */
 function isRulesModalOpen() {
-    return RULES_MODAL.style.display === "block" ? true : false;
+    return RULES_MODAL.style.display === "block";
 }
 
 RULES_BTN.addEventListener("click", openRulesModal);
