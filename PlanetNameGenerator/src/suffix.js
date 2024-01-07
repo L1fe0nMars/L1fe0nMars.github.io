@@ -85,6 +85,7 @@ class Suffix {
         "ies",
         "iex",
         "ii",
+        "ij",
         "ik",
         "il",
         "im",
