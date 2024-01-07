@@ -104,23 +104,20 @@ button {
     object-fit: cover;
 }
 
-.swiper-pagination{
+.swiper-pagination {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
+    --swiper-pagination-color: var(--blue-glow);
+    --swiper-pagination-bullet-inactive-color: gray;
+    --swiper-pagination-bullet-size: 1em;
 }
 
 .swiper-pagination-bullet {
-    background-color: gray !important;
-    width: 1em !important;
-    height: 1em !important;
     transition: 0.25s ease;
 }
 
 .swiper-pagination-bullet-active {
-    background-color: var(--blue-glow) !important;
-    width: 1em !important;
-    height: 1em !important;
     filter: drop-shadow(0 0 3px var(--blue-glow));
 }
 
