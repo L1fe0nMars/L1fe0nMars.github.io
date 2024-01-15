@@ -126,7 +126,6 @@ const projects = [
 
 let swiper = new Swiper(".mySwiper", {
     effect: "coverflow",
-    grabCursor: true,
     centeredSlides: true,
     slidesPerView: 2.5,
     initialSlide: 1,
