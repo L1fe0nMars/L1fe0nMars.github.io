@@ -27,7 +27,7 @@ const projects = [
             bet using imaginary money, and then decide whether they want to hit or stand. In addition to the game itself, I thought it would be a cool idea to keep track 
             of different stats, such as wins, losses, draws, biggest payout, and more. These stats are saved to the browser's local storage and can be accessed anytime. 
             All of these features and a simple UI make for an engaging web project to play.`,
-        link: "/Blackjack/index.html",
+        link: "/Blackjack/",
         linkText: "Visit Project",
         logos: {
             "html": "block",
@@ -109,7 +109,7 @@ const projects = [
             The possibility of so many different names is what lead me to implement the ability to save your favorite names, that way you'll never lose them. 
             You can also generate up to 100 names at a time, specify the first letter of generated names, and copy any name with one click of a button. With all of 
             my projects, I strive to implement features that I believe would greatly benefit the user experience, and this project was no exception.`,
-        link: "/PlanetNameGenerator/index.html",
+        link: "/PlanetNameGenerator/",
         linkText: "Visit Project",
         logos: {
             "html": "block",
