@@ -17,12 +17,14 @@ body {
     border-radius: 20px;
 }
 
-h1 {
+h1,
+h2,
+h3 {
     font-size: 2em;
     font-family: 'Nunito Sans Bold', sans-serif;
     color: var(--off-white);
     width: max-content;
-    background: linear-gradient(90deg, rgb(58, 232, 255), rgb(0, 153, 255));
+    background: linear-gradient(90deg, #3ae8ff, #0099ff);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -63,7 +65,7 @@ button {
     max-width: 45em;
 }
 
-#heading h1 {
+h1 {
     font-size: 2.5em;
     font-family: 'Nunito Sans Extra Bold', sans-serif;
 }
@@ -121,7 +123,7 @@ button {
     filter: drop-shadow(0 0 3px var(--blue-glow));
 }
 
-#projects h1 {
+#projects h2 {
     margin-top: 1em;
     margin-bottom: 0.5em;
 }
@@ -143,8 +145,8 @@ button {
     box-shadow: 0 0 25px -5px var(--blue-glow);
 }
 
-#features h1,
-#built-with h1 {
+#features h2,
+#built-with h2 {
     margin-bottom: 0.5em;
 }
 
@@ -216,7 +218,7 @@ button {
     background-attachment: fixed;
 }
 
-#contact h1 {
+#contact h2 {
     font-family: 'Nunito Sans Extra Bold', sans-serif;
 }
 
@@ -327,7 +329,8 @@ textarea:focus {
 
 /* TABLETS */
 @media screen and (min-width: 481px) and (max-width: 1024px) {
-    h1 {
+    h2,
+    h3 {
         font-size: 2.5em;
     }
 }
@@ -335,11 +338,12 @@ textarea:focus {
 /* PC */
 @media screen and (min-width: 1025px) {
     h1 {
-        font-size: 3em;
-    }
-
-    #heading h1 {
         font-size: 4em;
+    }
+    
+    h2,
+    h3 {
+        font-size: 3em;
     }
 
     #project-info {

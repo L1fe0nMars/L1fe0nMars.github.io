@@ -14,7 +14,8 @@ main {
     flex: 1;
 }
 
-h1 {
+h1,
+h2 {
     font-size: 2em;
 }
 
@@ -227,7 +228,7 @@ input {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-#rules h1 {
+#rules h2 {
     margin-bottom: 0.5em;
 }
 
@@ -264,7 +265,7 @@ input {
     height: 100%;
 }
 
-#stats h1 {
+#stats h2 {
     padding: 1em 0;
 }
 
@@ -337,14 +338,16 @@ footer {
 
 /* TABLETS */
 @media screen and (min-width: 481px) and (max-width: 1024px) {
-    h1 {
+    h1,
+    h2 {
         font-size: 2.5em;
     }
 }
 
 /* PC */
 @media screen and (min-width: 1025px) {
-    h1 {
+    h1,
+    h2 {
         font-size: 3em;
     }
 }
