@@ -73,15 +73,15 @@ const projects = [
         features: [
             "Responsive Design",
             "Light/Dark Mode Toggle",
-            `Swipeable Images Using <a href="https://swiperjs.com/" target="_blank" rel="noopener noreferrer" class="text-link">SwiperJS</a> Library`,
+            `Swipeable Image Galleries Using <a href="https://swiperjs.com/" target="_blank" rel="noopener noreferrer" class="text-link">SwiperJS</a> Library`,
         ],
         description: `21 Classics is a website dedicated to my dad's collector car business. Originally created by myself with a website builder in 2020, 
-            the website underwent a complete overhaul in July 2023 as I began my journey into front-end development. It was remade entirely from scratch using pure HTML, 
-            CSS, and JavaScript. The goal was to make the design simple but elegant, while making sure the cars stand out.<br><br>
+            the website underwent a complete overhaul in July 2023. It was remade entirely from scratch using pure HTML, CSS, and JavaScript. The goal was to make the 
+            design simple but elegant, while making sure the cars stand out.<br><br>
             
             UI/UX were key in my design choices. The website's responsive design allows the content to adapt to any screen size, while features such as the light/dark mode toggle 
-            and swipeable images let the user have an interactive experience when viewing the content. Buttons were specifically chosen to be colorful to make them stand out, and 
-            the simple header makes it easy for the user to navigate through the site. The 21 Classics website is a perfect example of how there's beauty in simplicity.`,
+            and swipeable image galleries let the user have an interactive experience when viewing the content. Buttons were specifically chosen to be colorful to make them stand out, 
+            and the simple header makes it easy for the user to navigate through the site. The 21 Classics website is a perfect example of how there's beauty in simplicity.`,
         link: "https://21classics.com/",
         linkText: "Visit Website",
         logos: {
