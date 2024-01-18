@@ -146,7 +146,7 @@ let swiper = new Swiper(".mySwiper", {
         520: {
             slidesPerView: 1.5,
         },
-        950: {
+        1200: {
             slidesPerView: 2.5,
         },
     },

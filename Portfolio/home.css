@@ -345,7 +345,9 @@ textarea:focus {
     h3 {
         font-size: 3em;
     }
+}
 
+@media screen and (min-width: 1200px) {
     #project-info {
         display: grid;
         grid-template-columns: 0.5fr 1fr 0.5fr;
