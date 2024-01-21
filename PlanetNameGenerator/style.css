@@ -24,6 +24,10 @@ ul {
     color: var(--space-color);
 }
 
+.fa-regular {
+    font-size: 1.17em;
+}
+
 header {
     margin-bottom: 3em;
 }
@@ -221,10 +225,10 @@ summary {
 }
 
 .fa-circle-xmark {
-    margin-left: 0.5em;
+    margin-left: 0.6em;
     cursor: pointer;
     color: rgb(224, 49, 49);
-    font-size: 0.9em;
+    font-size: 1em;
     transition: 0.1s ease-out;
 }
 

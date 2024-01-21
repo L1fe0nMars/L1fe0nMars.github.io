@@ -53,7 +53,7 @@ function createNameList(nameList, numNames) {
     for (let i = 0; i < numNames; i++) {
         const listElement = document.createElement("li");
         const name = document.createElement("h2");
-        const copyIcon = document.createElement("h3");
+        const copyIcon = document.createElement("span");
         const storedNames = localStorage["savedNames"];
 
         nameList === NAMES_LIST
@@ -75,7 +75,7 @@ function createNameList(nameList, numNames) {
 
         if (nameList === NAMES_LIST) {
             const nameDiv = document.createElement("div");
-            const starIcon = document.createElement("h3");
+            const starIcon = document.createElement("span");
 
             starIcon.innerHTML = '<i class="fa-regular fa-star" title="Save name"></i>';
             starIcon.onclick = () => {
@@ -89,7 +89,7 @@ function createNameList(nameList, numNames) {
             listElement.appendChild(nameDiv);
         }
         else {
-            const deleteButton = document.createElement("h3");
+            const deleteButton = document.createElement("span");
 
             deleteButton.innerHTML = '<i class="fa-regular fa-circle-xmark" title="Remove name"></i>';
             deleteButton.onclick = () => {
