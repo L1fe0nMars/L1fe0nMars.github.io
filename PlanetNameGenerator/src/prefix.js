@@ -113,6 +113,7 @@ class Prefix {
             "Eks",
             "Ekt",
             "El",
+            "Eld",
             "Eldr",
             "Elp",
             "Elr",
