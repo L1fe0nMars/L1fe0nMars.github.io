@@ -279,6 +279,7 @@ class Prefix {
         [
             "S",
             "Sc",
+            "Scl",
             "Sh",
             "Shr",
             "Sk",
