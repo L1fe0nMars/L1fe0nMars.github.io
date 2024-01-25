@@ -53,7 +53,8 @@ footer li {
 
 footer hr {
     margin: 0 auto;
-    width: 70%;
+    width: 80%;
+    max-width: 65em;
     height: 2px;
     background-color: rgb(57, 66, 68);
     border: none;
@@ -76,11 +77,4 @@ footer p {
 
 .fa-chevron-up {
     font-size: 2em;
-}
-
-/* PC + TABLETS */
-@media (min-width: 481px) {
-    footer hr {
-        width: 55%;
-    }
 }
