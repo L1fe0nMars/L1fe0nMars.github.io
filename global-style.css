@@ -10,32 +10,32 @@
 
 @font-face { 
     font-family: 'Nunito Sans'; 
-    src: url("/Portfolio/fonts/Nunito-Sans/static/NunitoSans_10pt-Regular.ttf");
+    src: url("/portfolio/fonts/Nunito-Sans/static/NunitoSans_10pt-Regular.ttf");
 }
 
 @font-face { 
     font-family: 'Nunito Sans Bold'; 
-    src: url("/Portfolio/fonts/Nunito-Sans/static/NunitoSans_10pt-Bold.ttf");
+    src: url("/portfolio/fonts/Nunito-Sans/static/NunitoSans_10pt-Bold.ttf");
 }
 
 @font-face { 
     font-family: 'Nunito Sans Extra Bold'; 
-    src: url("/Portfolio/fonts/Nunito-Sans/static/NunitoSans_10pt-ExtraBold.ttf");
+    src: url("/portfolio/fonts/Nunito-Sans/static/NunitoSans_10pt-ExtraBold.ttf");
 }
 
 @font-face { 
     font-family: 'Rajdhani'; 
-    src: url("/PlanetNameGenerator/fonts/Rajdhani/Rajdhani-Regular.ttf");
+    src: url("/planet-name-generator/fonts/Rajdhani/Rajdhani-Regular.ttf");
 }
 
 @font-face { 
     font-family: 'Rajdhani Bold'; 
-    src: url("/PlanetNameGenerator/fonts/Rajdhani/Rajdhani-Bold.ttf");
+    src: url("/planet-name-generator/fonts/Rajdhani/Rajdhani-Bold.ttf");
 }
 
 @font-face { 
     font-family: 'Playing Card'; 
-    src: url("/Blackjack/fonts/jqkas-wild-font/JqkasWild.ttf");
+    src: url("/blackjack/fonts/jqkas-wild-font/JqkasWild.ttf");
 }
 
 * {

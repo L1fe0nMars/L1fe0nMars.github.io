@@ -50,7 +50,7 @@ button {
 
 #heading-section {
     height: 100vh;
-    background-image: url(/Portfolio/images/stars.png);
+    background-image: url(/portfolio/images/stars.png);
     background-position: center;
     background-attachment: fixed;
     display: flex;
@@ -213,7 +213,7 @@ h1 {
     display: flex;
     align-items: center;
     flex-direction: column;
-    background-image: url(/Portfolio/images/stars.png);
+    background-image: url(/portfolio/images/stars.png);
     background-position: center;
     background-attachment: fixed;
 }

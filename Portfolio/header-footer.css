@@ -3,7 +3,7 @@ header {
     padding: 0.5em 0;
     display: flex;
     align-items: center;
-    background-image: url(/Portfolio/images/stars.png);
+    background-image: url(/portfolio/images/stars.png);
     background-position: center;
     background-attachment: fixed;
     position: absolute;
