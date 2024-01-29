@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="A simple password generator with a few different customization options.">
+        <meta name="description" content="A simple, secure password generator with a few different customization options.">
         <meta name="theme-color" content="#161d27">
         <link rel="stylesheet" href="/global-style.css">
         <link rel="stylesheet" href="/password-generator/style.css">
@@ -35,15 +35,15 @@
                 <div id="container">
                     <i class="fa-solid fa-lock"></i>
                     <h1>Password Generator</h1>
-                    <div id="password-container">
+                    <div id="password-container" title="Copy password">
                         <p id="password">Password</p>
-                        <i class="fa-regular fa-copy"></i>
+                        <i class="fa-regular fa-copy" id="copy-icon"></i>
                     </div>
                     <button id="password-btn">Generate Password</button>
                     <form>
                         <div id="length-label">
-                            <label id="length" for="length">Password Length</label>
-                            <input id="password-length" type="number" name="length" min="6" max="24" value="16">
+                            <label id="length" for="password-length">Password Length</label>
+                            <input id="password-length" type="number" name="length" min="8" max="24" value="16">
                         </div>
                         <div id="checkboxes">
                             <label for="uppercase">

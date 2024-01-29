@@ -21,7 +21,7 @@ body {
 }
 
 header {
-    margin-bottom: 3em;
+    margin-bottom: 2em;
 }
 
 header ul {
@@ -153,15 +153,15 @@ footer {
 }
 
 footer a {
-    color: var(--btn);
+    color: var(--icon);
 }
 
 footer a:hover {
     text-decoration: underline;
 }
 
-/* PC + TABLETS */
-@media (min-width: 481px) {
+/* PC */
+@media screen and (min-width: 1025px) {
     header {
         position: absolute;
         width: 100%;
