@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="A simple password generator with a few different customization options.">
+        <meta name="theme-color" content="#161d27">
+        <link rel="stylesheet" href="/global-style.css">
+        <link rel="stylesheet" href="/password-generator/style.css">
+        <title>Password Generator</title>
+    </head>
+    <body>
+        <header>
+            <ul>
+                <li>
+                    <a href="mailto:jkama005@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email">
+                        <i class="fa fa-solid fa-envelope"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/L1fe0nMars" target="_blank" rel="noopener" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/jamal-kamareddine-81b654278/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </li>
+            </ul>
+        </header>
+        <main>
+            <section>
+                <div id="container">
+                    <i class="fa-solid fa-lock"></i>
+                    <h1>Password Generator</h1>
+                    <div id="password-container">
+                        <p id="password">Password</p>
+                        <i class="fa-regular fa-copy"></i>
+                    </div>
+                    <button id="password-btn">Generate Password</button>
+                    <form>
+                        <div id="length-label">
+                            <label id="length" for="length">Password Length</label>
+                            <input id="password-length" type="number" name="length" min="6" max="24" value="16">
+                        </div>
+                        <div id="checkboxes">
+                            <label for="uppercase">
+                                <input id="uppercase" type="checkbox" name="uppercase" checked>
+                                Uppercase
+                            </label>
+                            <label for="lowercase">
+                                <input id="lowercase" type="checkbox" name="uppercase" checked>
+                                Lowercase
+                            </label>
+                            <label for="numbers">
+                                <input id="numbers" type="checkbox" name="uppercase" checked>
+                                Numbers
+                            </label>
+                            <label for="symbols">
+                                <input id="symbols" type="checkbox" name="uppercase" checked>
+                                Symbols
+                            </label>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </main>
+        <footer>
+            <p>Developed by <a href="https://l1fe0nmars.github.io/" target="_blank" rel="noopener noreferrer">Jamal Kamareddine</a></p>
+        </footer>
+        <script src="https://kit.fontawesome.com/4f246fd89d.js" crossorigin="anonymous"></script>
+        <script src="/password-generator/src/password-generator.js"></script>
+    </body>
+</html>

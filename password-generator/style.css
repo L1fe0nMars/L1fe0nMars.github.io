@@ -1,0 +1,169 @@
+:root {
+    --bg: #161d27;
+    --icon: #98cdf5;
+    --border: #96a3b9;
+    --box-bg: #222a35;
+    --btn: #007ffc;
+    --btn-dark: #0058b1;
+}
+
+* {
+    font-family: 'Poppins', Verdana, sans-serif;
+}
+
+body {
+    text-align: center;
+    background: var(--bg);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: var(--off-white);
+}
+
+header {
+    margin-bottom: 3em;
+}
+
+header ul {
+    list-style: none;
+    margin-right: 0;
+    padding-top: 0.5em;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+header li {
+    font-size: 2em;
+    padding: 0 0.4em;
+}
+
+header li a,
+#bottom-text a {
+    transition: 0.25s ease;
+}
+
+header li a:hover,
+#bottom-text a:hover {
+    opacity: 0.5;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section {
+    padding: 0 1em;
+    width: 100%;
+}
+
+#container {
+    margin: 0 auto;
+    padding: 4em 2em;
+    max-width: 30em;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+}
+
+.fa-lock {
+    color: var(--icon);
+    font-size: 2em;
+}
+
+h1 {
+    padding: 0.25em 0;
+    letter-spacing: 0.05em;
+}
+
+#password-container {
+    margin: 1em auto;
+    padding: 0.75em;
+    background-color: var(--box-bg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#password {
+    color: var(--border);
+}
+
+.fa-copy {
+    color: var(--btn);
+}
+
+#password-btn {
+    padding: 0.75em 0;
+    border-radius: 8px;
+    width: 100%;
+    background-color: var(--btn);
+    transition: 0.2s ease;
+}
+
+#password-btn:hover {
+    background-color: var(--btn-dark);
+}
+
+form {
+    padding-top: 1.5em;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 2em;
+}
+
+label {
+    display: flex;
+    align-items: center;
+}
+
+label:not(#length) {
+    cursor: pointer;
+}
+
+#length-label input {
+    margin-top: 1em;
+    font-size: 1em;
+}
+
+input[type="number"] {
+    padding: 0.3em;
+    width: 4em;
+    color: var(--border);
+    background-color: var(--box-bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+}
+
+input[type="checkbox"] {
+    width: 1.5em;
+    height: 1.5em;
+    margin-right: 0.5em;
+    accent-color: var(--btn);
+    cursor: pointer;
+}
+
+footer {
+    padding: 1em 0;
+}
+
+footer a {
+    color: var(--btn);
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* PC + TABLETS */
+@media (min-width: 481px) {
+    header {
+        position: absolute;
+        width: 100%;
+    }
+}
