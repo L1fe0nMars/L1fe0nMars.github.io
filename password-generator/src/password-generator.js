@@ -16,7 +16,7 @@ const MAX_CHARS = 24;
 const UPPERCASE = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const LOWERCASE = 'abcdefghijklmnopqrstuvwxyz';
 const NUMBERS = '0123456789';
-const SYMBOLS = "`~!@#$%^&*()-_=+[]{}\|;:',.<>/?";
+const SYMBOLS = `~!@#$%^&*()-_=+[]{}\|;:'",.<>/?`;
 
 /**
  * Checks if at least one checkbox is checked
