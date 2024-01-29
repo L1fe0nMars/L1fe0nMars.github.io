@@ -1,3 +1,8 @@
+:root {
+    --blackjack-color: #187a47;
+    --blackjack-color-dark: #093606;
+}
+
 html {
     background: radial-gradient(var(--blackjack-color), var(--blackjack-color-dark));
     background-repeat: no-repeat;

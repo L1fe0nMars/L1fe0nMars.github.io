@@ -1,11 +1,8 @@
 :root {
-    --off-white: rgb(245, 245, 245);
-    --dark-mode: rgb(28, 28, 28);
-    --blue-glow: rgb(67, 183, 255);
-    --paragraph-color: rgb(174, 197, 202);
-    --space-color: rgb(65, 201, 255);
-    --blackjack-color: rgb(24, 122, 71);
-    --blackjack-color-dark: rgb(9, 54, 6);
+    --off-white: #f5f5f5;
+    --dark-mode: #1c1c1c;
+    --blue-glow: #43b7ff;
+    --paragraph-color: #aec5ca;
 }
 
 @font-face { 

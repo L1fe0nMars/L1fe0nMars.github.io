@@ -1,10 +1,16 @@
+:root {
+    --space-color: #41c9ff;
+    --highlight: #0090c9;
+    --delete: #e03131;
+}
+
 * {
     font-family: 'Rajdhani', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 ::selection,
 ::-moz-selection {
-    background: rgb(0, 144, 201);
+    background: var(--highlight);
 }
 
 body {
@@ -227,7 +233,7 @@ summary {
 .fa-circle-xmark {
     margin-left: 0.6em;
     cursor: pointer;
-    color: rgb(224, 49, 49);
+    color: var(--delete);
     font-size: 1em;
     transition: 0.1s ease-out;
 }
@@ -256,7 +262,7 @@ summary {
     }
 
     .fa-circle-xmark:hover {
-        color: rgb(224, 49, 49);
+        color: var(--delete);
     }
 }
 
