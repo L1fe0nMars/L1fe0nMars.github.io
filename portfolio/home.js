@@ -5,12 +5,39 @@ const FEATURES_LIST = document.getElementById("features-list");
 const PROJECT_DESCRIPTION = document.getElementById("description-text");
 const PROJECT_LINK = document.getElementById("link");
 const PROJECT_LINK_BTN = document.getElementById("link-btn");
+const TECH_LIST = document.getElementById("tech-list")
 const SOURCE_CODE_DIV = document.getElementById("source-code-div");
 const SOURCE_CODE_LINK = document.getElementById("source-code");
 const JAVA_BTN = document.getElementById("java-btn");
 const JAVA_LINK = document.getElementById("java-link");
 
 const projects = [
+    {
+        title: "Password Generator",
+        features: [
+            "Generate Cryptographically Secure Passwords",
+            "Customize Password Length and Characters",
+            "Simple and Intuitive UI",
+        ],
+        description: `Security is a crucial aspect of the internet. Without it, everyone's sensitive information would be compromised. Having a strong password to your 
+            accounts is just one way to bolster that security, which is why I wanted to make my own secure password generator. By combining random letters, numbers, and 
+            symbols, it creates passwords that would be extremely difficult for any hacker to crack.<br><br>
+            
+            Originally I was just going to use Math.random to randomly select string characters, but researching on the topic lead me to discover that Math.random
+            wouldn't be ideal because it's not secure at all. Instead, I found that the window.crypto object can be used in its place to generate secure random numbers. It 
+            has a function that essentially seeds the selection of the random characters based on the user's window. This ensures that each generated password is unique 
+            to the user that generates them, making it cryptographically secure.`,
+        link: "/password-generator/",
+        linkText: "Visit Project",
+        logos: {
+            "html": "block",
+            "css": "block",
+            "javascript": "block",
+        },
+        sourceCode: "https://github.com/L1fe0nMars/L1fe0nMars.github.io/tree/main/password-generator",
+        javaBtnDisplay: "none",
+        javaSourceLink: "",
+    },
     {
         title: "Blackjack",
         features: [
@@ -33,8 +60,6 @@ const projects = [
             "html": "block",
             "css": "block",
             "javascript": "block",
-            "react": "none",
-            "swiperjs": "none",
         },
         sourceCode: "https://github.com/L1fe0nMars/ProjectPortfolio/tree/main/blackjack",
         javaBtnDisplay: "block",
@@ -58,11 +83,7 @@ const projects = [
         link: "https://master--keen-torte-d6dd9d.netlify.app/",
         linkText: "Visit Project",
         logos: {
-            "html": "none",
-            "css": "none",
-            "javascript": "none",
             "react": "block",
-            "swiperjs": "none",
         },
         sourceCode: "https://github.com/L1fe0nMars/weatherguesser",
         javaBtnDisplay: "none",
@@ -80,15 +101,14 @@ const projects = [
             design simple but elegant, while making sure the cars stand out.<br><br>
             
             UI/UX were key in my design choices. The website's responsive design allows the content to adapt to any screen size, while features such as the light/dark mode toggle 
-            and swipeable image galleries let the user have an interactive experience when viewing the content. Buttons were specifically chosen to be colorful to make them stand out, 
-            and the simple header makes it easy for the user to navigate through the site. The 21 Classics website is a perfect example of how there's beauty in simplicity.`,
+            and swipeable image galleries let the user have an interactive experience when viewing the content. Buttons were specifically chosen to be colorful to make them stand
+            out, and the simple header makes it easy for the user to navigate through the site. The 21 Classics website is a perfect example of how there's beauty in simplicity.`,
         link: "https://21classics.com/",
         linkText: "Visit Website",
         logos: {
             "html": "block",
             "css": "block",
             "javascript": "block",
-            "react": "none",
             "swiperjs": "block",
         },
         sourceCode: "https://github.com/L1fe0nMars/21Classics",
@@ -115,8 +135,6 @@ const projects = [
             "html": "block",
             "css": "block",
             "javascript": "block",
-            "react": "none",
-            "swiperjs": "none",
         },
         sourceCode: "https://github.com/L1fe0nMars/ProjectPortfolio/tree/main/planet-name-generator",
         javaBtnDisplay: "block",
@@ -128,7 +146,7 @@ let swiper = new Swiper(".mySwiper", {
     effect: "coverflow",
     centeredSlides: true,
     slidesPerView: 2.5,
-    initialSlide: 1,
+    initialSlide: 2,
     coverflowEffect: {
         rotate: 50,
         stretch: 0,
@@ -196,8 +214,8 @@ function updateProjectInfo(slide) {
         FEATURES_LIST.appendChild(listElement);
     }
 
-    for (const logo in projects[slide].logos) {
-        document.getElementById(logo).style.display = projects[slide].logos[logo];
+    for (const li of TECH_LIST.getElementsByTagName("li")) {
+        li.style.display = projects[slide].logos[li.id] || "none";
     }
 
     projects[slide].javaBtnDisplay === "none"
