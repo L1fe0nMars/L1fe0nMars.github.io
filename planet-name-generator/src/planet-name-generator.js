@@ -1,11 +1,11 @@
-"use strict";
+'use strict';
 
-const GENERATOR_BTN = document.getElementById("generate");
-const NAMES_LIST = document.getElementById("names");
-const NUM_NAMES = document.getElementById("num-names");
-const FIRST_LETTER = document.getElementById("first-letter");
-const SAVED_NAMES = document.getElementById("saved-names");
-const SAVED_NAMES_LIST = document.getElementById("saved-names-list");
+const GENERATOR_BTN = document.getElementById('generate');
+const NAMES_LIST = document.getElementById('names');
+const NUM_NAMES = document.getElementById('num-names');
+const FIRST_LETTER = document.getElementById('first-letter');
+const SAVED_NAMES = document.getElementById('saved-names');
+const SAVED_NAMES_LIST = document.getElementById('saved-names-list');
 
 const MAX_NAMES = Number(NUM_NAMES.max);
 const MIN_NAMES = Number(NUM_NAMES.min);
@@ -18,16 +18,16 @@ const generator = new Generator();
  * @param {string} name The name to save
  */
 function saveName(name) {
-    if (localStorage["savedNames"]) {
-        let savedNames = JSON.parse(localStorage["savedNames"]);
+    if (localStorage['savedNames']) {
+        let savedNames = JSON.parse(localStorage['savedNames']);
 
         if (!savedNames.includes(name)) {
             savedNames.push(name);
-            localStorage["savedNames"] = JSON.stringify(savedNames);
+            localStorage['savedNames'] = JSON.stringify(savedNames);
         }
     }
     else {
-        localStorage["savedNames"] = JSON.stringify([name]);
+        localStorage['savedNames'] = JSON.stringify([name]);
     }
 
     loadNames();
@@ -37,7 +37,7 @@ function saveName(name) {
  * Load all saved names
  */
 function loadNames() {
-    const storedNames = JSON.parse(localStorage["savedNames"]);
+    const storedNames = JSON.parse(localStorage['savedNames']);
 
     clearNames(SAVED_NAMES_LIST);
     createNameList(SAVED_NAMES_LIST, storedNames.length);
@@ -51,36 +51,36 @@ function loadNames() {
  */
 function createNameList(nameList, numNames) {
     for (let i = 0; i < numNames; i++) {
-        const listElement = document.createElement("li");
-        const name = document.createElement("h2");
-        const copyIcon = document.createElement("span");
-        const storedNames = localStorage["savedNames"];
+        const listElement = document.createElement('li');
+        const name = document.createElement('h2');
+        const copyIcon = document.createElement('span');
+        const storedNames = localStorage['savedNames'];
 
         nameList === NAMES_LIST
             ? name.innerHTML = generator.generateName(FIRST_LETTER.value[0])
             : name.innerHTML = JSON.parse(storedNames)[i];
         
-        copyIcon.innerHTML = '<i class="fa-regular fa-copy" title="Copy name"></i>';
-        copyIcon.style.color = "var(--off-white)";
+        copyIcon.innerHTML = `<i class='fa-regular fa-copy' title='Copy name'></i>`;
+        copyIcon.style.color = 'var(--off-white)';
         copyIcon.onclick = () => {
             navigator.clipboard.writeText(name.innerHTML);
-            copyIcon.innerHTML = '<i class="fa-regular fa-circle-check"></i>';
-            copyIcon.style.color = "green";
+            copyIcon.innerHTML = `<i class='fa-regular fa-circle-check'></i>`;
+            copyIcon.style.color = 'green';
 
             setTimeout(() => {
-                copyIcon.innerHTML = '<i class="fa-regular fa-copy" title="Copy name"></i>';
-                copyIcon.style.color = "var(--off-white)";
+                copyIcon.innerHTML = `<i class='fa-regular fa-copy' title='Copy name'></i>`;
+                copyIcon.style.color = 'var(--off-white)';
             }, 2000);
         };
 
         if (nameList === NAMES_LIST) {
-            const nameDiv = document.createElement("div");
-            const starIcon = document.createElement("span");
+            const nameDiv = document.createElement('div');
+            const starIcon = document.createElement('span');
 
-            starIcon.innerHTML = '<i class="fa-regular fa-star" title="Save name"></i>';
+            starIcon.innerHTML = `<i class='fa-regular fa-star' title='Save name'></i>`;
             starIcon.onclick = () => {
                 saveName(name.innerHTML);
-                starIcon.style.color = "var(--space-color)";
+                starIcon.style.color = 'var(--space-color)';
             };
 
             nameDiv.appendChild(name);
@@ -89,9 +89,9 @@ function createNameList(nameList, numNames) {
             listElement.appendChild(nameDiv);
         }
         else {
-            const deleteButton = document.createElement("span");
+            const deleteButton = document.createElement('span');
 
-            deleteButton.innerHTML = '<i class="fa-regular fa-circle-xmark" title="Remove name"></i>';
+            deleteButton.innerHTML = `<i class='fa-regular fa-circle-xmark' title='Remove name'></i>`;
             deleteButton.onclick = () => {
                 deleteSavedName(name.innerHTML);
             };
@@ -122,12 +122,12 @@ function clearNames(nameList) {
  * @param {string} name The name to delete
  */
 function deleteSavedName(name) {
-    let storedNames = JSON.parse(localStorage["savedNames"]);
+    let storedNames = JSON.parse(localStorage['savedNames']);
 
     for (let i = 0; i < storedNames.length; i++) {
         if (name === storedNames[i]) {
             storedNames.splice(i, 1);
-            localStorage["savedNames"] = JSON.stringify(storedNames);
+            localStorage['savedNames'] = JSON.stringify(storedNames);
             break;
         }
     }
@@ -135,7 +135,7 @@ function deleteSavedName(name) {
     loadNames();
 }
 
-GENERATOR_BTN.addEventListener("click", () => {
+GENERATOR_BTN.addEventListener('click', () => {
     let numNames = Number(NUM_NAMES.value);
     
     clearNames(NAMES_LIST);
@@ -155,18 +155,18 @@ GENERATOR_BTN.addEventListener("click", () => {
             || (numNames < 3 && window.innerWidth >= 1025)
             || (numNames < 2 && window.innerWidth >= 600)
         ) {
-            NAMES_LIST.style.display = "flex";
+            NAMES_LIST.style.display = 'flex';
         }
         else {
-            NAMES_LIST.style.display = "grid";
+            NAMES_LIST.style.display = 'grid';
         }
     }
 
     createNameList(NAMES_LIST, numNames);
 });
 
-SAVED_NAMES.addEventListener("click", () => {
-    if (localStorage["savedNames"]) {
+SAVED_NAMES.addEventListener('click', () => {
+    if (localStorage['savedNames']) {
         loadNames();
     }
 });

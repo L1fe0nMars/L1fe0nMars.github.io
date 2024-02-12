@@ -12,17 +12,17 @@
 
 @font-face { 
     font-family: 'Nunito Sans'; 
-    src: url("/portfolio/fonts/Nunito-Sans/static/NunitoSans_10pt-Regular.ttf");
+    src: url("/portfolio/fonts/Nunito-Sans/NunitoSans_10pt-Regular.ttf");
 }
 
 @font-face { 
     font-family: 'Nunito Sans Bold'; 
-    src: url("/portfolio/fonts/Nunito-Sans/static/NunitoSans_10pt-Bold.ttf");
+    src: url("/portfolio/fonts/Nunito-Sans/NunitoSans_10pt-Bold.ttf");
 }
 
 @font-face { 
     font-family: 'Nunito Sans Extra Bold'; 
-    src: url("/portfolio/fonts/Nunito-Sans/static/NunitoSans_10pt-ExtraBold.ttf");
+    src: url("/portfolio/fonts/Nunito-Sans/NunitoSans_10pt-ExtraBold.ttf");
 }
 
 @font-face { 

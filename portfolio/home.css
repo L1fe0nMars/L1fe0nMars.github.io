@@ -1,6 +1,6 @@
 body {
     font-family: 'Nunito Sans', sans-serif;
-    background: radial-gradient(rgb(12, 43, 71), black);
+    background: radial-gradient(#0c2b47, black);
     color: var(--off-white);
 }
 
@@ -76,6 +76,7 @@ h1 {
 }
 
 #heading button {
+    margin-top: 0.75em;
     float: right;
 }
 
@@ -344,6 +345,10 @@ textarea:focus {
     h2,
     h3 {
         font-size: 3em;
+    }
+
+    #heading button {
+        margin-top: 0;
     }
 }
 

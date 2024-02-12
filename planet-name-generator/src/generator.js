@@ -15,18 +15,18 @@ class Generator {
      * 
      * @return {string} The generated name
      */
-    generateName(letter = "") {
+    generateName(letter = '') {
         let nameStrings = [];
         let prefix = this.prefix.getPrefix();
-        let middlePart1 = "";
-        let middlePart2 = "";
-        let middlePart3 = "";
-        let suffix = "";
-        let name = "";
+        let middlePart1 = '';
+        let middlePart2 = '';
+        let middlePart3 = '';
+        let suffix = '';
+        let name = '';
         
-        this.isLetter(letter) ? letter = letter.toUpperCase() : letter = "";
+        this.isLetter(letter) ? letter = letter.toUpperCase() : letter = '';
 
-        letter !== ""
+        letter !== ''
             ? nameStrings.push(this.prefix.getPrefixWithFirstLetter(letter))
             : nameStrings.push(prefix);
         
@@ -90,10 +90,10 @@ class Generator {
     compareNameParts(...strings) {
         const nameParts = strings;
         const lastString = nameParts[nameParts.length - 1];
-        let previousString = "";
+        let previousString = '';
 
         for (let i = nameParts.length - 2; i >= 0; i--) {
-            if (nameParts[i] !== "") {
+            if (nameParts[i] !== '') {
                 previousString = nameParts[i];
 
                 return lastString.localeCompare(previousString) === 0;

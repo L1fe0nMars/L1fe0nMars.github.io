@@ -70,13 +70,13 @@ class Hand {
      * @return {string} The hand information
      */
     toString() {
-        let str = "";
+        let str = '';
 
         for (const card of this.#cards) {
-            str += card.isHidden() ? "(Hidden) ": card.rank + " ";
+            str += card.isHidden() ? '(Hidden) ': card.rank + ' ';
         }
 
-        str += "Total: " + this.score;
+        str += 'Total: ' + this.score;
         
         return str;
     }

@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 const COPY_ICON = document.getElementById('copy-icon');
 const PASSWORD_CONTAINER = document.getElementById('password-container');
@@ -69,12 +69,12 @@ PASSWORD_CONTAINER.addEventListener('click', () => {
 
     COPY_ICON.classList.toggle('fa-copy');
     COPY_ICON.classList.toggle('fa-circle-check');
-    COPY_ICON.style.color = "green";
+    COPY_ICON.style.color = 'green';
 
     setTimeout(() => {
         COPY_ICON.classList.toggle('fa-copy');
         COPY_ICON.classList.toggle('fa-circle-check');
-        COPY_ICON.style.color = "var(--btn)";
+        COPY_ICON.style.color = 'var(--btn)';
     }, 2000);
 });
 

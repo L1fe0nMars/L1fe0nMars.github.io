@@ -1,20 +1,20 @@
-"use strict";
+'use strict';
 
-const BODY = document.querySelector("body");
-const PLAYER_HAND = document.getElementById("player-hand");
-const DEALER_HAND = document.getElementById("dealer-hand");
-const DISPLAY_INFO = document.getElementById("display-info");
-const DEALER_SCORE = document.getElementById("dealer-score");
-const PLAYER_SCORE = document.getElementById("player-score");
-const HIT_BTN = document.getElementById("hit-btn");
-const STAND_BTN = document.getElementById("stand-btn");
-const NEW_GAME_BTN = document.getElementById("new-game-btn");
-const BET_AMOUNT = document.getElementById("bet-amount");
-const BET_BTN = document.getElementById("bet-btn");
-const ERROR_TEXT = document.getElementById("error-text");
-const CURRENT_BET_TEXT = document.getElementById("current-bet-text");
-const CURRENT_BET = document.getElementById("current-bet");
-const PLAYER_MONEY = document.getElementById("player-money-amount");
+const BODY = document.querySelector('body');
+const PLAYER_HAND = document.getElementById('player-hand');
+const DEALER_HAND = document.getElementById('dealer-hand');
+const DISPLAY_INFO = document.getElementById('display-info');
+const DEALER_SCORE = document.getElementById('dealer-score');
+const PLAYER_SCORE = document.getElementById('player-score');
+const HIT_BTN = document.getElementById('hit-btn');
+const STAND_BTN = document.getElementById('stand-btn');
+const NEW_GAME_BTN = document.getElementById('new-game-btn');
+const BET_AMOUNT = document.getElementById('bet-amount');
+const BET_BTN = document.getElementById('bet-btn');
+const ERROR_TEXT = document.getElementById('error-text');
+const CURRENT_BET_TEXT = document.getElementById('current-bet-text');
+const CURRENT_BET = document.getElementById('current-bet');
+const PLAYER_MONEY = document.getElementById('player-money-amount');
 
 const player = new Player();
 const dealer = new Dealer();
@@ -30,12 +30,12 @@ resetGame();
  */
 function toggleButton(button, disable) {
     if (disable) {
-        button.style.opacity = "0.33";
-        button.style.pointerEvents = "none";
+        button.style.opacity = '0.33';
+        button.style.pointerEvents = 'none';
     }
     else {
-        button.style.opacity = "1";
-        button.style.pointerEvents = "auto";
+        button.style.opacity = '1';
+        button.style.pointerEvents = 'auto';
     }
 }
 
@@ -49,11 +49,11 @@ function resetGame() {
 
     player.money = 100;
     player.resetBetAmount();
-    DISPLAY_INFO.innerHTML = "";
-    PLAYER_SCORE.innerHTML = "";
-    DEALER_SCORE.innerHTML = "";
-    CURRENT_BET_TEXT.style.display = "none";
-    CURRENT_BET.innerHTML = "";
+    DISPLAY_INFO.innerHTML = '';
+    PLAYER_SCORE.innerHTML = '';
+    DEALER_SCORE.innerHTML = '';
+    CURRENT_BET_TEXT.style.display = 'none';
+    CURRENT_BET.innerHTML = '';
     PLAYER_MONEY.innerHTML = 100;
 }
 
@@ -85,7 +85,7 @@ function placeBet(betAmount) {
 
     player.betAmount = betAmount;
     CURRENT_BET.innerHTML = betAmount;
-    CURRENT_BET_TEXT.style.display = "block";
+    CURRENT_BET_TEXT.style.display = 'block';
     PLAYER_MONEY.innerHTML = player.money - betAmount;
 
     dealInitialCards(playerHand, false);
@@ -124,23 +124,23 @@ function dealInitialCards(hand, isDealer) {
  */
 function updateHand(handElement, card, cardElement) {
     if (!cardElement) {
-        cardElement = document.createElement("div");
-        cardElement.classList.toggle("card");
+        cardElement = document.createElement('div');
+        cardElement.classList.toggle('card');
         handElement.appendChild(cardElement);
     }
     
-    const cardRankTop = document.createElement("p");
-    const cardRankBottom = document.createElement("p");
-    const cardSuitTop = document.createElement("p");
-    const cardSuitBottom = document.createElement("p");
+    const cardRankTop = document.createElement('p');
+    const cardRankBottom = document.createElement('p');
+    const cardSuitTop = document.createElement('p');
+    const cardSuitBottom = document.createElement('p');
 
-    cardRankTop.className = "card-top";
-    cardSuitTop.className = "card-top";
-    cardRankBottom.className = "card-bottom";
-    cardSuitBottom.className = "card-bottom";
+    cardRankTop.className = 'card-top';
+    cardSuitTop.className = 'card-top';
+    cardRankBottom.className = 'card-bottom';
+    cardSuitBottom.className = 'card-bottom';
     
     if (card.isHidden()) {
-        cardElement.classList.toggle("hidden-card");
+        cardElement.classList.toggle('hidden-card');
     }
     else {
         cardRankTop.innerHTML = card.rank;
@@ -149,7 +149,7 @@ function updateHand(handElement, card, cardElement) {
         cardSuitBottom.innerHTML = card.suit;
         
         if (card.suit === CARD_SUIT.DIAMONDS || card.suit === CARD_SUIT.HEARTS) {
-            cardElement.style.color = "red";
+            cardElement.style.color = 'red';
         }
 
         cardElement.appendChild(cardRankTop);
@@ -177,10 +177,10 @@ function endUserTurn() {
 function dealerTurn() {
     setTimeout(() => {
         const hiddenCard = dealer.hiddenCard;
-        const hiddenCardElement = document.querySelector(".hidden-card");
+        const hiddenCardElement = document.querySelector('.hidden-card');
 
         hiddenCard.hidden = false;
-        hiddenCardElement.classList.toggle("hidden-card");
+        hiddenCardElement.classList.toggle('hidden-card');
 
         updateHand(DEALER_HAND, hiddenCard, hiddenCardElement);
     }, 1000);
@@ -203,10 +203,10 @@ function dealerTurn() {
                         case 0:
                             let newCard = dealer.hit(deck);
                             updateHand(DEALER_HAND, newCard);
-                            DISPLAY_INFO.innerHTML = "The dealer hits.";
+                            DISPLAY_INFO.innerHTML = 'The dealer hits.';
                             break;
                         case 1:
-                            DISPLAY_INFO.innerHTML = "The dealer stands.";
+                            DISPLAY_INFO.innerHTML = 'The dealer stands.';
                             clearInterval(interval);
 
                             setTimeout(() => {
@@ -214,7 +214,7 @@ function dealerTurn() {
                             }, 2000);
                             break;
                         default:
-                            DISPLAY_INFO.innerHTML = "This should never display.";
+                            DISPLAY_INFO.innerHTML = 'This should never display.';
                     }
                 }
             }
@@ -251,27 +251,27 @@ function payoutPlayer() {
         const payoutAmount = 2 * betAmount;
         
         player.payout(payoutAmount);
-        updateStat("lifetimeEarnings", stats.lifetimeEarnings.value + payoutAmount);
+        updateStat('lifetimeEarnings', stats.lifetimeEarnings.value + payoutAmount);
 
         if (payoutAmount > stats.biggestPayout.value) {
-            updateStat("biggestPayout", payoutAmount);
+            updateStat('biggestPayout', payoutAmount);
         }
     }
     else if (playerScore < BLACKJACK_RULES.BLACKJACK_VALUE && (dealerScore < playerScore || dealer.bust())) {
         player.payout(betAmount);
-        updateStat("lifetimeEarnings", stats.lifetimeEarnings.value + betAmount);
+        updateStat('lifetimeEarnings', stats.lifetimeEarnings.value + betAmount);
 
         if (betAmount > stats.biggestPayout.value) {
-            updateStat("biggestPayout", betAmount);
+            updateStat('biggestPayout', betAmount);
         }
     }
     else if (playerScore !== dealerScore) {
         player.payout(-betAmount);
-        updateStat("lifetimeMoneyLost", stats.lifetimeMoneyLost.value + betAmount);
+        updateStat('lifetimeMoneyLost', stats.lifetimeMoneyLost.value + betAmount);
     }
 
     if (player.money > stats.highestTotalMoney.value) {
-        updateStat("highestTotalMoney", player.money);
+        updateStat('highestTotalMoney', player.money);
     }
 }
 
@@ -283,40 +283,40 @@ function endGameResult() {
     const dealerScore = dealer.hand.score;
 
     if (dealer.bust()) {
-        DISPLAY_INFO.innerHTML = "The dealer busts! You win!";
-        updateStat("wins", ++stats.wins.value);
+        DISPLAY_INFO.innerHTML = 'The dealer busts! You win!';
+        updateStat('wins', ++stats.wins.value);
     }
     else if (player.bust()) {
-        DISPLAY_INFO.innerHTML = "Bust! You lose.";
-        updateStat("losses", ++stats.losses.value);
+        DISPLAY_INFO.innerHTML = 'Bust! You lose.';
+        updateStat('losses', ++stats.losses.value);
     }
     else if (dealerScore < playerScore) {
-        DISPLAY_INFO.innerHTML = "You win!";
-        updateStat("wins", ++stats.wins.value);
+        DISPLAY_INFO.innerHTML = 'You win!';
+        updateStat('wins', ++stats.wins.value);
     }
     else if (dealerScore > playerScore) {
-        DISPLAY_INFO.innerHTML = "You lose.";
-        updateStat("losses", ++stats.losses.value);
+        DISPLAY_INFO.innerHTML = 'You lose.';
+        updateStat('losses', ++stats.losses.value);
     }
     else {
-        DISPLAY_INFO.innerHTML = "It's a draw.";
-        updateStat("draws", ++stats.draws.value);
+        DISPLAY_INFO.innerHTML = `It's a draw.`;
+        updateStat('draws', ++stats.draws.value);
     }
 
     payoutPlayer();
-    CURRENT_BET.innerHTML = "";
-    CURRENT_BET_TEXT.style.display = "none";
+    CURRENT_BET.innerHTML = '';
+    CURRENT_BET_TEXT.style.display = 'none';
     PLAYER_MONEY.innerHTML = player.money;
     toggleButton(BET_BTN);
 
     if (player.money === 0) {
         toggleButton(BET_BTN, true);
-        NEW_GAME_BTN.style.display = "inline";
-        updateStat("lostItAll", ++stats.lostItAll.value);
+        NEW_GAME_BTN.style.display = 'inline';
+        updateStat('lostItAll', ++stats.lostItAll.value);
     }
 }
 
-HIT_BTN.addEventListener("click", () => {
+HIT_BTN.addEventListener('click', () => {
     const newCard = player.hit(deck);
     updateHand(PLAYER_HAND, newCard);
 
@@ -331,30 +331,30 @@ HIT_BTN.addEventListener("click", () => {
     }
 });
 
-STAND_BTN.addEventListener("click", () => {
-    DISPLAY_INFO.innerHTML = "You stand.";
+STAND_BTN.addEventListener('click', () => {
+    DISPLAY_INFO.innerHTML = 'You stand.';
     endUserTurn();
 });
 
-BET_BTN.addEventListener("click", () => {
+BET_BTN.addEventListener('click', () => {
     const betAmount = Number(BET_AMOUNT.value);
 
     if (betAmount < BLACKJACK_RULES.MIN_BET_AMOUNT) {
-        ERROR_TEXT.innerHTML = "Minimum bet is $1.";
+        ERROR_TEXT.innerHTML = 'Minimum bet is $1.';
     }
     else if (betAmount > player.money) {
-        ERROR_TEXT.innerHTML = "You cannot bet more money than you have.";
+        ERROR_TEXT.innerHTML = 'You cannot bet more money than you have.';
     }
     else if (!Number.isInteger(betAmount)) {
-        ERROR_TEXT.innerHTML = "You can only bet using whole numbers.";
+        ERROR_TEXT.innerHTML = 'You can only bet using whole numbers.';
     }
     else {
         if (betAmount > stats.highestBet.value) {
-            updateStat("highestBet", betAmount);
+            updateStat('highestBet', betAmount);
         }
 
-        ERROR_TEXT.innerHTML = "";
-        DISPLAY_INFO.innerHTML = "";
+        ERROR_TEXT.innerHTML = '';
+        DISPLAY_INFO.innerHTML = '';
         toggleButton(BET_BTN, true);
         toggleButton(HIT_BTN);
         toggleButton(STAND_BTN);
@@ -362,8 +362,8 @@ BET_BTN.addEventListener("click", () => {
     }
 });
 
-NEW_GAME_BTN.addEventListener("click", () => {
+NEW_GAME_BTN.addEventListener('click', () => {
     resetGame();
-    NEW_GAME_BTN.style.display = "none";
+    NEW_GAME_BTN.style.display = 'none';
     toggleButton(BET_BTN);
 });

@@ -4,13 +4,14 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Jamal Kamareddine is a junior front-end developer who creates responsive, engaging, and elegant web projects.">
+        <meta name="description" content="Jamal Kamareddine is a front-end developer who creates responsive, engaging, and elegant web projects.">
+        <link rel="preload" as="image" href="/portfolio/images/stars.png">
         <meta name="theme-color" content="#11202d">
         <link rel="stylesheet" href="/global-style.css">
         <link rel="stylesheet" href="/portfolio/header-footer.css">
         <link rel="stylesheet" href="/portfolio/home.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
-        <title>Jamal Kamareddine | Junior Front-End Developer</title>
+        <title>Jamal Kamareddine | Front-End Developer</title>
     </head>
     <body>
         <header>
@@ -36,7 +37,7 @@
             <section id="heading-section">
                 <div id="heading">
                     <h1>Jamal<br>Kamareddine</h1>
-                    <p>I'm a junior front-end developer who creates responsive, engaging, and elegant web projects. Don't just take my word for it, take a look at my projects below.</p>
+                    <p>I'm a front-end developer who creates responsive, engaging, and elegant web projects. Don't just take my word for it, take a look at my projects below.</p>
                     <a href="#projects">
                         <button>Check 'Em Out</button>
                     </a>
@@ -54,6 +55,11 @@
                         <div class="swiper-slide">
                             <a href="/blackjack/" target="_blank">
                                 <img src="/portfolio/images/blackjack.jpg" alt="Javascript blackjack project" decoding="async">
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="https://tourmaline-frangollo-d19e23.netlify.app/" target="_blank">
+                                <img src="/portfolio/images/cashfolio.jpg" alt="React expense and income tracker project" decoding="async">
                             </a>
                         </div>
                         <div class="swiper-slide">
@@ -126,9 +132,9 @@
                 <p>In need of a website or front-end developer for your project? Send me a message and let's work together.</p>
                 <form action="https://formspree.io/f/xyyqjrez" method="POST">
                     <label for="name">Name</label>
-                    <input id="name" type="text" name="name" required>
+                    <input id="name" name="name" type="text" required>
                     <label for="email">Email</label>
-                    <input id="email" type="email" name="email" required>
+                    <input id="email" name="email" type="email" required>
                     <label for="message">Message</label>
                     <textarea id="message" name="message" rows="6" cols="30" required></textarea>
                     <button type="submit" value="send">Send</button>

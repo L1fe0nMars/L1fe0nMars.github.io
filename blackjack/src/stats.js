@@ -1,45 +1,45 @@
-"use strict";
+'use strict';
 
-const STATS_BTN = document.getElementById("stats-btn");
-const STATS_MODAL = document.getElementById("stats-modal");
-const STATS_TABLE = document.getElementById("stats");
+const STATS_BTN = document.getElementById('stats-btn');
+const STATS_MODAL = document.getElementById('stats-modal');
+const STATS_TABLE = document.getElementById('stats');
 
 let stats = {
     wins: {
         value: 0,
-        element: "wins",
+        element: 'wins',
     },
     losses: {
         value: 0,
-        element: "losses"
+        element: 'losses'
     },
     draws: {
         value: 0,
-        element: "draws",
+        element: 'draws',
     },
     highestBet: {
         value: 0,
-        element: "highest-bet",
+        element: 'highest-bet',
     },
     biggestPayout: {
         value: 0,
-        element: "biggest-payout",
+        element: 'biggest-payout',
     },
     highestTotalMoney: {
         value: 100,
-        element: "highest-total-money",
+        element: 'highest-total-money',
     },
     lifetimeEarnings: {
         value: 0,
-        element: "lifetime-earnings",
+        element: 'lifetime-earnings',
     },
     lifetimeMoneyLost: {
         value: 0,
-        element: "lifetime-money-lost",
+        element: 'lifetime-money-lost',
     },
     lostItAll: {
         value: 0,
-        element: "lost-it-all",
+        element: 'lost-it-all',
     },
 }
 
@@ -49,7 +49,7 @@ loadStats();
  * Saves the game stats
  */
 function saveStats() {
-    localStorage["stats"] = JSON.stringify(stats);
+    localStorage['stats'] = JSON.stringify(stats);
 
     for (const [key, val] of Object.entries(stats)) {
         document.getElementById(stats[key].element).innerHTML = stats[key].value;
@@ -60,8 +60,8 @@ function saveStats() {
  * Loads the game stats
  */
 function loadStats() {
-    if (localStorage["stats"]) {
-        stats = JSON.parse(localStorage["stats"]);
+    if (localStorage['stats']) {
+        stats = JSON.parse(localStorage['stats']);
 
         for (const [key, val] of Object.entries(stats)) {
             document.getElementById(stats[key].element).innerHTML = stats[key].value;
@@ -88,16 +88,16 @@ function updateStat(stat, newValue) {
  * Opens the stats modal
  */
 function openStatsModal() {
-    STATS_MODAL.style.display = "block";
-    GAME_AREA.style.display = "none";
+    STATS_MODAL.style.display = 'block';
+    GAME_AREA.style.display = 'none';
 }
 
 /**
  * Closes the stats modal
  */
 function closeStatsModal() {
-    STATS_MODAL.style.display = "none";
-    GAME_AREA.style.display = "block";
+    STATS_MODAL.style.display = 'none';
+    GAME_AREA.style.display = 'block';
 }
 
 /**
@@ -106,14 +106,14 @@ function closeStatsModal() {
  * @return {boolean} Whether the modal is open or not
  */
 function isStatsModalOpen() {
-    return STATS_MODAL.style.display === "block";
+    return STATS_MODAL.style.display === 'block';
 }
 
-STATS_BTN.addEventListener("click", openStatsModal);
-CLOSE_BTN[1].addEventListener("click", closeStatsModal);
+STATS_BTN.addEventListener('click', openStatsModal);
+CLOSE_BTN[1].addEventListener('click', closeStatsModal);
 
-document.addEventListener("keydown", (event) => {
-    if (isStatsModalOpen() && event.key === "Escape") {
+document.addEventListener('keydown', (event) => {
+    if (isStatsModalOpen() && event.key === 'Escape') {
         closeStatsModal();
     }
 });
