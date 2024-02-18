@@ -159,6 +159,7 @@ class Suffix {
         'ury',
         'us',
         'usk',
+        'ut',
         'uth',
         'uul',
         'ux',
