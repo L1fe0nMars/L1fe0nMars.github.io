@@ -148,6 +148,7 @@ class Suffix {
         'u',
         'ua',
         'ub',
+        'ug',
         'ui',
         'uin',
         'uk',
