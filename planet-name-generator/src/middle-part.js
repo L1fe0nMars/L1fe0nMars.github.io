@@ -420,23 +420,15 @@ class MiddlePart {
     /**
      * Gets a string from the above array
      * 
-     * @return {string} The middle string
-     */
-    getMiddlePart() {
-        const middle = this.#middlePart[Math.floor(Math.random() * this.#middlePart.length)];
-
-        return middle;
-    }
-
-    /**
-     * Gets a string from the above array that is only 2 characters in length
+     * @param {string} excludedStr A string to exclude to prevent the same string occurring consecutively
      * 
      * @return {string} The middle string
      */
-    getMiddlePartTwoLetters() {
-        const middlePartTwoLetters = this.#middlePart.filter(str => str.length === 2);
+    getMiddlePart(excludedStr = '') {
+        const filtered = this.#middlePart.filter(str => str !== excludedStr);
+        const middle = filtered[Math.floor(Math.random() * filtered.length)];
         
-        return middlePartTwoLetters[Math.floor(Math.random() * middlePartTwoLetters.length)];
+        return middle;
     }
 
     /**
@@ -446,16 +438,5 @@ class MiddlePart {
      */
     getNumMiddleParts() {
         return this.#middlePart.length;
-    }
-
-    /**
-     * Gets the amount of middle part strings that are 2 characters in length
-     * 
-     * @return {number} The total number of possible strings
-     */
-    getNumMiddlePartsTwoLetters() {
-        const middlePartTwoLetters = this.#middlePart.filter(str => str.length === 2);
-
-        return middlePartTwoLetters.length;
     }
 }

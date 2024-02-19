@@ -169,10 +169,13 @@ class Suffix {
     /**
      * Gets a random suffix from the above array
      * 
+     * @param {string} excludedStr A string to exclude to prevent the same string occurring consecutively
+     * 
      * @return {string} The suffix
      */
-    getSuffix() {
-        const suffix = this.#suffixes[Math.floor(Math.random() * this.#suffixes.length)];
+    getSuffix(excludedStr = '') {
+        const filtered = this.#suffixes.filter(str => str !== excludedStr);
+        const suffix = filtered[Math.floor(Math.random() * filtered.length)];
 
         return suffix;
     }

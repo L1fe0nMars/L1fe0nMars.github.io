@@ -16,56 +16,38 @@ class Generator {
      * @return {string} The generated name
      */
     generateName(letter = '') {
-        let nameStrings = [];
-        let prefix = this.prefix.getPrefix();
-        let middlePart1 = '';
-        let middlePart2 = '';
-        let middlePart3 = '';
-        let suffix = '';
-        let name = '';
+        const nameStrings = [];
+        const weights = {
+            3: 0.5,
+            2: 0.2,
+            4: 0.2,
+            5: 0.1,
+        };
+        const nameLength = this.weightedOutcome(weights);
+        let prevStr = '';
+        let name;
         
         this.isLetter(letter) ? letter = letter.toUpperCase() : letter = '';
 
-        letter !== ''
-            ? nameStrings.push(this.prefix.getPrefixWithFirstLetter(letter))
-            : nameStrings.push(prefix);
+        letter !== '' ? name = this.prefix.getPrefixWithFirstLetter(letter) : name = this.prefix.getPrefix();
+
+        nameStrings.push(name);
         
-        if (Math.random() < 0.5) {
-            do {
-                middlePart1 = this.middlePart.getMiddlePart();
-            } while(this.compareNameParts(prefix, middlePart1));
+        for (let i = 1; i < nameLength; i++) {
+            prevStr = nameStrings[i - 1].toLowerCase();
 
-            nameStrings.push(middlePart1);
+            if (i === nameLength - 1) {
+                const suffix = this.suffix.getSuffix(prevStr)
+                name += suffix;
+                nameStrings.push(suffix);
+            }
+            else {
+                const middlePart = this.middlePart.getMiddlePart(prevStr);
+                name += middlePart;
+                nameStrings.push(middlePart);
+            }
         }
-
-        if (Math.random() < 0.5) {
-            do {
-                middlePart2 = this.middlePart.getMiddlePart();
-            } while(this.compareNameParts(prefix, middlePart1, middlePart2));
-
-            nameStrings.push(middlePart2);
-        }
-
-        do {
-            suffix = this.suffix.getSuffix();
-        } while(this.compareNameParts(prefix, middlePart1, middlePart2, suffix));
-
-        nameStrings.push(suffix);
-        
-        if (nameStrings.length === 4 && Math.random() < 0.1) {
-            let index = Math.floor(Math.random() * 3) + 1;
-
-            do {
-                middlePart3 = this.middlePart.getMiddlePartTwoLetters();
-            } while (middlePart3.localeCompare(nameStrings[index]) === 0 || middlePart3.localeCompare(nameStrings[index - 1]) === 0);
-            
-            nameStrings.splice(index, 0, middlePart3);
-        }
-
-        for (let i = 0; i < nameStrings.length; i++) {
-            name += nameStrings[i];
-        }
-
+       
         return name;
     }
 
@@ -81,25 +63,23 @@ class Generator {
     }
 
     /**
-     * Checks if two consecutive string parts are the same
+     * Randomly gets a key from an object of different weights
      * 
-     * @param {strings} strings Each string part of the name
+     * @param {object} weightedObj The object with weights
      * 
-     * @return {boolean} Whether the strings are equal or not
+     * @return {number} The chosen key from the weighted object
      */
-    compareNameParts(...strings) {
-        const nameParts = strings;
-        const lastString = nameParts[nameParts.length - 1];
-        let previousString = '';
-
-        for (let i = nameParts.length - 2; i >= 0; i--) {
-            if (nameParts[i] !== '') {
-                previousString = nameParts[i];
-
-                return lastString.localeCompare(previousString) === 0;
+    weightedOutcome(weightedObj) {
+        const sortedWeights = Object.entries(weightedObj).sort((a, b) => a[1] - b[1]);
+        const randNum = Math.random();
+        let probability = 0;
+        
+        for (const [outcome, weight] of sortedWeights) {
+            probability += weight;
+            
+            if (randNum < probability) {
+                return outcome;
             }
         }
-
-        return false;
     }
 }
