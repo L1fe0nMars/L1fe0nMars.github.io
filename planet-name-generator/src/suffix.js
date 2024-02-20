@@ -106,6 +106,7 @@ class Suffix {
         'ist',
         'ite',
         'ith',
+        'iu',
         'ium',
         'ius',
         'iv',
