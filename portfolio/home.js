@@ -153,7 +153,7 @@ const projects = [
         },
         sourceCode: 'https://github.com/L1fe0nMars/ProjectPortfolio/tree/main/planet-name-generator',
         javaBtnDisplay: 'block',
-        javaSourceLink: 'https://github.com/L1fe0nMars/planet-name-generator',
+        javaSourceLink: 'https://github.com/L1fe0nMars/PlanetNameGenerator',
     },
 ];
 
