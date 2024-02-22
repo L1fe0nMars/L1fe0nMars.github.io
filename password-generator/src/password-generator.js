@@ -4,14 +4,12 @@ const COPY_ICON = document.getElementById('copy-icon');
 const PASSWORD_CONTAINER = document.getElementById('password-container');
 const PASSWORD = document.getElementById('password')
 const PASSWORD_BTN = document.getElementById('password-btn');
-const PASSWORD_LENGTH = document.getElementById('password-length');
+const SLIDER_OUTPUT = document.getElementById('length-output');
+const LENGTH_SLIDER = document.getElementById('password-length');
 const UPPERCASE_CHECKBOX = document.getElementById('uppercase');
 const LOWERCASE_CHECKBOX = document.getElementById('lowercase');
 const NUMBERS_CHECKBOX = document.getElementById('numbers');
 const SYMBOLS_CHECKBOX = document.getElementById('symbols');
-
-const MIN_CHARS = 8;
-const MAX_CHARS = 24;
 
 const UPPERCASE = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const LOWERCASE = 'abcdefghijklmnopqrstuvwxyz';
@@ -78,17 +76,12 @@ PASSWORD_CONTAINER.addEventListener('click', () => {
     }, 2000);
 });
 
-PASSWORD_BTN.addEventListener('click', () => {
-    let length = Number(PASSWORD_LENGTH.value);
+LENGTH_SLIDER.addEventListener('input', () => {
+    SLIDER_OUTPUT.innerHTML = LENGTH_SLIDER.value;
+});
 
-    if (length < MIN_CHARS) {
-        length = MIN_CHARS;
-        PASSWORD_LENGTH.value = MIN_CHARS;
-    } 
-    else if (length > MAX_CHARS) {
-        length = MAX_CHARS;
-        PASSWORD_LENGTH.value = MAX_CHARS;
-    }
+PASSWORD_BTN.addEventListener('click', () => {
+    const length = Number(LENGTH_SLIDER.value);
 
     PASSWORD.innerText = generatePassword(length);
 });
