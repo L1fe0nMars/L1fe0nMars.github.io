@@ -4,11 +4,9 @@ const PROJECT_NAME = document.getElementById('project-name');
 const FEATURES_LIST = document.getElementById('features-list');
 const PROJECT_DESCRIPTION = document.getElementById('description-text');
 const PROJECT_LINK = document.getElementById('link');
-const PROJECT_LINK_BTN = document.getElementById('link-btn');
 const TECH_LIST = document.getElementById('tech-list')
 const SOURCE_CODE_DIV = document.getElementById('source-code-div');
 const SOURCE_CODE_LINK = document.getElementById('source-code');
-const JAVA_BTN = document.getElementById('java-btn');
 const JAVA_LINK = document.getElementById('java-link');
 
 const projects = [
@@ -213,16 +211,16 @@ function updateProjectInfo(slide) {
     PROJECT_NAME.innerHTML = projects[slide].title;
     PROJECT_DESCRIPTION.innerHTML = projects[slide].description;
     PROJECT_LINK.href = projects[slide].link;
-    PROJECT_LINK_BTN.innerHTML = projects[slide].linkText;
+    PROJECT_LINK.innerHTML = projects[slide].linkText;
     SOURCE_CODE_LINK.href = projects[slide].sourceCode;
 
     if (projects[slide].javaSourceLink === undefined) {
-        JAVA_BTN.style.display = 'none';
+        JAVA_LINK.style.display = 'none';
         JAVA_LINK.href = '';
         SOURCE_CODE_DIV.style.gap = '0';
     }
     else {
-        JAVA_BTN.style.display = 'block';
+        JAVA_LINK.style.display = 'block';
         JAVA_LINK.href = projects[slide].javaSourceLink;
         SOURCE_CODE_DIV.style.gap = '2em';
     }
