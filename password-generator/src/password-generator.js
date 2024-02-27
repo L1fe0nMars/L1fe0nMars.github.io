@@ -77,7 +77,10 @@ PASSWORD_CONTAINER.addEventListener('click', () => {
 });
 
 LENGTH_SLIDER.addEventListener('input', () => {
+    const percent = (LENGTH_SLIDER.value - LENGTH_SLIDER.min) / (LENGTH_SLIDER.max - LENGTH_SLIDER.min) * 100;
+
     SLIDER_OUTPUT.innerHTML = LENGTH_SLIDER.value;
+    LENGTH_SLIDER.style.background = `linear-gradient(to right, var(--btn-dark) 0%, var(--btn-dark) ${percent}%, var(--box-bg) ${percent}%, var(--box-bg) 100%)`;
 });
 
 PASSWORD_BTN.addEventListener('click', () => {

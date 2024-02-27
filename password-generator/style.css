@@ -137,19 +137,19 @@ label:not(#length) {
 
 #password-length {
     margin-top: 1em;
+    background: linear-gradient(to right, var(--btn-dark) 0%, var(--btn-dark) 50%, var(--box-bg) 50%, var(--box-bg) 100%);
 }
 
 input[type="range"] {
     height: 1em;
-    background-color: var(--box-bg);
     border-radius: 20px;
     appearance: none;
     -webkit-appearance: none;
 }
 
 input[type="range"]::-webkit-slider-thumb {
-    height: 1.5em;
-    width: 1.5em;
+    height: 1.75em;
+    width: 1.75em;
     background: var(--btn);
     border-radius: 50%;
     cursor: pointer;
