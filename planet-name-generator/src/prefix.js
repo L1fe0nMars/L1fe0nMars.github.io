@@ -245,6 +245,7 @@ class Prefix {
             'Oj',
             'Ok',
             'Okr',
+            'Ols',
             'Olv',
             'Om',
             'Omn',
