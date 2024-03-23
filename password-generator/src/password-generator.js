@@ -29,6 +29,35 @@ function anyBoxIsChecked() {
 }
 
 /**
+ * Checks if the password contains at least 1 character from each checked option
+ * 
+ * @param {number} password The password to check
+ * 
+ * @return {boolean} If the password meets the conditions
+ */
+function isPasswordValid(password) {
+    let isValid = true;
+
+    if (LOWERCASE_CHECKBOX.checked) {
+        isValid = isValid && /[a-z]/.test(password);
+    }
+    if (UPPERCASE_CHECKBOX.checked) {
+        isValid = isValid && /[A-Z]/.test(password);
+    }
+    if (NUMBERS_CHECKBOX.checked) {
+        isValid = isValid && /[0-9]/.test(password);
+    }
+    if (SYMBOLS_CHECKBOX.checked) {
+        const escapedSymbols = SYMBOLS.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+        const symbolsRegex = new RegExp(`[${escapedSymbols}]`);
+
+        isValid = isValid && symbolsRegex.test(password);
+    }
+
+    return isValid;
+}
+
+/**
  * Generates a random password
  * 
  * @param {number} length The length of the password
@@ -36,28 +65,32 @@ function anyBoxIsChecked() {
  * @return {string} The generated password
  */
 function generatePassword(length) {
+    let password;
     let chars = '';
-    let password = '';
-    const arr = new Uint32Array(length);
-    window.crypto.getRandomValues(arr);
     
-    if (!anyBoxIsChecked() || LOWERCASE_CHECKBOX.checked) {
-        chars += LOWERCASE;
-        LOWERCASE_CHECKBOX.checked = true;
-    }
-    if (UPPERCASE_CHECKBOX.checked) {
-        chars += UPPERCASE;
-    }
-    if (NUMBERS_CHECKBOX.checked) {
-        chars += NUMBERS;
-    }
-    if (SYMBOLS_CHECKBOX.checked) {
-        chars += SYMBOLS;
-    }
-    
-    for (let i = 0; i < length; i++) {
-        password += chars.charAt(arr[i] % chars.length);
-    }
+    do {
+        const arr = new Uint32Array(length);
+        window.crypto.getRandomValues(arr);
+        password = '';
+        
+        if (!anyBoxIsChecked() || LOWERCASE_CHECKBOX.checked) {
+            chars += LOWERCASE;
+            LOWERCASE_CHECKBOX.checked = true;
+        }
+        if (UPPERCASE_CHECKBOX.checked) {
+            chars += UPPERCASE;
+        }
+        if (NUMBERS_CHECKBOX.checked) {
+            chars += NUMBERS;
+        }
+        if (SYMBOLS_CHECKBOX.checked) {
+            chars += SYMBOLS;
+        }
+        
+        for (let i = 0; i < length; i++) {
+            password += chars.charAt(arr[i] % chars.length);
+        }
+    } while (!isPasswordValid(password));
     
     return password;
 }
