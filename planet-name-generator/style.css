@@ -8,8 +8,7 @@
     font-family: 'Rajdhani', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-::selection,
-::-moz-selection {
+::selection {
     background: var(--highlight);
 }
 
