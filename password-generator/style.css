@@ -80,7 +80,7 @@ h1 {
 
 #password-container {
     margin: 1em auto;
-    padding: 0.75em;
+    padding: 0 0.75em;
     background-color: var(--box-bg);
     display: flex;
     align-items: center;
@@ -88,13 +88,27 @@ h1 {
     border: 1px solid var(--border);
     border-radius: 8px;
     cursor: pointer;
+    overflow-y: hidden;
 }
 
 #password {
+    padding: 0.75em 0;
     color: var(--border);
+    white-space: nowrap;
+    overflow-x: auto;
+}
+
+#password::-webkit-scrollbar {
+    height: 5px;
+}
+
+#password::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 20px;
 }
 
 .fa-copy {
+    padding-left: 0.3em;
     color: var(--btn);
 }
 
@@ -137,7 +151,7 @@ label:not(#length) {
 
 #password-length {
     margin-top: 1em;
-    background: linear-gradient(to right, var(--btn-dark) 0%, var(--btn-dark) 50%, var(--box-bg) 50%, var(--box-bg) 100%);
+    background: linear-gradient(to right, var(--btn-dark) 0%, var(--btn-dark) 37.5%, var(--box-bg) 37.5%, var(--box-bg) 100%);
 }
 
 input[type="range"] {
