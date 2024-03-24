@@ -1,6 +1,10 @@
 :root {
     --blackjack-color: #187a47;
     --blackjack-color-dark: #093606;
+    --btn-red: #cf0a0a;
+    --btn-dark-red: #530000;
+    --btn-blue: #003cff;
+    --btn-dark-blue: #000547;
 }
 
 html {
@@ -22,6 +26,16 @@ main {
 h1,
 h2 {
     font-size: 2em;
+}
+
+button {
+    padding: 0.5em 1em;
+    color: var(--off-white);
+    background: linear-gradient(gray, black 33%);
+    border: 2px solid black;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
 }
 
 header {
@@ -73,14 +87,6 @@ header li a:hover,
 #section-1 {
     text-align: center;
     color: var(--off-white);
-}
-
-#section-1 button {
-    color: var(--off-white);
-    background: linear-gradient(gray, black 33%);
-    border: solid black 2px;
-    border-radius: 10px;
-    font-weight: bold;
 }
 
 #game-area {
@@ -162,15 +168,21 @@ header li a:hover,
 
 #hit-btn,
 #stand-btn {
-    padding: 0.5em 1em;
-    font-size: 16px;
     opacity: 0.33;
     pointer-events: none;
 }
 
+#hit-btn {
+    border-color: var(--btn-dark-blue);
+    background: linear-gradient(var(--btn-blue), var(--btn-dark-blue) 33%);
+}
+
+#stand-btn {
+    border-color: var(--btn-dark-red);
+    background: linear-gradient(var(--btn-red), var(--btn-dark-red) 33%);
+}
+
 #new-game-btn {
-    padding: 0.5em 1em;
-    font-size: 16px;
     display: none;
 }
 
@@ -187,13 +199,6 @@ input {
     padding-left: 0.3em;
     width: 5em;
     font-size: 15px;
-}
-
-#bet-btn,
-#rules-btn,
-#stats-btn {
-    padding: 0.5em 1em;
-    font-size: 16px;
 }
 
 #money-info {
@@ -290,18 +295,24 @@ td {
     text-align: left;
 }
 
+#reset-stats {
+    margin-top: 2em;
+    border-color: var(--btn-dark-red);
+    background: linear-gradient(var(--btn-red), var(--btn-dark-red) 33%);
+}
+
 footer {
+    margin-top: 2em;
     color: var(--off-white);
     padding-bottom: 1em;
 }
 
 #disclaimer,
 #bottom-text {
+    margin: 0 auto;
+    padding: 0.5em;
     width: 90%;
     max-width: max-content;
-    margin: 2em auto 0 auto;
-    padding: 0.5em;
-    margin-bottom: 0;
     border: solid var(--off-white) 2px;
     border-radius: 15px;
     background-color: rgba(0, 0, 0, 0.8);
@@ -317,10 +328,7 @@ footer {
 
 /* PC + TABLETS */
 @media (min-width: 481px) {
-    #section-1 button {
-        font-size: 20px;
-    }
-
+    button,
     .card {
         font-size: 20px;
     }

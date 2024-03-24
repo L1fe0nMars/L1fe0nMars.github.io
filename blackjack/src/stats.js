@@ -3,6 +3,7 @@
 const STATS_BTN = document.getElementById('stats-btn');
 const STATS_MODAL = document.getElementById('stats-modal');
 const STATS_TABLE = document.getElementById('stats');
+const RESET_STATS = document.getElementById('reset-stats');
 
 let stats = {
     wins: {
@@ -73,6 +74,15 @@ function loadStats() {
 }
 
 /**
+ * Resets game stats back to their default values
+ */
+function resetStats() {
+    for (const [key, val] of Object.entries(stats)) {
+        key === 'highestTotalMoney' ? updateStat(key, 100) : updateStat(key, 0);
+    }
+}
+
+/**
  * Updates one of the saved stats
  * 
  * @param {string} stat The stat key to update
@@ -111,6 +121,7 @@ function isStatsModalOpen() {
 
 STATS_BTN.addEventListener('click', openStatsModal);
 CLOSE_BTN[1].addEventListener('click', closeStatsModal);
+RESET_STATS.addEventListener('click', resetStats);
 
 document.addEventListener('keydown', (event) => {
     if (isStatsModalOpen() && event.key === 'Escape') {
