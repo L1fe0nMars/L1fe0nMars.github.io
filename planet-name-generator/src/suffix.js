@@ -6,6 +6,7 @@
 class Suffix {
     #suffixes = [
         'a',
+        'aar',
         'ab',
         'ac',
         'ach',
@@ -22,6 +23,8 @@ class Suffix {
         'ak',
         'al',
         'alb',
+        'alg',
+        'alk',
         'alyx',
         'am',
         'amyr',
@@ -38,6 +41,7 @@ class Suffix {
         'ark',
         'ars',
         'arse',
+        'arth',
         'arv',
         'at',
         'ath',
