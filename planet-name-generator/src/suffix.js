@@ -6,6 +6,7 @@
 class Suffix {
     #suffixes = [
         'a',
+        'aan',
         'aar',
         'ab',
         'ac',
@@ -99,6 +100,7 @@ class Suffix {
         'im',
         'imph',
         'in',
+        'inth',
         'inx',
         'io',
         'ion',
@@ -129,6 +131,7 @@ class Suffix {
         'of',
         'og',
         'oh',
+        'oj',
         'ok',
         'ol',
         'om',
@@ -165,6 +168,7 @@ class Suffix {
         'um',
         'un',
         'une',
+        'ur',
         'urk',
         'urn',
         'ury',
