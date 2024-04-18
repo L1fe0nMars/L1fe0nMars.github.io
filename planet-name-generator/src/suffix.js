@@ -53,6 +53,7 @@ class Suffix {
         'eas',
         'eb',
         'ebe',
+        'ed',
         'ede',
         'een',
         'eer',
