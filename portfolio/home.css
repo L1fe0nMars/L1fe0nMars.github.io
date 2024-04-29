@@ -286,11 +286,10 @@ textarea:focus {
 
 .text-link {
     color: var(--blue-glow);
-    transition: 0.25s ease-out;
 }
 
 .text-link:hover {
-    opacity: 0.5;
+    text-decoration: underline;
 }
 
 /* PC + TABLETS */

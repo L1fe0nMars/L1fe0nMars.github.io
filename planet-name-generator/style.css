@@ -52,13 +52,11 @@ header li {
     padding: 0 0.4em;
 }
 
-header li a,
-#bottom-text a {
+header li a {
     transition: 0.25s ease;
 }
 
-header li a:hover,
-#bottom-text a:hover {
+header li a:hover {
     opacity: 0.5;
 }
 
@@ -239,6 +237,10 @@ summary {
 
 #bottom-text a {
     color: var(--space-color);
+}
+
+#bottom-text a:hover {
+    text-decoration: underline;
 }
 
 /* PC + TABLETS */
