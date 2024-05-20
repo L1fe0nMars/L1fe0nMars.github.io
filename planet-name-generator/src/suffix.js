@@ -26,7 +26,6 @@ class Suffix {
         'alb',
         'alg',
         'alk',
-        'alyx',
         'am',
         'amyr',
         'an',
@@ -180,6 +179,7 @@ class Suffix {
         'uul',
         'ux',
         'uz',
+        'yx'
     ];
 
     /**
