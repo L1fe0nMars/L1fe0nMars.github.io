@@ -157,12 +157,12 @@ button {
 form {
     padding: 1em;
     margin: 0 auto;
-    max-width: 35em;
+    max-width: 45em;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    gap: 2em;
+    gap: 1em;
 }
 
 input {

@@ -41,11 +41,13 @@ class Prefix {
             'Alc',
             'Alcy',
             'Ald',
+            'Aldh',
             'Alg',
             'Alk',
             'Alp',
             'Alph',
             'Alt',
+            'Alz',
             'Am',
             'Amph',
             'Amr',
@@ -117,6 +119,7 @@ class Prefix {
             'Ch',
             'Chl',
             'Chr',
+            'Cl',
             'Cr',
         ],
         [
@@ -183,6 +186,7 @@ class Prefix {
             'Etl',
             'Etr',
             'Etym',
+            'Euc',
             'Euch',
             'Eucl',
             'Eug',
@@ -370,7 +374,6 @@ class Prefix {
             'Ukr',
             'Ul',
             'Ulg',
-            'Ultr',
             'Ulv',
             'Um',
             'Umb',
@@ -384,12 +387,14 @@ class Prefix {
             'Urkl',
             'Urn',
             'Urs',
+            'Us',
             'Ut',
             'Uth',
             'Uv',
             'Ux',
             'Uz',
             'Uzb',
+            'Uzv',
         ],
         [
             'V',
@@ -435,6 +440,7 @@ class Prefix {
             'Kyl',
             'Kyr',
             'Kys',
+            'Kyt',
             'Kyz',
             'Ly',
             'Lyg',
@@ -523,7 +529,7 @@ class Prefix {
     /**
      * Gets a random prefix that starts with a specific letter
      * 
-     * @param letter The letter the prefix starts with
+     * @param {string} letter The letter the prefix starts with
      * 
      * @return {string} The prefix
      */

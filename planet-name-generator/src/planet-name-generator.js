@@ -4,6 +4,7 @@ const GENERATOR_BTN = document.getElementById('generate');
 const NAMES_LIST = document.getElementById('names');
 const NUM_NAMES = document.getElementById('num-names');
 const FIRST_LETTER = document.getElementById('first-letter');
+const LAST_LETTER = document.getElementById('last-letter');
 const SAVED_NAMES = document.getElementById('saved-names');
 const SAVED_NAMES_LIST = document.getElementById('saved-names-list');
 
@@ -56,9 +57,7 @@ function createNameList(nameList, numNames) {
         const copyIcon = document.createElement('span');
         const storedNames = localStorage['savedNames'];
 
-        nameList === NAMES_LIST
-            ? name.innerHTML = generator.generateName(FIRST_LETTER.value[0])
-            : name.innerHTML = JSON.parse(storedNames)[i];
+        name.innerHTML = nameList === NAMES_LIST ? generator.generateName(FIRST_LETTER.value[0], LAST_LETTER.value[0]) : JSON.parse(storedNames)[i];
         
         copyIcon.innerHTML = `<i class='fa-regular fa-copy' title='Copy name'></i>`;
         copyIcon.style.color = 'var(--off-white)';

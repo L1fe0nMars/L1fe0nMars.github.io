@@ -12,7 +12,6 @@ class Suffix {
         'ac',
         'ach',
         'ad',
-        'adys',
         'aeus',
         'ag',
         'ah',
@@ -26,14 +25,15 @@ class Suffix {
         'alb',
         'alg',
         'alk',
+        'aly',
         'am',
-        'amyr',
         'an',
         'ang',
         'ant',
         'anth',
         'ao',
         'aos',
+        'ap',
         'aph',
         'aq',
         'ar',
@@ -43,10 +43,13 @@ class Suffix {
         'arse',
         'arth',
         'arv',
+        'as',
+        'ash',
         'at',
         'ath',
         'au',
         'ax',
+        'ayde',
         'az',
         'ea',
         'eas',
@@ -77,6 +80,7 @@ class Suffix {
         'et',
         'eum',
         'eus',
+        'euse',
         'ev',
         'ex',
         'ez',
@@ -167,6 +171,7 @@ class Suffix {
         'uk',
         'um',
         'un',
+        'und',
         'une',
         'ur',
         'urk',
@@ -179,6 +184,8 @@ class Suffix {
         'uul',
         'ux',
         'uz',
+        'yr',
+        'ys',
         'yx'
     ];
 
@@ -193,6 +200,21 @@ class Suffix {
         const filtered = this.#suffixes.filter(str => str !== excludedStr);
         const suffix = filtered[Math.floor(Math.random() * filtered.length)];
 
+        return suffix;
+    }
+
+    /**
+     * Gets a random suffix that ends with a specific letter
+     * 
+     * @param {string} letter The letter the suffix ends with
+     * @param {string} excludedStr A string to exclude to prevent the same string occurring consecutively
+     * 
+     * @return {string} The suffix
+     */
+    getSuffixWithLastLetter(letter = '', excludedStr = '') {
+        const filtered = this.#suffixes.filter(str => str.charAt(str.length - 1) === letter && str !== excludedStr);
+        const suffix = filtered.length > 0 ? filtered[Math.floor(Math.random() * filtered.length)] : this.getSuffix(excludedStr);
+        
         return suffix;
     }
 

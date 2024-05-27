@@ -11,11 +11,12 @@ class Generator {
     /**
      * Generates a random name by combining word parts together
      * 
-     * @param {string} letter Optional letter that the name should start with
+     * @param {string} firstLetter Optional letter that the name should start with
+     * @param {string} lastLetter Optional letter that the name should end with
      * 
      * @return {string} The generated name
      */
-    generateName(letter = '') {
+    generateName(firstLetter = '', lastLetter = '') {
         const nameStrings = [];
         const weights = {
             3: 0.5,
@@ -25,11 +26,11 @@ class Generator {
         };
         const nameLength = this.weightedOutcome(weights);
         let prevStr = '';
-        let name;
         
-        this.isLetter(letter) ? letter = letter.toUpperCase() : letter = '';
+        firstLetter = this.isLetter(firstLetter) ? firstLetter.toUpperCase() : '';
+        lastLetter = this.isLetter(lastLetter) ? lastLetter.toLowerCase() : '';
 
-        letter !== '' ? name = this.prefix.getPrefixWithFirstLetter(letter) : name = this.prefix.getPrefix();
+        let name = firstLetter !== '' ? this.prefix.getPrefixWithFirstLetter(firstLetter) : this.prefix.getPrefix();
 
         nameStrings.push(name);
         
@@ -37,7 +38,7 @@ class Generator {
             prevStr = nameStrings[i - 1].toLowerCase();
 
             if (i === nameLength - 1) {
-                const suffix = this.suffix.getSuffix(prevStr)
+                const suffix = lastLetter !== '' ? this.suffix.getSuffixWithLastLetter(lastLetter, prevStr) : this.suffix.getSuffix(prevStr);
                 name += suffix;
                 nameStrings.push(suffix);
             }
