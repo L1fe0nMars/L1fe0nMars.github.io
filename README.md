@@ -7,4 +7,4 @@ A portfolio of various front-end projects developed from scratch by myself.
 - **[21 Classics:](https://21classics.com/)** A collector car website with a simple, elegant, and responsive design.
 - **[Blackjack:](https://l1fe0nmars.github.io/blackjack/)** Play Blackjack, the classic casino card game.
 - **[Password Generator:](https://l1fe0nmars.github.io/password-generator/)** A simple, secure password generator with different customization options.
-- **[Planet Name Generator:](https://l1fe0nmars.github.io/planet-name-generator/)** Generate billions of unique sci-fi planet names.
+- **[Planet Name Generator:](https://l1fe0nmars.github.io/planet-name-generator/)** Generate trillions of unique sci-fi planet names.
