@@ -111,13 +111,14 @@ const projects = [
             'Light/Dark Mode Toggle',
             `Swipeable Image Galleries Using <a href='https://swiperjs.com/' target='_blank' rel='noopener noreferrer' class='text-link'>SwiperJS</a> Library`,
         ],
-        description: `21 Classics is a website dedicated to my dad's collector car business. Originally created by myself with a website builder in 2020, 
-            the website underwent a complete overhaul in July 2023. It was remade entirely from scratch using pure HTML, CSS, and JavaScript. The goal was to make the 
+        description: `21 Classics is a website dedicated to my dad's collector car business. Originally created with a website builder in 2020, the 
+            website underwent a complete overhaul in July 2023. It was remade entirely from scratch using pure HTML, CSS, and JavaScript. The goal was to make the 
             design simple but elegant, while making sure the cars stand out.<br><br>
             
             UI/UX were key in my design choices. The website's responsive design allows the content to adapt to any screen size, while features such as the light/dark mode toggle 
-            and swipeable image galleries let the user have an interactive experience when viewing the content. Buttons were specifically chosen to be colorful to make them stand
-            out, and the simple header makes it easy for the user to navigate through the site. The 21 Classics website is a perfect example of how there's beauty in simplicity.`,
+            and swipeable image galleries let the user have an interactive experience when viewing the content. Buttons and certain elements were specifically chosen to be 
+            colorful to give a more vibrant feel to the website, and the simple header makes it easy for the user to navigate through the site. 21 Classics is a perfect example 
+            of how there's beauty in simplicity.`,
         link: 'https://21classics.com/',
         linkText: 'Visit Website',
         logos: {
@@ -131,16 +132,16 @@ const projects = [
     {
         title: 'Planet Name Generator',
         features: [
-            'Generate Billions of Unique Names',
+            'Generate Trillions of Unique Names',
             'Save and Unsave Names',
             'Copy Any Name to Your Clipboard With One Click',
         ],
         description: `You may notice already that I have quite an interest in astronomy. My love for space is the reason why I wanted to create my very own 
             planet name generator. Each name is a combination of hand-selected string parts to make them sound like they would be straight out of a sci-fi movie. 
-            This generator has undergone several iterations, and this version is the most advanced, capable of generating <i>billions</i> of unique names.<br><br>
+            This generator has undergone several iterations, and this version is the most advanced, capable of generating <i>trillions</i> of unique names.<br><br>
             
             The possibility of so many different names is what lead me to implement the ability to save your favorite names, that way you'll never lose them. 
-            You can also generate up to 100 names at a time, specify the first letter of generated names, and copy any name with one click of a button. With all of 
+            You can also generate up to 100 names at a time, specify the first and last letter of generated names, and copy any name with one click of a button. With all of 
             my projects, I strive to implement features that I believe would greatly benefit the user experience, and this project was no exception.`,
         link: '/planet-name-generator/',
         linkText: 'Visit Project',
