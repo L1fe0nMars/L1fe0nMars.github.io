@@ -175,7 +175,8 @@ input {
     border-radius: 5px;
 }
 
-#first-letter {
+#first-letter,
+#last-letter {
     width: 3em;
 }
 
