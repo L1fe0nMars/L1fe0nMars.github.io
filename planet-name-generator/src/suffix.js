@@ -154,6 +154,7 @@ class Suffix {
         'ome',
         'on',
         'one',
+        'ong',
         'ons',
         'op',
         'ope',

@@ -111,8 +111,8 @@ const projects = [
             'Light/Dark Mode Toggle',
             `Swipeable Image Galleries Using <a href='https://swiperjs.com/' target='_blank' rel='noopener noreferrer' class='text-link'>SwiperJS</a> Library`,
         ],
-        description: `21 Classics is a website dedicated to my dad's collector car business. Originally created with a website builder in 2020, the 
-            website underwent a complete overhaul in July 2023. It was remade entirely from scratch using pure HTML, CSS, and JavaScript. The goal was to make the 
+        description: `21 Classics is a website dedicated to collector cars. Originally created with a website builder in 2020, the 
+            website underwent a complete overhaul in 2023. It was remade entirely from scratch using pure HTML, CSS, and JavaScript. The goal was to make the 
             design simple but elegant, while making sure the cars stand out.<br><br>
             
             UI/UX were key in my design choices. The website's responsive design allows the content to adapt to any screen size, while features such as the light/dark mode toggle 
