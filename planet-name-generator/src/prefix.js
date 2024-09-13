@@ -19,6 +19,7 @@ class Prefix {
             'Acr',
             'Ad',
             'Adn',
+            'Adr',
             'Adv',
             'Aeg',
             'Aegl',
@@ -33,6 +34,7 @@ class Prefix {
             'Agn',
             'Agr',
             'Agv',
+            'Ahs',
             'Aj',
             'Ak',
             'Akl',
@@ -105,6 +107,7 @@ class Prefix {
             'Av',
             'Avr',
             'Ax',
+            'Axb',
             'Axd',
             'Axt',
             'Ay',
@@ -262,6 +265,7 @@ class Prefix {
             'Is',
             'Ish',
             'It',
+            'Ith',
             'Iv',
             'Iw',
             'Ix',
@@ -375,6 +379,7 @@ class Prefix {
             'Spl',
             'St',
             'Str',
+            'Sv',
         ],
         [
             'T',
@@ -387,6 +392,7 @@ class Prefix {
             'Ub',
             'Ubr',
             'Uc',
+            'Uch',
             'Ud',
             'Ug',
             'Uj',
@@ -398,6 +404,7 @@ class Prefix {
             'Uld',
             'Ulg',
             'Ulv',
+            'Uly',
             'Um',
             'Umb',
             'Umbr',
@@ -546,8 +553,22 @@ class Prefix {
      * @return {string} The prefix
      */
     getPrefix() {
-        const letter = this.#prefixes[Math.floor(Math.random() * this.#prefixes.length)];
-        const prefix = letter[Math.floor(Math.random() * letter.length)];
+        const randNum = Math.floor(Math.random() * this.#prefixes.length);
+        const letter = this.#prefixes[randNum];
+        let prefix;
+        
+        // Make prefixes more often than not start with a single letter for consonants
+        if (this.doesPrefixBeginWithVowel(letter[0]) || randNum === this.#prefixes.length - 1) {
+            prefix = letter[Math.floor(Math.random() * letter.length)];
+        }
+        else {
+            if (Math.random() < 0.75) {
+                prefix = letter[0];
+            }
+            else {
+                prefix = letter[Math.floor(Math.random() * letter.length)];
+            }
+        }
 
         return prefix;
     }
@@ -564,18 +585,29 @@ class Prefix {
         const complexPrefixes = lastArray.filter(prefix => prefix.charAt(0) === letter);
         let letterPrefixArray = [];
         let prefix;
-        
+
         for (let i = 0; i < this.#prefixes.length; i++) {
             if (this.#prefixes[i][0].charAt(0) === letter) {
                 letterPrefixArray = [...this.#prefixes[i]];
                 break;
             }
         }
-        
-        (complexPrefixes.length > 0 && Math.random() < 0.1)
-            ? prefix = complexPrefixes[Math.floor(Math.random() * complexPrefixes.length)]
-            : prefix = letterPrefixArray[Math.floor(Math.random() * letterPrefixArray.length)];
-        
+
+        if (this.doesPrefixBeginWithVowel(letter[0])) {
+            prefix = letterPrefixArray[Math.floor(Math.random() * letterPrefixArray.length)];
+        }
+        else if (complexPrefixes.length > 0 && Math.random() < 0.1) {
+            prefix = complexPrefixes[Math.floor(Math.random() * complexPrefixes.length)];
+        }
+        else {
+            if (Math.random() < 0.75) {
+                prefix = letterPrefixArray[0];
+            }
+            else {
+                prefix = letterPrefixArray[Math.floor(Math.random() * letterPrefixArray.length)];
+            }
+        }
+
         return prefix;
     }
 
@@ -592,5 +624,14 @@ class Prefix {
         }
 
         return numPrefixes;
+    }
+
+    /**
+     * Checks if the prefix begins with a vowel
+     * 
+     * @return {boolean} Whether or not the prefix begins with a vowel
+     */
+    doesPrefixBeginWithVowel(prefix) {
+        return prefix === 'A' || prefix === 'E' || prefix === 'I' || prefix === 'O' || prefix === 'U'
     }
 }
