@@ -44,6 +44,7 @@ class Suffix {
         'ar',
         'are',
         'ark',
+        'arp',
         'ars',
         'arse',
         'arth',
