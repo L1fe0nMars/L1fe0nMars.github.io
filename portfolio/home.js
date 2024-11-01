@@ -6,8 +6,6 @@ const projectDescription = document.getElementById('description-text');
 const projectLink = document.getElementById('link');
 const techList = document.getElementById('tech-list')
 const extraProjectLinks = document.getElementById('extra-links');
-const sourceCodeLink = document.getElementById('source-code');
-const javaLink = document.getElementById('java-link');
 
 const projects = [
     {
@@ -28,7 +26,6 @@ const projects = [
         link: '/password-generator/',
         linkText: 'Visit Project',
         logos: ['html', 'css', 'javascript'],
-        sourceCode: 'https://github.com/L1fe0nMars/L1fe0nMars.github.io/tree/main/password-generator',
         extraLinks: `
             <a class="button" href="https://github.com/L1fe0nMars/L1fe0nMars.github.io/tree/main/password-generator" target="_blank" rel="noopener">
                 View Source Code
