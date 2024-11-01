@@ -75,7 +75,7 @@ const projects = [
             sorting transactions. Deleting a transaction can be easily done by clicking an entry to bring up the delete button or if a user wants to delete all data at 
             once, there's a button for that under the list of transactions as well. The final feature that was implemented was the ability to search transactions. A robust 
             set of features makes CashFolio an extremely useful tool for anyone.`,
-        link: 'https://tourmaline-frangollo-d19e23.netlify.app/',
+        link: 'https://cashfolio.netlify.app/',
         linkText: 'Visit Project',
         logos: ['react'],
         extraLinks: `
