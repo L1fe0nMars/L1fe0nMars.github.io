@@ -52,6 +52,7 @@ class Prefix {
             'Aldh',
             'Alg',
             'Alk',
+            'Aln',
             'Alp',
             'Alph',
             'Alt',

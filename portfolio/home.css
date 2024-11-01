@@ -159,10 +159,8 @@ h1 {
 
 #features ul li {
     margin: 1em auto;
-    font-size: 1.25em;
-}
-
-.bold-feature {
+    color: var(--paragraph-color);
+    font-size: 1.4em;
     font-weight: bold;
 }
 
@@ -201,12 +199,12 @@ h1 {
     width: 3em;
 }
 
-#source-code-div {
+#extra-links {
     margin: 1.5em auto 1em auto;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 2em;
+    gap: 1.5em;
 }
 
 #contact {
