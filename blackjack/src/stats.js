@@ -2,8 +2,12 @@
 
 const STATS_BTN = document.getElementById('stats-btn');
 const STATS_MODAL = document.getElementById('stats-modal');
+const CLOSE_STATS = document.getElementById('close-stats');
 const STATS_TABLE = document.getElementById('stats');
 const RESET_STATS = document.getElementById('reset-stats');
+const CONFIRM_RESET = document.getElementById('reset-confirm');
+const RESET = document.getElementById('reset');
+const CANCEL_RESET = document.getElementById('cancel');
 
 let stats = {
     wins: {
@@ -120,8 +124,24 @@ function isStatsModalOpen() {
 }
 
 STATS_BTN.addEventListener('click', openStatsModal);
-CLOSE_BTN[1].addEventListener('click', closeStatsModal);
-RESET_STATS.addEventListener('click', resetStats);
+CLOSE_STATS.addEventListener('click', () => {
+    closeStatsModal();
+    CONFIRM_RESET.style.display = 'none';
+    RESET_STATS.style.display = 'block';
+});
+RESET_STATS.addEventListener('click', () => {
+    RESET_STATS.style.display = 'none';
+    CONFIRM_RESET.style.display = 'block';
+});
+RESET.addEventListener('click', () => {
+    resetStats();
+    CONFIRM_RESET.style.display = 'none';
+    RESET_STATS.style.display = 'block';
+});
+CANCEL_RESET.addEventListener('click', () => {
+    CONFIRM_RESET.style.display = 'none';
+    RESET_STATS.style.display = 'block';
+});
 
 document.addEventListener('keydown', (event) => {
     if (isStatsModalOpen() && event.key === 'Escape') {

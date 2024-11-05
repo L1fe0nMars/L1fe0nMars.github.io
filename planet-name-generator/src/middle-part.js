@@ -229,6 +229,7 @@ class MiddlePart {
         'elsh',
         'elt',
         'elv',
+        'ely',
         'elz',
         'em',
         'emb',

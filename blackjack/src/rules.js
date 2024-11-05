@@ -4,7 +4,7 @@ const GAME_AREA = document.getElementById('game-area');
 const RULES_BTN = document.getElementById('rules-btn');
 const RULES_MODAL = document.getElementById('rules-modal');
 const RULES_LIST = document.getElementById('rules-list');
-const CLOSE_BTN = document.getElementsByClassName('close');
+const CLOSE_RULES = document.getElementById('close-rules');
 
 for (let i = 0; i < BLACKJACK_RULES.RULES.length; i++) {
     const listElement = document.createElement('li');
@@ -38,7 +38,7 @@ function isRulesModalOpen() {
 }
 
 RULES_BTN.addEventListener('click', openRulesModal);
-CLOSE_BTN[0].addEventListener('click', closeRulesModal);
+CLOSE_RULES.addEventListener('click', closeRulesModal);
 
 document.addEventListener('keydown', (event) => {
     if (isRulesModalOpen() && event.key === 'Escape') {
