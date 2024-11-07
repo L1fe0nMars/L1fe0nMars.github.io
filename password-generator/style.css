@@ -181,7 +181,9 @@ input[type="checkbox"] {
 #exclude-container {
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 0.5em;
 }
 
