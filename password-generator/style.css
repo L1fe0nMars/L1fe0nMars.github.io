@@ -24,29 +24,29 @@ header {
     margin-bottom: 2em;
 }
 
-header ul {
-    list-style: none;
-    margin-right: 0;
-    padding-top: 0.5em;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-}
+    header ul {
+        list-style: none;
+        margin-right: 0;
+        padding-top: 0.5em;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
 
-header li {
-    font-size: 2em;
-    padding: 0 0.4em;
-}
+    header li {
+        font-size: 2em;
+        padding: 0 0.4em;
+    }
 
-header li a,
-#bottom-text a {
-    transition: 0.25s ease;
-}
+    header li a,
+    #bottom-text a {
+        transition: 0.25s ease;
+    }
 
-header li a:hover,
-#bottom-text a:hover {
-    opacity: 0.5;
-}
+        header li a:hover,
+        #bottom-text a:hover {
+            opacity: 0.5;
+        }
 
 main {
     flex: 1;
@@ -62,10 +62,7 @@ section {
 
 #container {
     margin: 0 auto;
-    padding: 4em 2em;
-    max-width: 30em;
-    border-radius: 20px;
-    border: 1px solid var(--border);
+    max-width: 25.75em;
 }
 
 .fa-lock {
@@ -98,18 +95,19 @@ h1 {
     overflow-x: auto;
 }
 
-#password::-webkit-scrollbar {
-    height: 5px;
-}
+    #password::-webkit-scrollbar {
+        height: 5px;
+    }
 
-#password::-webkit-scrollbar-thumb {
-    background: var(--border);
-    border-radius: 20px;
-}
+    #password::-webkit-scrollbar-thumb {
+        background: var(--border);
+        border-radius: 20px;
+    }
 
-.fa-copy {
+#icon-container {
     padding-left: 0.3em;
-    color: var(--btn);
+    display: flex;
+    justify-content: center;
 }
 
 #password-btn {
@@ -120,14 +118,15 @@ h1 {
     transition: 0.2s ease;
 }
 
-#password-btn:hover {
-    background-color: var(--btn-dark);
-}
+    #password-btn:hover {
+        background-color: var(--btn-dark);
+    }
 
 form {
     padding-top: 1.5em;
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
     gap: 2em;
 }
 
@@ -136,9 +135,9 @@ label {
     align-items: center;
 }
 
-label:not(#length) {
-    cursor: pointer;
-}
+    label:not(#length) {
+        cursor: pointer;
+    }
 
 #length-label {
     display: flex;
@@ -161,15 +160,15 @@ input[type="range"] {
     -webkit-appearance: none;
 }
 
-input[type="range"]::-webkit-slider-thumb {
-    height: 1.75em;
-    width: 1.75em;
-    background: var(--btn);
-    border-radius: 50%;
-    cursor: pointer;
-    appearance: none;
-    -webkit-appearance: none;
-}
+    input[type="range"]::-webkit-slider-thumb {
+        height: 1.75em;
+        width: 1.75em;
+        background: var(--btn);
+        border-radius: 50%;
+        cursor: pointer;
+        appearance: none;
+        -webkit-appearance: none;
+    }
 
 input[type="checkbox"] {
     width: 1.5em;
@@ -179,17 +178,40 @@ input[type="checkbox"] {
     cursor: pointer;
 }
 
+#exclude-container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 0.5em;
+}
+
+    #exclude-container label {
+        display: flex;
+        flex-direction: column;
+        cursor: default;
+    }
+
+#exclude {
+    padding: 0 0.75em;
+    height: 2em;
+    color: var(--border);
+    background-color: var(--box-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 1em;
+}
+
 footer {
     padding: 1em 0;
 }
 
-footer a {
-    color: var(--icon);
-}
+    footer a {
+        color: var(--icon);
+    }
 
-footer a:hover {
-    text-decoration: underline;
-}
+        footer a:hover {
+            text-decoration: underline;
+        }
 
 /* PC */
 @media screen and (min-width: 1025px) {

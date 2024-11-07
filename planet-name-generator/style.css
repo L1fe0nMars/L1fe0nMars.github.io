@@ -37,28 +37,28 @@ header {
     margin-bottom: 3em;
 }
 
-header ul {
-    list-style: none;
-    margin-right: 0;
-    padding-top: 0.5em;
-    color: var(--space-color);
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-}
+    header ul {
+        list-style: none;
+        margin-right: 0;
+        padding-top: 0.5em;
+        color: var(--space-color);
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
 
-header li {
-    font-size: 2em;
-    padding: 0 0.4em;
-}
+    header li {
+        font-size: 2em;
+        padding: 0 0.4em;
+    }
 
-header li a {
-    transition: 0.25s ease;
-}
+        header li a {
+            transition: 0.25s ease;
+        }
 
-header li a:hover {
-    opacity: 0.5;
-}
+            header li a:hover {
+                opacity: 0.5;
+            }
 
 #section-1 {
     margin-bottom: 5em;
@@ -93,26 +93,26 @@ h1 {
     flex-wrap: wrap;
 }
 
-#names li div {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-}
+    #names li div {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-#names h2 {
-    padding: 0.5em;
-    width: max-content;
-    margin: 0 auto;
-    transition: 0.1s ease-out;
-    border-radius: 10px;
-    font-family: 'Rajdhani Bold', 'Rajdhani', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+    #names h2 {
+        padding: 0.5em;
+        width: max-content;
+        margin: 0 auto;
+        transition: 0.1s ease-out;
+        border-radius: 10px;
+        font-family: 'Rajdhani Bold', 'Rajdhani', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
-#names h2:hover {
-    box-shadow: inset 3px -3px 15px var(--space-color);
-    border-radius: 30px;
-}
+        #names h2:hover {
+            box-shadow: inset 3px -3px 15px var(--space-color);
+            border-radius: 30px;
+        }
 
 .fa-copy {
     cursor: pointer;
@@ -120,9 +120,9 @@ h1 {
     transition: 0.1s ease-out;
 }
 
-.fa-copy:hover {
-    color: var(--space-color);
-}
+    .fa-copy:hover {
+        color: var(--space-color);
+    }
 
 .fa-star {
     cursor: pointer;
@@ -130,9 +130,9 @@ h1 {
     transition: 0.1s ease-out;
 }
 
-.fa-star:hover {
-    color: var(--space-color);
-}
+    .fa-star:hover {
+        color: var(--space-color);
+    }
 
 p,
 label,
@@ -150,9 +150,9 @@ button {
     transition: 0.25s ease-out;
 }
 
-#generate:hover {
-    box-shadow: inset 10px -3px 15px var(--space-color);
-}
+    #generate:hover {
+        box-shadow: inset 10px -3px 15px var(--space-color);
+    }
 
 form {
     padding: 1em;
@@ -208,25 +208,25 @@ summary {
     margin-top: 1em;
 }
 
-#saved-names-list li {
-    padding: 0 0.5em;
-    font-weight: bold;
-    font-family: 'Rajdhani Bold', 'Rajdhani', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+    #saved-names-list li {
+        padding: 0 0.5em;
+        font-weight: bold;
+        font-family: 'Rajdhani Bold', 'Rajdhani', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-#saved-names-list li h2 {
-    padding: 0.5em;
-    font-family: 'Rajdhani Bold', 'Rajdhani', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    transition: 0.1s ease-out;
-}
+        #saved-names-list li h2 {
+            padding: 0.5em;
+            font-family: 'Rajdhani Bold', 'Rajdhani', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            transition: 0.1s ease-out;
+        }
 
-#saved-names-list li h2:hover {
-    box-shadow: inset 3px -3px 15px var(--space-color);
-    border-radius: 30px;
-}
+            #saved-names-list li h2:hover {
+                box-shadow: inset 3px -3px 15px var(--space-color);
+                border-radius: 30px;
+            }
 
 .fa-circle-xmark {
     margin-left: 0.6em;
@@ -240,9 +240,9 @@ summary {
     color: var(--space-color);
 }
 
-#bottom-text a:hover {
-    text-decoration: underline;
-}
+    #bottom-text a:hover {
+        text-decoration: underline;
+    }
 
 /* PC + TABLETS */
 @media (min-width: 481px) {
@@ -263,9 +263,9 @@ summary {
         color: var(--off-white);
     }
 
-    .fa-circle-xmark:hover {
-        color: var(--delete);
-    }
+        .fa-circle-xmark:hover {
+            color: var(--delete);
+        }
 }
 
 @media screen and (min-width: 600px) {
