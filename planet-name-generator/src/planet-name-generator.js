@@ -59,16 +59,29 @@ function createNameList(nameList, numNames) {
 
         name.innerHTML = nameList === NAMES_LIST ? generator.generateName(FIRST_LETTER.value[0], LAST_LETTER.value[0]) : JSON.parse(storedNames)[i];
         
-        copyIcon.innerHTML = `<i class='fa-regular fa-copy' title='Copy name'></i>`;
+        copyIcon.innerHTML = `
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-copy" title="Copy name">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+        `;
         copyIcon.style.color = 'var(--off-white)';
         copyIcon.onclick = () => {
             navigator.clipboard.writeText(name.innerHTML);
-            copyIcon.innerHTML = `<i class='fa-regular fa-circle-check'></i>`;
-            copyIcon.style.color = 'green';
+            copyIcon.innerHTML = `
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="green" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+            `;
 
             setTimeout(() => {
-                copyIcon.innerHTML = `<i class='fa-regular fa-copy' title='Copy name'></i>`;
-                copyIcon.style.color = 'var(--off-white)';
+                copyIcon.innerHTML = `
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-copy" title="Copy name">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                `;
             }, 2000);
         };
 
@@ -76,7 +89,11 @@ function createNameList(nameList, numNames) {
             const nameDiv = document.createElement('div');
             const starIcon = document.createElement('span');
 
-            starIcon.innerHTML = `<i class='fa-regular fa-star' title='Save name'></i>`;
+            starIcon.innerHTML = `
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star" title="Save name">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+            `;
             starIcon.onclick = () => {
                 saveName(name.innerHTML);
                 starIcon.style.color = 'var(--space-color)';
@@ -90,7 +107,12 @@ function createNameList(nameList, numNames) {
         else {
             const deleteButton = document.createElement('span');
 
-            deleteButton.innerHTML = `<i class='fa-regular fa-circle-xmark' title='Remove name'></i>`;
+            deleteButton.innerHTML = `
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--off-white)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x-circle" title="Remove name">
+                    <circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15">
+                    </line><line x1="9" y1="9" x2="15" y2="15"></line>
+                </svg>
+            `;
             deleteButton.onclick = () => {
                 deleteSavedName(name.innerHTML);
             };

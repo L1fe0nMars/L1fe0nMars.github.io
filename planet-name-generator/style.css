@@ -25,8 +25,8 @@ ul {
     list-style-type: none;
 }
 
-.fa {
-    color: var(--space-color);
+.feather {
+    cursor: pointer;
 }
 
 .fa-regular {
@@ -114,24 +114,22 @@ h1 {
             border-radius: 30px;
         }
 
-.fa-copy {
-    cursor: pointer;
+.feather-copy {
     margin-left: 0.25em;
     transition: 0.1s ease-out;
 }
 
-    .fa-copy:hover {
-        color: var(--space-color);
+    .feather-copy:hover {
+        stroke: var(--space-color);
     }
 
-.fa-star {
-    cursor: pointer;
+.feather-star {
     margin-left: 0.5em;
     transition: 0.1s ease-out;
 }
 
-    .fa-star:hover {
-        color: var(--space-color);
+    .feather-star:hover {
+        stroke: var(--space-color);
     }
 
 p,
@@ -228,10 +226,9 @@ summary {
                 border-radius: 30px;
             }
 
-.fa-circle-xmark {
+.feather-x-circle {
     margin-left: 0.6em;
-    cursor: pointer;
-    color: var(--delete);
+    stroke: var(--delete);
     font-size: 1em;
     transition: 0.1s ease-out;
 }
@@ -259,12 +256,12 @@ summary {
         display: grid;
     }
 
-    .fa-circle-xmark {
-        color: var(--off-white);
+    .feather-x-circle {
+        stroke: var(--off-white);
     }
 
-        .fa-circle-xmark:hover {
-            color: var(--delete);
+        .feather-x-circle:hover {
+            stroke: var(--delete);
         }
 }
 
