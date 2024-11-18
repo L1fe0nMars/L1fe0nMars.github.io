@@ -157,7 +157,7 @@ function deleteSavedName(name) {
 }
 
 GENERATOR_BTN.addEventListener('click', () => {
-    let numNames = Number(NUM_NAMES.value);
+    let numNames = Math.ceil(Number(NUM_NAMES.value));
     
     clearNames(NAMES_LIST);
     
@@ -183,6 +183,7 @@ GENERATOR_BTN.addEventListener('click', () => {
         }
     }
 
+    NUM_NAMES.value = numNames;
     createNameList(NAMES_LIST, numNames);
 });
 

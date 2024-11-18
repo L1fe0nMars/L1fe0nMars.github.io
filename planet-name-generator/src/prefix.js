@@ -482,6 +482,7 @@ class Prefix {
         ],
         [   // More complex prefixes, separated to prevent bloat in each letter
             'Cth',
+            'Crypt',
             'Cryx',
             'Cy',
             'Cyg',
@@ -490,6 +491,7 @@ class Prefix {
             'Cyz',
             'Fyr',
             'Hy',
+            'Hyb',
             'Hybr',
             'Hyd',
             'Hydr',
