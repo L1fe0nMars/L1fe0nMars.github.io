@@ -179,6 +179,17 @@ h1 {
     gap: 1.5em;
 }
 
+    #link-container a {
+        display: flex;
+        align-items: center;
+        gap: 0.5em;
+    }
+
+    #link-container img {
+        height: 1.5em;
+        width: 1.5em;
+    }
+
 #built-with {
     width: 100%;
 }

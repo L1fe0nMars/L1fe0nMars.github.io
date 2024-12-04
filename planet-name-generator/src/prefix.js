@@ -103,6 +103,7 @@ class Prefix {
             'Asg',
             'Ash',
             'Askl',
+            'Asm',
             'Ast',
             'Astr',
             'At',
@@ -155,11 +156,14 @@ class Prefix {
             'Eck',
             'Ecl',
             'Ect',
+            'Ecz',
             'Ed',
             'Eg',
             'Ehw',
             'Ej',
             'Ek',
+            'Ekt',
+            'Ektr',
             'Ekn',
             'Ekr',
             'Eks',
@@ -314,6 +318,8 @@ class Prefix {
         [
             'O',
             'Ob',
+            'Obl',
+            'Obr',
             'Obs',
             'Oc',
             'Ocr',
@@ -496,6 +502,7 @@ class Prefix {
             'Hyd',
             'Hydr',
             'Hyg',
+            'Hyl',
             'Hym',
             'Hyp',
             'Hyr',
@@ -666,6 +673,6 @@ class Prefix {
      * @return {boolean} Whether or not the prefix begins with a vowel
      */
     doesPrefixBeginWithVowel(prefix) {
-        return prefix === 'A' || prefix === 'E' || prefix === 'I' || prefix === 'O' || prefix === 'U'
+        return prefix === 'A' || prefix === 'E' || prefix === 'I' || prefix === 'O' || prefix === 'U';
     }
 }

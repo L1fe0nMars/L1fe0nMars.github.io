@@ -78,8 +78,14 @@ const projects = [
             <li>Batch actions for extracting and opening multiple links</li>
         `,
         link: `
-            <a class="button" href="https://chromewebstore.google.com/detail/link-seeker/knaipgpgejlmehnomikiglidffhpjmnb" target="_blank" rel="noopener">Chrome Web Store</a>
-            <a class="button" href="https://microsoftedge.microsoft.com/addons/detail/link-seeker/bkhmimkpgebbbfhhillnabaojnmlcblh" target="_blank" rel="noopener">Microsoft Edge Add-Ons</a>
+            <a class="button" href="https://chromewebstore.google.com/detail/link-seeker/knaipgpgejlmehnomikiglidffhpjmnb" target="_blank" rel="noopener">
+                <img src="/portfolio/images/chrome.svg" alt="Google Chrome logo">
+                <span>Chrome Web Store</span>
+            </a>
+            <a class="button" href="https://microsoftedge.microsoft.com/addons/detail/link-seeker/bkhmimkpgebbbfhhillnabaojnmlcblh" target="_blank" rel="noopener">
+                <img src="/portfolio/images/microsoft-edge.svg" alt="Microsoft logo">
+                <span>Microsoft Edge Add-Ons</span>
+            </a>
         `,
         logos: ['html', 'css', 'javascript']
     },
