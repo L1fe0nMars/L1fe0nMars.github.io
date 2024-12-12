@@ -76,6 +76,7 @@ class Suffix {
         'elp',
         'elph',
         'en',
+        'eng',
         'ens',
         'enth',
         'eo',

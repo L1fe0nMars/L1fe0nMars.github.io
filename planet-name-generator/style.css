@@ -91,6 +91,8 @@ h1 {
     align-items: center;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    max-height: 15em;
+    overflow: auto;
 }
 
     #names li div {
@@ -113,6 +115,20 @@ h1 {
             box-shadow: inset 3px -3px 15px var(--space-color);
             border-radius: 30px;
         }
+
+    #names::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+    }
+    
+    #names::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    
+    #names::-webkit-scrollbar-thumb {
+        background: var(--blue-glow);
+        border-radius: 20px;
+    }
 
 .feather-copy {
     margin-left: 0.25em;
