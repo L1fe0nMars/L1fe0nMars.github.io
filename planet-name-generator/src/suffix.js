@@ -90,6 +90,7 @@ class Suffix {
         'erg',
         'erth',
         'es',
+        'esh',
         'esp',
         'et',
         'eth',

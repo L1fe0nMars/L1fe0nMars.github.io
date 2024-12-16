@@ -91,7 +91,7 @@ h1 {
     align-items: center;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    max-height: 15em;
+    max-height: 18em;
     overflow: auto;
 }
 
@@ -265,6 +265,10 @@ summary {
 
     header {
         margin-bottom: 5em;
+    }
+
+    #names {
+        max-height: 15em;
     }
     
     #names,
