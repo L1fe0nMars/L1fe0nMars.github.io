@@ -185,6 +185,7 @@ GENERATOR_BTN.addEventListener('click', () => {
 
     NUM_NAMES.value = numNames;
     createNameList(NAMES_LIST, numNames);
+    NAMES_LIST.scrollTop = 0;
 });
 
 SAVED_NAMES.addEventListener('click', () => {
