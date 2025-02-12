@@ -44,7 +44,7 @@ const projects = [
         title: 'CashFolio',
         features: `
             <li>Easily track your income and expenses</li>
-            <li>Sort by transaction type and month</li>
+            <li>Sort by transaction type, month, and year</li>
             <li>Search functionality</li>
         `,
         link: '<a class="button" href="https://cashfolio.netlify.app/" target="_blank" rel="noopener">Visit Project</a>',
@@ -108,7 +108,7 @@ const projects = [
         title: 'Planet Name Generator',
         features: `
             <li>Generate trillions of unique names</li>
-            <li>Save and unsave names</li>
+            <li>Save your favorite names</li>
             <li>Copy any name to your clipboard with one click</li>
         `,
         link: '<a class="button" href="/planet-name-generator/" target="_blank" rel="noopener">Visit Project</a>',
