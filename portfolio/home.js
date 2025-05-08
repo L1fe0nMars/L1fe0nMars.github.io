@@ -1,6 +1,7 @@
 'use strict';
 
 const projectName = document.getElementById('project-name');
+const projectInfoContainer = document.getElementById('project-info');
 const featuresList = document.getElementById('features-list');
 const projectLinkContainer = document.getElementById('link-container');
 const techList = document.getElementById('tech-list')
@@ -163,7 +164,7 @@ const swiper = new Swiper('.mySwiper', {
  */
 function updateProjectInfo(slide) {
     const { title, features, link, logos, extraLinks } = projects[slide];
-
+    
     projectName.innerHTML = title;
     featuresList.innerHTML = features;
     projectLinkContainer.innerHTML = link;
@@ -171,8 +172,7 @@ function updateProjectInfo(slide) {
     if (extraLinks) {
         extraProjectLinks.innerHTML = extraLinks;
         extraProjectLinks.style.display = 'flex';
-    }
-    else {
+    } else {
         extraProjectLinks.innerHTML = '';
         extraProjectLinks.style.display = 'none';
     }
@@ -180,10 +180,16 @@ function updateProjectInfo(slide) {
     for (const li of techList.getElementsByTagName('li')) {
         li.style.display = logos.includes(li.id) ? '' : 'none';
     }
+
+    projectName.className = 'show';
+    projectInfoContainer.className = 'show';
 }
 
 updateProjectInfo(swiper.realIndex);
 
-swiper.on('transitionEnd', () => {
-    updateProjectInfo(swiper.realIndex);
+swiper.on('transitionStart', () => {
+    projectName.className = 'hide';
+    projectInfoContainer.className = 'hide';
 });
+
+swiper.on('transitionEnd', () => { updateProjectInfo(swiper.realIndex) });
