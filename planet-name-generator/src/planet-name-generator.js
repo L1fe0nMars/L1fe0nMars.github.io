@@ -11,10 +11,8 @@ const SAVED_NAMES_LIST = document.getElementById('saved-names-list');
 const MAX_NAMES = Number(NUM_NAMES.max);
 const MIN_NAMES = Number(NUM_NAMES.min);
 
-const generator = new Generator();
-
 /**
- * Saves name the browser's local storage
+ * Saves name to the browser's local storage
  * 
  * @param {string} name The name to save
  */
@@ -39,7 +37,6 @@ function saveName(name) {
  */
 function loadNames() {
     const storedNames = JSON.parse(localStorage['savedNames']);
-
     clearNames(SAVED_NAMES_LIST);
     createNameList(SAVED_NAMES_LIST, storedNames.length);
 }
@@ -56,8 +53,10 @@ function createNameList(nameList, numNames) {
         const name = document.createElement('h2');
         const copyIcon = document.createElement('span');
         const storedNames = localStorage['savedNames'];
+        const firstLetter = FIRST_LETTER.value[0];
+        const lastLetter = LAST_LETTER.value[0];
 
-        name.innerHTML = nameList === NAMES_LIST ? generator.generateName(FIRST_LETTER.value[0], LAST_LETTER.value[0]) : JSON.parse(storedNames)[i];
+        name.innerHTML = nameList === NAMES_LIST ? generateName(firstLetter, lastLetter) : JSON.parse(storedNames)[i];
         
         copyIcon.innerHTML = `
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-copy" title="Copy name">
