@@ -45,7 +45,7 @@ const CONSONANTS = {
         'nb','nc','nd','ndr','ndv','nf','nfr','ng','ngk','ngl','ngr','ngt','ngw','nj','nk','nkl','nl','nm','nn','nph','ns','nsh','nt','nth','nthr','ntr','nv','ny','nym','nz',
         'ph','phd','phl','phn','phr','pl','pn','pr','ps','pt',
         'rb','rc','rct','rd','rf','rg','rgl','rj','rk','rl','rm','rn','rp','rph','rr','rs','rt','rth','rthr','rtr','rv','rx','ry','rz',
-        'sb','sc','scl','scr','sg','sh','sk','skr','sl','sm','sn','sp','sph','ss','st','str','sw',
+        'sb','sc','scl','scr','sg','sh','sk','skr','sl','sm','sn','sp','sph','sr','ss','st','str','sw',
         'th','thl','thr','tl','tm','tn','tr','ts','tsw','tt','tv','ty',
         'vk','vl','vn','vr','vy',   
         'xl','xp','xph','xt','xtr','xv','xvl',
